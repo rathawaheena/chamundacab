@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Our Fleet | Chamunda Cab</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Manrope:wght@400;500;600;700;800&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="fleet-data.js"></script>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="site-nav navbar navbar-expand-lg">
+  <div class="container">
+    <a class="brand" href="index.html"><img class="brand-logo" src="images/logo-header.jpg" alt="Chamunda Cab Tourism - Your Journey, Our Responsibility" width="680" height="272"></a>
+    <button class="navbar-toggler" type="button" id="menuToggle" aria-label="Toggle menu"><i class="bi bi-list fs-4"></i></button>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item"><a class="nav-link" href="booking.html">Cab Booking</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#routes">Popular Routes</a></li>
+        <li class="nav-item"><a class="nav-link active" href="fleet.html">Our Fleet</a></li><li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#services">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#why">Cab Arcade</a></li>
+      </ul>
+      <a href="https://wa.me/916352179909" target="_blank" rel="noopener" class="btn btn-wa wa-link"><i class="fab fa-whatsapp me-2"></i>WhatsApp Booking</a>
+    </div>
+  </div>
+</nav>
+
+<main id="top">
+  <div class="page-head hero-compact">
+    <div class="container">
+      <h1>Chamunda Cab Fleet</h1>
+      <div class="hero-cta"><a href="booking.html#booking" class="btn-book-cta" aria-label="Book in seconds - go to the cab booking form">Book in seconds<i class="bi bi-arrow-right ms-2"></i></a></div>
+      <p>Explore well-maintained Sedans, SUVs, Innova Crysta, and Luxury Cabs across all major cities in India. <strong style="color:var(--gold);font-weight:800">Instant Call &amp; WhatsApp Booking</strong> with professional drivers, and available <strong style="color:var(--gold);font-weight:800">24/7</strong>.</p>
+      <div class="d-flex gap-2 justify-content-center flex-wrap mt-3">
+        <a href="tel:+918128295920" class="btn btn-call"><i class="bi bi-telephone-fill me-2"></i>Call +91 81282 95920</a>
+        <a href="https://wa.me/916352179909?text=Hello%20Chamunda%20Cab%2C%20I%20want%20to%20book%20a%20cab." target="_blank" rel="noopener" class="btn btn-wa"><i class="fab fa-whatsapp me-2"></i>WhatsApp Booking</a>
+      </div>
+    </div>
+  </div>
+
+  <section class="fleet-sec" id="india-benefits"><div class="container"><div class="text-center mb-4"><span class="eyebrow">All-India service</span><h2 class="sec-title">Why Travellers Book Chamunda Cab Across India</h2></div><div class="row g-3"><div class="col-sm-6 col-lg-3"><div class="svc"><div class="ico"><i class="bi bi-headset"></i></div><h5>24/7 All-India Support</h5><p>Call or WhatsApp at any hour for bookings and trip support on routes across India.</p></div></div><div class="col-sm-6 col-lg-3"><div class="svc"><div class="ico"><i class="bi bi-signpost-split"></i></div><h5>Experienced Highway Drivers</h5><p>Chauffeurs used to long highway and night drives, for safe outstation and interstate trips.</p></div></div><div class="col-sm-6 col-lg-3"><div class="svc"><div class="ico"><i class="bi bi-currency-rupee"></i></div><h5>Transparent Fixed Fares</h5><p>A fare quoted before you travel, no hidden surge. Tolls, parking and state taxes are clarified at booking.</p></div></div><div class="col-sm-6 col-lg-3"><div class="svc"><div class="ico"><i class="bi bi-airplane"></i></div><h5>Pan-India Outstation &amp; Airport Transfers</h5><p>One-way, round-trip and airport cabs between major cities, from Delhi and Mumbai to Bangalore and Ahmedabad.</p></div></div></div><div class="text-center mt-4"><a class="btn btn-amber" href="routes.html#india-routes">See All India routes</a></div></div></section>
+  <section class="fleet-sec" id="fleet">
+    <div class="container">
+      <div class="filters" id="filters">
+        <button type="button" class="active" data-f="all">All Vehicles</button>
+        <button type="button" data-f="car">Cars</button>
+        <button type="button" data-f="suv">SUV &amp; MUV</button>
+        <button type="button" data-f="coach">Group &amp; Coach</button>
+      </div>
+      <div class="row g-4 mt-2" id="fleetGrid"></div>
+
+      <div class="rate-card mt-5" id="rates">
+        <div class="d-flex flex-wrap justify-content-between align-items-end gap-2 mb-3">
+          <h3 class="serif mb-0">Rate Card at a Glance</h3><span class="pill mb-0">Per km &middot; Chauffeur driven</span>
+        </div>
+        <div class="table-responsive">
+          <table class="table rate-table align-middle mb-0">
+            <thead><tr><th>NO.</th><th>VEHICLE</th><th>SEATING</th><th>RATE</th><th class="text-end">BOOKING</th></tr></thead>
+            <tbody id="rateBody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="cta-band cta-band--link mt-5" id="fleetHelpCard">
+        <h3 class="serif"><a class="cta-stretch" href="booking.html" aria-label="Not sure which vehicle fits your trip? Go to Cab Booking">Not sure which vehicle fits your trip?</a></h3>
+        <p>Tell us your route and group size and we will suggest the right cab with a fixed fare.</p>
+        <a href="booking.html" class="btn btn-amber">Go to Cab Booking</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="row align-items-center gy-4">
+      <div class="col-lg-3"><a class="brand ms-0" href="index.html" style="margin:0"><img class="brand-logo brand-logo-foot" src="images/logo.jpg" alt="Chamunda Cab Tourism - Your Journey, Our Responsibility" width="1643" height="656"></a></div>
+      <div class="col-lg-6 text-lg-center"><a href="booking.html">Cab Booking</a><a href="index.html#routes">One-Way Routes</a><a href="fleet.html">Fleet &amp; Rates</a><a href="index.html#services">Cab Services</a><a href="https://wa.me/916352179909" target="_blank" rel="noopener" class="wa-link">WhatsApp Desk</a></div>
+      <div class="col-lg-3 text-lg-end small-muted">Chamunda Cab Ground Transportation Services<div class="booking-line mt-1">Booking line: +91 63521 79909</div></div>
+    </div>
+  </div>
+</footer>
+
+<div id="progress"></div>
+
+<script>
+$('html').addClass('js');
+$(function () {
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  var fleet = window.FLEET, rateOf = window.fleetRate;
+  var chat = '<i class="fab fa-whatsapp me-2"></i>';
+
+  /* Vehicle cards */
+  $('#fleetGrid').html($.map(fleet, function (v) {
+    return '<div class="col-md-6 col-xl-4 fleet-item" data-cat="' + v.cat + '"><div class="car"><a class="car-overlay" href="booking.html?car=' + encodeURIComponent(v.name) + '#booking" aria-label="Open booking page for ' + v.name + '"></a><div class="car-img" data-img="' + v.img + '"><i class="bi bi-' + v.icon + ' ph"></i><div><small>' + v.type + '</small><h5>' + v.name + '</h5></div></div>' +
+      '<div class="car-body"><div class="specs"><span>Capacity: <b>' + v.seats + '</b></span><span>AC: <b>Yes</b></span><span>Driver: <b>Included</b></span></div>' +
+      '<div class="rate"><span>Rate per km:</span><b>' + rateOf(v) + '</b></div><p>' + v.desc + '</p>' +
+      '<a href="' + window.WA_LINK + '" target="_blank" rel="noopener" class="btn btn-wa wa-car">' + chat + 'Book ' + v.name + '</a></div></div></div>';
+  }).join(''));
+
+  /* Use photo if the file exists, otherwise keep the icon placeholder */
+  $('.car-img').each(function () {
+    var $el = $(this), src = $el.data('img'), im = new Image();
+    im.onload = function () { $el.css('background-image', "url('" + src + "')").addClass('has-img'); };
+    im.src = src;
+  });
+
+  /* Rate card table */
+  $('#rateBody').html($.map(fleet, function (v, i) {
+    var WA = 'https://wa.me/916352179909?text=Hello%20Chamunda%20Cab,%20I%20want%20to%20book%20a%20cab.';
+    return '<tr>' +
+      '<td data-label="No." class="col-no">' + (i + 1) + '</td>' +
+      '<td data-label="Vehicle" class="col-veh"><span class="veh-cat">' + v.type + '</span><span class="veh-name">' + v.name + '</span></td>' +
+      '<td data-label="Seating" class="col-seat">' + v.seats + '</td>' +
+      '<td data-label="Rate" class="rt">' + rateOf(v) + '</td>' +
+      '<td data-label="Booking" class="col-book"><div class="book-actions">' +
+        '<a class="btn-wa" href="' + WA + '" target="_blank" rel="noopener"><i class="bi bi-whatsapp"></i> Book via WhatsApp</a>' +
+        '<a class="btn-callnow" href="tel:818295920"><i class="bi bi-telephone-fill"></i> Call Now</a>' +
+      '</div></td></tr>';
+  }).join(''));
+
+  /* Category filter with fade */
+  $('#filters').on('click', 'button', function () {
+    var f = $(this).data('f');
+    $('#filters button').removeClass('active'); $(this).addClass('active');
+    var $items = $('.fleet-item');
+    $items.stop(true, true).fadeOut(reduce ? 0 : 180).promise().done(function () {
+      $items.filter(function () { return f === 'all' || $(this).data('cat') === f; }).fadeIn(reduce ? 0 : 280);
+    });
+  });
+
+  /* WhatsApp */
+
+  /* Mobile menu */
+  $('#menuToggle').on('click', function () { $('#mainNav').collapse('toggle'); });
+
+  /* Reveal (stagger), header shrink, progress bar, back-to-top */
+  $('.fleet-item').each(function (i) { $(this).addClass('reveal').css('transition-delay', (i % 3) * 90 + 'ms'); });
+  $('.cta-band,.rate-card').addClass('reveal');
+  var $nav = $('.site-nav'), $bar = $('#progress'), $top = $('#toTop');
+  function onScroll() {
+    var y = $(window).scrollTop(), max = $(document).height() - $(window).height();
+    $nav.toggleClass('scrolled', y > 30);
+    $bar.css('width', (max > 0 ? y / max * 100 : 0) + '%');
+    $top.toggleClass('show', y > 500);
+    var edge = y + $(window).height() * 0.95;
+    $('.reveal:not(.in)').each(function () {
+      if ($(this).offset().top < edge) {
+        var $el = $(this).addClass('in');
+        setTimeout(function () { $el.removeClass('reveal in').css('transition-delay', ''); }, 1100);
+      }
+    });
+  }
+  $(window).on('scroll resize', onScroll); onScroll();
+  $top.on('click', function () { $('html,body').animate({ scrollTop: 0 }, 600); });
+
+  /* Button ripple */
+  $(document).on('click', '.btn', function (e) {
+    if (reduce) return;
+    var $b = $(this), off = $b.offset(), d = Math.max($b.outerWidth(), $b.outerHeight());
+    $('<span class="ripple"></span>').css({ width: d, height: d, left: e.pageX - off.left - d / 2, top: e.pageY - off.top - d / 2 })
+      .appendTo($b).on('animationend', function () { $(this).remove(); });
+  });
+
+  /* Card tilt (desktop only) */
+  if (!reduce && window.matchMedia('(hover:hover)').matches) {
+    $(document).on('mousemove', '.car', function (e) {
+      var r = this.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+      this.style.transform = 'translateY(-6px) perspective(900px) rotateY(' + x * 5 + 'deg) rotateX(' + -y * 5 + 'deg)';
+    }).on('mouseleave', '.car', function () { this.style.transform = ''; });
+  }
+});
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+/* Help card: click anywhere (except the button) opens Cab Booking; button handles itself, no double redirect */
+(function(){
+  var card=document.getElementById('fleetHelpCard'); if(!card) return;
+  card.addEventListener('click',function(e){
+    if(e.target.closest('a,button')) return;
+    window.location.href='booking.html';
+  });
+  card.querySelectorAll('.btn').forEach(function(btn){
+    btn.addEventListener('click',function(e){ e.stopPropagation(); });
+  });
+})();
+</script>
+</body>
+</html>

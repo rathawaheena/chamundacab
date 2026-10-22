@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cab Booking | Chamunda Cab</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Manrope:wght@400;500;600;700;800&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="fleet-data.js"></script>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="site-nav navbar navbar-expand-lg">
+  <div class="container">
+    <a class="brand" href="index.html"><img class="brand-logo" src="images/logo-header.jpg" alt="Chamunda Cab Tourism - Your Journey, Our Responsibility" width="680" height="272"></a>
+    <button class="navbar-toggler" type="button" id="menuToggle" aria-label="Toggle menu"><i class="bi bi-list fs-4"></i></button>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item"><a class="nav-link active" href="booking.html">Cab Booking</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#routes">Popular Routes</a></li>
+        <li class="nav-item"><a class="nav-link" href="fleet.html">Our Fleet</a></li><li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#services">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#why">Cab Arcade</a></li>
+      </ul>
+      <a href="https://wa.me/916352179909" target="_blank" rel="noopener" class="btn btn-wa wa-link"><i class="fab fa-whatsapp me-2"></i>WhatsApp Booking</a>
+    </div>
+  </div>
+</nav>
+
+<main id="top">
+  <div class="page-head">
+    <div class="container">
+      <h1>Cab Booking</h1>
+      <p>Share your trip details and we will confirm your fixed fare on WhatsApp.</p>
+    </div>
+  </div>
+
+  <!-- BOOKING FORM -->
+  <section id="booking" class="booking-sec">
+    <div class="container">
+      <form class="est" id="bookingForm" novalidate>
+      <div class="row g-3">
+        <div class="col-md-6"><label>Full name</label><input type="text" class="form-control" id="fName" placeholder="e.g. Bhavdeepsinh Jadeja"></div>
+        <div class="col-md-6"><label>Mobile number</label><input type="tel" class="form-control" id="fPhone" placeholder="e.g. 9876543210"></div>
+        <div class="col-md-6"><label>Pickup city</label><input type="text" class="form-control" id="fFrom" placeholder="e.g. Rajkot, Delhi, Mumbai"></div>
+        <div class="col-md-6"><label>Drop city</label><input type="text" class="form-control" id="fTo" placeholder="e.g. Dwarka, Bengaluru, Udaipur"></div>
+        <div class="col-md-6"><label>Date</label><input type="date" class="form-control" id="fDate"></div>
+        <div class="col-md-6"><label>Time</label><input type="time" class="form-control" id="fTime"></div>
+        <div class="col-md-6"><label>Vehicle</label>
+          <select class="form-select" id="fCar" name="vehicle" required>
+            <option value="" disabled selected hidden>-- Select Vehicle --</option>
+            <option value="WagonR New (4 Seater)">WagonR New (4 Seater)</option>
+            <option value="Swift Dzire (5 Seater)">Swift Dzire (5 Seater)</option>
+            <option value="New Model Ertiga (7 Seater)">New Model Ertiga (7 Seater)</option>
+            <option value="Kia Carens (7 Seater)">Kia Carens (7 Seater)</option>
+            <option value="TUV 300 Plus (8 Seater)">TUV 300 Plus (8 Seater)</option>
+            <option value="Innova (7 Seater)">Innova (7 Seater)</option>
+            <option value="Innova Crysta New Model (8 Seater)">Innova Crysta New Model (8 Seater)</option>
+            <option value="17 Seater Tempo Traveller">17 Seater Tempo Traveller</option>
+            <option value="20 Seater Tempo Traveller">20 Seater Tempo Traveller</option>
+            <option value="New Luxury Urbania (16+1 Seater)">New Luxury Urbania (16+1 Seater)</option>
+          </select></div>
+        <div class="col-md-6"><label>Passengers</label>
+          <select class="form-select" id="fPax"><option>1-4</option><option>5-7</option><option>8-9</option><option>10-17</option><option>18-20</option></select></div>
+        <div class="col-12"><label>Anything else? (optional)</label><textarea class="form-control" id="fNote" rows="3" placeholder="Luggage, child seat, flight number..."></textarea></div>
+      </div>
+      <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mt-4">
+        <p class="small-muted mb-0" style="max-width:340px;font-size:.8rem;color:var(--muted)">We never share your contact details. A direct WhatsApp dispatch message will be generated.</p>
+        <div class="d-flex gap-2">
+          <a href="tel:+916352179909" class="btn btn-call"><i class="bi bi-telephone me-2"></i>Call Now</a>
+          <button type="submit" class="btn btn-wa"><i class="fab fa-whatsapp me-2"></i>Send Booking to WhatsApp</button>
+        </div>
+      </div>
+      <div class="info">
+        <div><b>Service Area</b>Home City, Gujarat &amp; All India</div>
+        <div><b>Availability</b>24 Hours / 7 Days a Week</div>
+        <div><b>Booking Rail</b>WhatsApp &amp; Direct Call Confirmation</div>
+      </div>
+    </form>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="row align-items-center gy-4">
+      <div class="col-lg-3"><a class="brand ms-0" href="index.html" style="margin:0"><img class="brand-logo brand-logo-foot" src="images/logo.jpg" alt="Chamunda Cab Tourism - Your Journey, Our Responsibility" width="1643" height="656"></a></div>
+      <div class="col-lg-6 text-lg-center"><a href="booking.html">Cab Booking</a><a href="index.html#routes">One-Way Routes</a><a href="fleet.html">Fleet &amp; Rates</a><a href="index.html#services">Cab Services</a><a href="https://wa.me/916352179909" target="_blank" rel="noopener" class="wa-link">WhatsApp Desk</a></div>
+      <div class="col-lg-3 text-lg-end small-muted">Chamunda Cab Ground Transportation Services<div class="booking-line mt-1">Booking line: +91 63521 79909</div></div>
+    </div>
+  </div>
+</footer>
+
+<div id="progress"></div>
+
+<div class="modal fade" id="confirmModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header"><h5 class="modal-title serif">Confirm your booking</h5><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button></div>
+      <div class="modal-body"><ul class="summary" id="summaryList"></ul></div>
+      <div class="modal-footer"><button type="button" class="btn btn-call" data-bs-dismiss="modal">Edit details</button><button type="button" class="btn btn-wa" id="confirmSend"><i class="fab fa-whatsapp me-2"></i>Send on WhatsApp</button></div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+$('html').addClass('js');
+$(function () {
+  var wa = function (t) { return window.WA_LINK + '?text=' + encodeURIComponent(t); }; // base link: https://wa.me/916352179909
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Mobile menu */
+  $('#menuToggle').on('click', function () { $('#mainNav').collapse('toggle'); });
+
+  /* Smooth scroll for in-page anchors */
+  $('a[href^="#"]').on('click', function (e) {
+    var id = this.getAttribute('href'), $t = id.length > 1 ? $(id) : $();
+    if (!$t.length) return;
+    e.preventDefault();
+    $('html,body').animate({ scrollTop: $t.offset().top - $('.site-nav').outerHeight() + 1 }, 500);
+  });
+
+  /* WhatsApp links */
+
+  /* Vehicle dropdown from the shared rate card */
+  /* (Vehicle options are written directly in the HTML; nothing is pre-selected) */
+
+  /* Optional prefill from links like booking.html?from=Rajkot&to=Dwarka&car=Innova */
+  var q = new URLSearchParams(window.location.search);
+  if (q.get('from')) $('#fFrom').val(q.get('from'));
+  if (q.get('to')) $('#fTo').val(q.get('to'));
+  if (q.get('car')) {            /* ?car=Innova -> selects "Innova (7 Seater)" */
+    var want = q.get('car');
+    $('#fCar option').each(function () {
+      if (this.value === want || this.value.indexOf(want + ' (') === 0) { $('#fCar').val(this.value); return false; }
+    });
+  }
+
+  $('#fCar').on('change', function () { $(this).css('border-color', ''); });
+
+  /* Form validation -> confirmation modal -> WhatsApp */
+  var pendingMsg = '';
+  $('#bookingForm').on('submit', function (e) {
+    e.preventDefault();
+    var ok = true;
+    $('#fName,#fPhone,#fFrom,#fTo,#fCar').each(function () {
+      var bad = !$.trim(this.value);
+      $(this).css('border-color', bad ? '#ef4444' : '');
+      if (bad) ok = false;
+    });
+    if (!ok) return;
+    pendingMsg = 'New Booking Request\nName: ' + $('#fName').val() + '\nMobile: ' + $('#fPhone').val() +
+      '\nPickup: ' + $('#fFrom').val() + '\nDrop: ' + $('#fTo').val() +
+      '\nDate: ' + ($('#fDate').val() || '-') + ' ' + $('#fTime').val() +
+      '\nVehicle: ' + $('#fCar').val() + '\nPassengers: ' + $('#fPax').val() +
+      '\nNotes: ' + ($('#fNote').val() || '-');
+    var rows = [['Name', '#fName'], ['Mobile', '#fPhone'], ['Pickup', '#fFrom'], ['Drop', '#fTo'], ['Vehicle', '#fCar'], ['Passengers', '#fPax']];
+    var html = $.map(rows, function (r) { return '<li><span>' + r[0] + '</span><b>' + $('<i>').text($(r[1]).val()).html() + '</b></li>'; }).join('');
+    html += '<li><span>When</span><b>' + ($('#fDate').val() || '-') + ' ' + $('#fTime').val() + '</b></li>';
+    $('#summaryList').html(html);
+    bootstrap.Modal.getOrCreateInstance('#confirmModal').show();
+  });
+  $('#confirmSend').on('click', function () {
+    window.open(wa(pendingMsg), '_blank');
+    bootstrap.Modal.getInstance('#confirmModal').hide();
+  });
+  $('#bookingForm input').on('input', function () { $(this).css('border-color', ''); });
+
+  /* Reveal, header shrink, progress bar, back-to-top */
+  $('.est,.footer-reveal').addClass('reveal');
+  var $nav = $('.site-nav'), $bar = $('#progress'), $top = $('#toTop');
+  function onScroll() {
+    var y = $(window).scrollTop(), max = $(document).height() - $(window).height();
+    $nav.toggleClass('scrolled', y > 30);
+    $bar.css('width', (max > 0 ? y / max * 100 : 0) + '%');
+    $top.toggleClass('show', y > 400);
+    var edge = y + $(window).height() * 0.95;
+    $('.reveal:not(.in)').each(function () {
+      if ($(this).offset().top < edge) {
+        var $el = $(this).addClass('in');
+        setTimeout(function () { $el.removeClass('reveal in'); }, 1100);
+      }
+    });
+  }
+  $(window).on('scroll resize', onScroll); onScroll();
+  $top.on('click', function () { $('html,body').animate({ scrollTop: 0 }, 600); });
+
+  /* Button ripple */
+  $(document).on('click', '.btn', function (e) {
+    if (reduce) return;
+    var $b = $(this), off = $b.offset(), d = Math.max($b.outerWidth(), $b.outerHeight());
+    $('<span class="ripple"></span>').css({ width: d, height: d, left: e.pageX - off.left - d / 2, top: e.pageY - off.top - d / 2 })
+      .appendTo($b).on('animationend', function () { $(this).remove(); });
+  });
+});
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

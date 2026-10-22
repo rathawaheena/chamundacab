@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chamunda Cab | Your Ride, Our Responsibility</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Manrope:wght@400;500;600;700;800&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="fleet-data.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="site-nav navbar navbar-expand-lg">
+  <div class="container">
+    <a class="brand" href="#top"><img class="brand-logo" src="images/logo-header.jpg" alt="Chamunda Cab Tourism - Your Journey, Our Responsibility" width="680" height="272"></a>
+    <button class="navbar-toggler" type="button" id="menuToggle" aria-label="Toggle menu"><i class="bi bi-list fs-4"></i></button>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item"><a class="nav-link" href="booking.html">Cab Booking</a></li>
+        <li class="nav-item"><a class="nav-link" href="#routes">Popular Routes</a></li>
+        <li class="nav-item"><a class="nav-link" href="fleet.html">Our Fleet</a></li><li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="#why">Cab Arcade</a></li>
+      </ul>
+      <a href="https://wa.me/916352179909" target="_blank" rel="noopener" class="btn btn-wa wa-link"><i class="fab fa-whatsapp me-2"></i>WhatsApp Booking</a>
+    </div>
+  </div>
+</nav>
+
+<main id="top">
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <h1>Zero Cancellations.<br>Punctual Pickups Always.</h1>
+    <p>Clean chauffeur-driven sedans, SUVs, and luxury coaches across Gujarat and all India. Transparent fixed fares with guaranteed on-time departure.</p>
+    <div class="hero-card">
+      <div class="hero-cap">
+        <span class="pill">Your ride, our responsibility</span>
+        <p>Professional verified local drivers ready 24/7 for airport transfers, one-way drops, and pilgrimage tours.</p>
+      </div>
+    </div>
+    <div class="row g-3 mt-4">
+      <div class="col-6 col-lg-3"><div class="stat"><i class="bi bi-shield-check"></i><h3>100%</h3><span>Pickup guarantee</span></div></div>
+      <div class="col-6 col-lg-3"><div class="stat"><i class="bi bi-currency-rupee"></i><h3>Fixed Rate</h3><span>No hidden surge</span></div></div>
+      <div class="col-6 col-lg-3"><div class="stat"><i class="bi bi-stars"></i><h3>Sanitized</h3><span>Spotless fleet</span></div></div>
+      <div class="col-6 col-lg-3"><div class="stat"><i class="bi bi-clock"></i><h3>24 / 7</h3><span>Driver dispatch</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ROUTES -->
+<section id="routes">
+  <div class="container">
+    <div class="d-flex flex-wrap justify-content-between align-items-end gap-3 mb-5">
+      <div><h2 class="sec-title">Popular One-Way Route Packages</h2><p class="sec-sub mb-0">Affordable fixed-rate transfers across Saurashtra, Gujarat, and All-India routes. Tolls &amp; taxes included options.</p></div>
+      <span class="pill mb-0">Indicative packages</span>
+    </div>
+    <div class="row g-4" id="routeGrid"></div>
+  </div>
+</section>
+
+<!-- FLEET -->
+<section id="fleet">
+  <div class="container">
+    <div class="text-center mb-5"><h2 class="sec-title">Our Premium Fleet &amp; Car Rent Rates</h2><p class="sec-sub mx-auto">Every vehicle is thoroughly inspected, air-conditioned, sanitized, and chauffeured by courteous local drivers.</p></div>
+    <div class="fleet-carousel" id="fleetCarousel" role="region" aria-roledescription="carousel" aria-label="Our taxi and cab fleet">
+    <div class="fc-viewport"><div class="fc-track" id="fleetGrid"></div></div>
+    <div class="fc-controls">
+      <button type="button" class="fc-btn fc-prev" aria-label="Previous vehicles"><i class="bi bi-chevron-left"></i></button>
+      <div class="fc-dots" id="fleetDots"></div>
+      <button type="button" class="fc-btn fc-next" aria-label="Next vehicles"><i class="bi bi-chevron-right"></i></button>
+    </div>
+  </div>
+    <div class="text-center mt-5"><a href="fleet.html" class="btn btn-amber">View All 10 Vehicles &amp; Rates<i class="bi bi-arrow-right ms-2"></i></a></div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <div class="text-center mb-5"><h2 class="sec-title">Our Dedicated Cab Services</h2><p class="sec-sub mx-auto">Tailored ground transport solutions for individuals, corporate organizations, and tourist groups.</p></div>
+    <div class="row g-4" id="svcGrid"></div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="why" class="why">
+  <div class="container">
+    <div class="row g-5 align-items-center">
+      <div class="col-lg-6">
+        <span class="eyebrow">Why riders choose us</span>
+        <h2>On-Time Pickups. No Last-Minute Cancellations.</h2>
+        <p class="lead2">For years, Chamunda Cab has served local Gujarati families, tourists, and corporate travellers with absolute honesty. When you book with us, your cab arrives 10 minutes before the scheduled time with a clean cabin and verified driver — at an affordable, fixed price.</p>
+        <div class="check"><i class="bi bi-check-lg"></i><div><b>Clean &amp; Sanitized Interiors</b><span>Every cab is vacuumed and washed before starting any outstation trip.</span></div></div>
+        <div class="check"><i class="bi bi-check-lg"></i><div><b>Experienced Local Chauffeurs</b><span>Drivers fluent in Gujarati &amp; Hindi who know every shortcut, bypass, and quality highway dhaba.</span></div></div>
+        <div class="check"><i class="bi bi-check-lg"></i><div><b>24/7 Human Dispatch Support</b><span>Direct phone and WhatsApp call support anytime your journey is underway.</span></div></div>
+      </div>
+      <div class="col-lg-6">
+        <div class="fb">
+          <div class="d-flex justify-content-between align-items-center"><h4 class="mb-0 fw-bold">Rider Feedback</h4></div>
+          <div class="fb-in"><div class="stars">★★★★★</div><p>"Booked an Innova for our family Dwarka-Somnath trip. The driver was punctual and very respectful to our elders. Excellent service."</p><div><b>Patel Family, Rajkot</b><span>Outstation Tour</span></div></div>
+          <div class="fb-in"><div class="stars">★★★★★</div><p>"Frequent airport drops to Ahmedabad. Never had a single delay or cancellation. Transparent pricing with no extra demands."</p><div><b>Corporate Traveler</b><span>Airport Transfer</span></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="row align-items-center gy-4">
+      <div class="col-lg-3"><a class="brand ms-0" href="#top" style="margin:0"><img class="brand-logo brand-logo-foot" src="images/logo.jpg" alt="Chamunda Cab Tourism - Your Journey, Our Responsibility" width="1643" height="656"></a></div>
+      <div class="col-lg-6 text-lg-center"><a href="booking.html">Cab Booking</a><a href="#routes">One-Way Routes</a><a href="fleet.html">Fleet &amp; Rates</a><a href="#services">Cab Services</a><a href="https://wa.me/916352179909" target="_blank" rel="noopener" class="wa-link">WhatsApp Desk</a></div>
+      <div class="col-lg-3 text-lg-end small-muted">Chamunda Cab Ground Transportation Services<div class="booking-line mt-1">Booking line: +91 63521 79909</div></div>
+    </div>
+  </div>
+</footer>
+
+<div id="progress"></div>
+
+
+<script>
+$('html').addClass('js');
+$(function () {
+
+  /* ---------- Data ---------- */
+  var routes = [
+    ['One-Way Route','~220 km','Rajkot to Ahmedabad Airport','Direct terminal drop, highway toll assistance, on-time flight guarantee.','2,800','4,200'],
+    ['Pilgrimage Special','~230 km','Rajkot to Dwarka Temple','Comfortable temple darshan transfer with flexible waiting options.','3,200','4,600',1],
+    ['Pilgrimage Special','~200 km','Rajkot to Somnath Jyotirlinga','Direct shoreline highway route, family-friendly vehicles with AC.','2,900','4,500',1],
+    ['Outstation Express','~95 km','Rajkot to Jamnagar','Quick daily commuter & refinery corporate transfers with zero delay.','1,600','2,400'],
+    ['Commercial Hub','~440 km','Rajkot to Surat City','Comfortable night & day rides across the Golden Corridor.','5,500','7,800'],
+    ['Holiday Circuit','~4-Day Tour','Dwarka - Somnath - Sasan Gir','Complete Saurashtra pilgrimage & wildlife safari tour package.','12,000','16,500',1]
+  ];
+  /* Featured vehicles come from fleet-data.js (full list on fleet.html) */
+  /* All 10 vehicles; Swift Dzire, Ertiga and Innova Crysta come first so they are the 3 cards shown initially */
+  var lead = ['dzire', 'ertiga', 'crysta'];
+  var featured = $.map(lead, function (id) { return $.grep(window.FLEET, function (v) { return v.id === id; }); })
+    .concat($.grep(window.FLEET, function (v) { return $.inArray(v.id, lead) < 0; }));
+  var svcs = [
+    ['geo-alt','Local City Taxi','Hourly rentals and local point-to-point drops for shopping, meetings, and hospital visits.'],
+    ['diagram-2','Outstation Round Trips','Multi-day travel across Gujarat and neighboring states with courteous night-stay drivers.'],
+    ['airplane','Airport Transfers','Timely pickup and drop services for Rajkot, Ahmedabad, Jamnagar, and Mumbai airports.'],
+    ['arrow-right','One-Way Drops','Pay only for one-side travel. No return fare burden for intercity transfers.'],
+    ['briefcase','Corporate Employee Cab','Monthly billing, GST invoices, and dedicated corporate fleets for business staff.'],
+    ['heart','Wedding Fleet Rentals','Decorated luxury sedans and coordinated fleet management for wedding guests (Baraat).'],
+    ['bank','Dwarka-Somnath Packages','Special holy pilgrimage packages with experienced drivers who know temple timings.'],
+    ['globe','All India Tour Yatras','Commercial all-India permits for Rajasthan, Maharashtra, MP, and North India trips.']
+  ];
+
+  /* ---------- Render ---------- */
+  var chat = '<i class="fab fa-whatsapp me-2"></i>';
+  $('#routeGrid').html($.map(routes, function (r) {
+    return '<div class="col-md-6 col-xl-4"><div class="route"><div class="d-flex justify-content-between align-items-center">' +
+      '<span class="tag' + (r[6] ? ' gold' : '') + '">' + r[0] + '</span><span class="km">' + r[1] + '</span></div>' +
+      '<h4>' + r[2] + '</h4><p>' + r[3] + '</p>' +
+      '<div class="fares"><div><span>Sedan (Dzire / Aura)</span><b>Rs. ' + r[4] + ' approx.</b></div>' +
+      '<div><span>SUV (Ertiga / Innova)</span><b>Rs. ' + r[5] + ' approx.</b></div></div>' +
+      '<a href="' + window.WA_LINK + '" target="_blank" rel="noopener" class="btn btn-wa wa-route">' + chat + 'WhatsApp Booking &amp; Route Details</a></div></div>';
+  }).join(''));
+
+  $('#fleetGrid').html($.map(featured, function (v) {
+    return '<div class="fc-slide"><div class="car"><a class="car-overlay" href="booking.html?car=' + encodeURIComponent(v.name) + '#booking" aria-label="Open booking page for ' + v.name + '"></a><div class="car-img" data-img="' + v.img + '"><i class="bi bi-' + v.icon + ' ph"></i><div><small>' + v.type + '</small><h5>' + v.name + '</h5></div></div>' +
+      '<div class="car-body"><div class="specs"><span>Capacity: <b>' + v.seats + '</b></span><span>AC: <b>Yes</b></span><span>Driver: <b>Included</b></span></div>' +
+      '<div class="rate"><span>Rate per km:</span><b>' + window.fleetRate(v) + '</b></div><p>' + v.desc + '</p>' +
+      '<a href="' + window.WA_LINK + '" target="_blank" rel="noopener" class="btn btn-wa wa-car">' + chat + 'Book ' + v.name + '</a></div></div></div>';
+  }).join(''));
+  $('#fleetGrid .car-img').each(function () {
+    var $el = $(this), src = $el.data('img'), im = new Image();
+    im.onload = function () { $el.css('background-image', "url('" + src + "')").addClass('has-img'); };
+    im.src = src;
+  });
+
+  $('#svcGrid').html($.map(svcs, function (s) {
+    return '<div class="col-sm-6 col-lg-3"><div class="svc"><div class="ico"><i class="bi bi-' + s[0] + '"></i></div><h5>' + s[1] + '</h5><p>' + s[2] + '</p></div></div>';
+  }).join(''));
+
+  /* ---------- Fleet carousel: autoplay, 3 cards per view (2 on tablets, 1 on phones), slides one car at a time ---------- */
+  (function () {
+    var INTERVAL = 3000;                                   /* ms between automatic slides (3 seconds) */
+    var $car = $('#fleetCarousel'), $vp = $car.find('.fc-viewport'), $track = $('#fleetGrid'),
+        $real = $track.children('.fc-slide'), n = $real.length, $dots = $('#fleetDots'),
+        $prev = $car.find('.fc-prev'), $next = $car.find('.fc-next'),
+        idx = 0, per = 3, timer = null, hold = { hover: false, focus: false, touch: false, hidden: false, away: false };
+
+    /* Endless loop: the first cards are cloned at the end so the last card slides straight into the first */
+    function makeClones() {
+      $track.children('.fc-clone').remove();
+      for (var i = 0; i < per; i++) {
+        var $c = $real.eq(i).clone().addClass('fc-clone').removeClass('reveal in').css('transition-delay', '').attr({ 'aria-hidden': 'true', inert: '' });
+        $c.find('a,button').attr('tabindex', '-1');
+        $c.find('.car-img').each(function () {
+          var src = $(this).data('img');
+          if (src) $(this).css('background-image', "url('" + src + "')").addClass('has-img');
+        });
+        $track.append($c);
+      }
+    }
+    function mod(i) { return ((i % n) + n) % n; }
+    function show(i, animate) {
+      idx = i;
+      var $all = $track.children(), x = $all[i].offsetLeft - $all[0].offsetLeft;
+      if (!animate) $track.addClass('no-anim');
+      $track.css('transform', 'translateX(-' + x + 'px)');
+      if (!animate) { void $track[0].offsetWidth; $track.removeClass('no-anim'); }
+      $dots.children().removeClass('on').removeAttr('aria-current').eq(mod(i)).addClass('on').attr('aria-current', 'true');
+      $vp.scrollLeft(0);
+    }
+    function step(d) {
+      if (idx >= n) show(idx - n, false);                  /* silently land back on the real cards */
+      if (d < 0 && idx <= 0) show(n, false);               /* going back from the first card: jump to the clones, then slide */
+      show(idx + d, true);
+    }
+    $track.on('transitionend', function (e) {
+      if (e.target === this && e.originalEvent.propertyName === 'transform' && idx >= n) show(idx - n, false);
+    });
+    function build() {
+      var w = $(window).width();
+      per = w >= 992 ? 3 : (w >= 576 ? 2 : 1);
+      $car[0].style.setProperty('--per', per);
+      makeClones();
+      $dots.html($.map($real, function (el, i) {
+        return '<button type="button" class="fc-dot" aria-label="Show vehicle ' + (i + 1) + ' of ' + n + '"></button>';
+      }).join(''));
+      show(mod(idx), false);
+    }
+
+    /* ---- Autoplay (self-healing): every INTERVAL ms the slider moves one card, UNLESS right now
+          the mouse is over a card, a card has keyboard focus, a finger is touching it,
+          the tab is hidden or the slider is off-screen. State is re-checked on every tick,
+          so it can never get "stuck" paused. ---- */
+    function inView() {
+      var r = $car[0].getBoundingClientRect(), vh = window.innerHeight || document.documentElement.clientHeight;
+      return r.bottom > 0 && r.top < vh;
+    }
+    function running() {
+      return !hold.focus && !hold.touch && !document.hidden && inView() && !$car.find('.car:hover').length;
+    }
+    function stop() { clearInterval(timer); timer = null; }
+    function play() { stop(); timer = setInterval(function () { if (running()) step(1); }, INTERVAL); }
+    function pause(k, v) { hold[k] = v; }
+    /* keyboard focus pause (a mouse click on an arrow/dot must NOT keep autoplay paused) */
+    $car.on('focusin', function (e) {
+      var kb = false; try { kb = e.target.matches(':focus-visible'); } catch (x) {}
+      if (kb) pause('focus', true);
+    }).on('focusout', function () { pause('focus', false); });
+
+    /* ---- Manual controls ---- */
+    $prev.on('click', function () { step(-1); play(); });
+    $next.on('click', function () { step(1); play(); });
+    $dots.on('click', '.fc-dot', function () {
+      if (idx >= n) show(idx - n, false);
+      show($(this).index(), true); play();
+    });
+    var sx = null;                                          /* swipe on touch screens */
+    $vp.on('touchstart', function (e) { sx = e.originalEvent.touches[0].clientX; pause('touch', true); })
+       .on('touchend touchcancel', function (e) {
+         if (sx !== null && e.type === 'touchend') {
+           var dx = e.originalEvent.changedTouches[0].clientX - sx;
+           if (Math.abs(dx) > 50) step(dx < 0 ? 1 : -1);
+         }
+         sx = null; pause('touch', false);
+       });
+    $car.on('keydown', function (e) {
+      if (e.key === 'ArrowLeft') step(-1); else if (e.key === 'ArrowRight') step(1);
+    });
+    $track.on('focusin', '.fc-slide:not(.fc-clone)', function () {   /* Tab into an off-screen card brings it into view */
+      var i = $(this).index();
+      if (mod(i - mod(idx)) >= per) show(i, false);
+    });
+    $(window).on('resize', build).on('load', build);
+    build();
+    play();
+  })();
+
+  /* ---------- Mobile menu ---------- */
+  $('#menuToggle').on('click', function () { $('#mainNav').collapse('toggle'); });
+  $('#mainNav .nav-link').on('click', function () { if ($(window).width() < 992) $('#mainNav').collapse('hide'); });
+
+  /* ---------- Smooth scroll with sticky-header offset ---------- */
+  $('a[href^="#"]').on('click', function (e) {
+    var id = this.getAttribute('href');
+    if (id.length < 2) return;
+    var $t = $(id);
+    if (!$t.length) return;
+    e.preventDefault();
+    $('html,body').animate({ scrollTop: $t.offset().top - $('.site-nav').outerHeight() + 1 }, 500);
+  });
+
+  /* ---------- Active nav link on scroll ---------- */
+  var $secs = $('#routes,#fleet,#services,#why');
+  $(window).on('scroll', function () {
+    var y = $(this).scrollTop() + $('.site-nav').outerHeight() + 80, cur = '';
+    $secs.each(function () { if ($(this).offset().top <= y) cur = '#' + this.id; });
+    $('#mainNav .nav-link').removeClass('active').filter('[href="' + cur + '"]').addClass('active');
+  });
+
+  /* ---------- WhatsApp links ---------- */
+
+
+  /* ================= Interactive effects ================= */
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Scroll reveal with stagger inside each grid */
+  $('.sec-title,.sec-sub,.eyebrow,.why h2,.lead2,.check,.fb').addClass('reveal');
+  $('#routeGrid>div,#fleetGrid>div,#svcGrid>div,.stat').each(function (i) {
+    $(this).addClass('reveal').css('transition-delay', (i % 4) * 90 + 'ms');
+  });
+  function reveal() {
+    var edge = $(window).scrollTop() + $(window).height() * 0.9;
+    $('.reveal:not(.in)').each(function () { 
+      if ($(this).offset().top < edge) {
+        var $el = $(this).addClass('in');
+        setTimeout(function () { $el.removeClass('reveal in').css('transition-delay', ''); }, 1100);
+      }
+    });
+  }
+
+  /* One scroll handler: header shrink, progress bar, back-to-top, reveal */
+  var $nav = $('.site-nav'), $bar = $('#progress'), $top = $('#toTop');
+  function onScroll() {
+    var y = $(window).scrollTop(), max = $(document).height() - $(window).height();
+    $nav.toggleClass('scrolled', y > 30);
+    $bar.css('width', (max > 0 ? y / max * 100 : 0) + '%');
+    $top.toggleClass('show', y > 600);
+    reveal();
+  }
+  $(window).on('scroll resize', onScroll); onScroll();
+  $top.on('click', function () { $('html,body').animate({ scrollTop: 0 }, 600); });
+
+  /* Button ripple */
+  $(document).on('click', '.btn', function (e) {
+    if (reduce) return;
+    var $b = $(this), off = $b.offset(), d = Math.max($b.outerWidth(), $b.outerHeight());
+    $('<span class="ripple"></span>').css({ width: d, height: d, left: e.pageX - off.left - d / 2, top: e.pageY - off.top - d / 2 })
+      .appendTo($b).on('animationend', function () { $(this).remove(); });
+  });
+
+  /* Subtle 3D tilt on fleet cards (desktop only) */
+  if (!reduce && window.matchMedia('(hover:hover)').matches) {
+    $(document).on('mousemove', '.car', function (e) {
+      var r = this.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+      this.style.transform = 'translateY(-6px) perspective(900px) rotateY(' + x * 5 + 'deg) rotateX(' + -y * 5 + 'deg)';
+    }).on('mouseleave', '.car', function () { this.style.transform = ''; });
+  }
+});
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

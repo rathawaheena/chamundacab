@@ -1,0 +1,2169 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+:root{--bg:#0d0d0d;--nav:#161616;--card:#1a1a1a;--card2:#262626;--amber:#f59e0b;--gold:#fbbf24;--text:#f5f5f5;--muted:#9a9a9a;--line:rgba(245,158,11,.22)}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Manrope',sans-serif;font-size:15px}
+h1,h2{font-family:'Poppins',sans-serif;font-weight:700}
+.serif{font-family:'Fraunces',serif;font-weight:800}
+section{padding:72px 0;border-bottom:1px solid rgba(255,255,255,.07)}
+.sec-title{font-size:2.1rem;margin-bottom:8px}
+.sec-sub{color:var(--muted);max-width:640px}
+.container{max-width:1280px}
+
+/* Navbar */
+.site-nav{background:#111111;border-bottom:1px solid rgba(255,255,255,.07);position:sticky;top:0;z-index:1030;padding:10px 0}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--text)}
+.logo{width:40px;height:40px;border-radius:10px;background:#2a2210;border:1px solid var(--line);color:var(--gold);font:800 18px 'Fraunces',serif;display:grid;place-items:center;flex:none}
+.brand-logo{display:block;height:112px;width:auto;max-width:100%;border-radius:12px;border:1px solid var(--line);filter:brightness(1.1) contrast(1.1) saturate(1.1);box-shadow:0 0 18px rgba(251,191,36,.28),0 2px 8px rgba(0,0,0,.6);image-rendering:auto;transition:height .3s,box-shadow .3s}
+.brand:hover .brand-logo{box-shadow:0 0 26px rgba(251,191,36,.45),0 2px 8px rgba(0,0,0,.6)}
+.brand-logo-foot{height:64px}
+.site-nav{padding:14px 0}
+.site-nav.scrolled .brand-logo{height:88px}
+@media(max-width:991.98px){.brand-logo{height:92px}.site-nav.scrolled .brand-logo{height:76px}}
+@media(max-width:575.98px){.brand-logo{height:78px}.site-nav.scrolled .brand-logo{height:64px}.site-nav .container{padding-left:12px;padding-right:12px}}
+.brand b{display:block;font-size:1.2rem;line-height:1.1;font-weight:700}
+.brand small{display:block;color:var(--amber);font-size:.72rem;font-weight:500;text-transform:uppercase;letter-spacing:.02em}
+.site-nav .nav-link{color:var(--text);font-weight:500;padding:8px 16px}
+.site-nav .nav-link:hover,.site-nav .nav-link.active{color:var(--amber)}
+.btn-amber{background:var(--amber);color:#111;font-weight:800;font-size:.8rem;text-transform:uppercase;border:0;border-radius:8px;padding:10px 18px;box-shadow:0 4px 18px rgba(245,158,11,.25)}
+.btn-amber:hover{background:var(--gold);color:#111}
+.navbar-toggler{border:1px solid var(--line);color:var(--amber);padding:6px 10px}
+.navbar-toggler:focus{box-shadow:none}
+
+/* Hero */
+.hero-card{position:relative;border-radius:18px;overflow:hidden;border:1px solid var(--line);text-align:left;background:var(--card)}
+.hero-img{display:block;width:100%;height:auto;aspect-ratio:1370/768;object-fit:contain;object-position:center top;background:var(--card)}
+@media(min-width:992px){.hero-img{min-height:500px}}   /* full banner incl. logo + sky; scales with width (~540-640px on desktop) */
+.hero-cap{padding:22px 28px 26px;max-width:none}
+.pill{display:inline-block;font-size:.78rem;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:var(--gold);background:rgba(251,191,36,.12);border:1px solid var(--line);border-radius:999px;padding:5px 14px;margin-bottom:12px}
+.hero-cap p{font-size:1.05rem;margin:0;color:#eee}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 16px;text-align:center;height:100%}
+.stat i{color:var(--amber);font-size:1.1rem}
+.stat h3{color:var(--gold);font-size:1.6rem;font-weight:800;margin:4px 0 2px}
+.stat span{color:var(--muted);font-size:.78rem;text-transform:uppercase}
+
+/* Routes */
+.tag{font-size:.78rem;font-weight:600;border:1px solid rgba(255,255,255,.2);background:var(--card2);border-radius:5px;padding:4px 10px}
+.tag.gold{color:var(--gold);border-color:var(--line);background:rgba(251,191,36,.12)}
+.route{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:24px;height:100%;display:flex;flex-direction:column;transition:border-color .2s}
+.route:hover{border-color:var(--amber)}
+.route .km{color:var(--gold);font-weight:700;font-size:.82rem}
+.route h4{font-weight:700;font-size:1.25rem;margin:18px 0 8px}
+.route p{color:var(--muted);font-size:.84rem;min-height:40px;margin-bottom:0}
+.fares{border-top:1px solid rgba(255,255,255,.08);margin-top:auto;padding:18px 0;font-size:.85rem}
+.fares div{display:flex;justify-content:space-between;padding:3px 0}
+.fares span{color:#cfcfcf}.fares b{font-weight:800}
+.btn-dark2{background:var(--card2);border:1px solid rgba(255,255,255,.12);color:var(--text);font-weight:700;font-size:.85rem;width:100%;padding:10px;border-radius:8px}
+.btn-dark2:hover{border-color:var(--amber);color:var(--amber)}
+
+/* Fleet */
+.car{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;height:100%}
+.car-img{height:238px;position:relative;background-size:cover;background-position:center;background-color:#2b2b2b}
+.car-img:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(26,26,26,.95))}
+.car-img div{position:absolute;left:16px;bottom:14px;z-index:1}
+.car-img small{display:block;color:var(--amber);font-weight:800;font-size:.78rem;text-transform:uppercase;letter-spacing:.05em}
+.car-img h5{font-size:1.1rem;font-weight:600;margin:2px 0 0}
+.car-body{padding:24px 24px 24px}
+.specs{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;font-size:.8rem;color:#bdbdbd;padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,.08)}
+.specs b{color:#fff}
+.rate{display:flex;justify-content:space-between;align-items:center;margin:18px 0 10px;color:#bdbdbd;font-size:.85rem}
+.rate b{color:var(--amber);font-size:1.15rem;font-weight:800}
+.car-body p{color:var(--muted);font-size:.84rem;min-height:40px}
+.btn-book{background:#f59e0b;color:#111;font-weight:700;font-size:.85rem;width:100%;padding:10px;border-radius:8px;border:0}
+.btn-book:hover{background:var(--gold)}
+
+/* Services */
+.svc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px;height:100%}
+.ico{width:40px;height:40px;border-radius:10px;background:#2a2210;border:1px solid var(--line);color:var(--amber);display:grid;place-items:center;margin-bottom:22px}
+.svc h5{font-size:1.05rem;font-weight:700;margin-bottom:8px}
+.svc p{color:var(--muted);font-size:.85rem;margin:0}
+
+/* Why */
+.eyebrow{color:var(--amber);font-weight:700;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
+.why h2{font-size:clamp(2rem,4vw,2.9rem);line-height:1.12;margin:10px 0 20px}
+.why>div>p,.why .lead2{color:#d4d4d4;line-height:1.7}
+.check{display:flex;gap:12px;margin-top:18px}
+.check i{flex:none;width:24px;height:24px;border-radius:50%;background:#3a2f12;color:var(--gold);display:grid;place-items:center;font-size:.8rem;margin-top:2px}
+.check b{display:block;font-weight:700}.check span{color:var(--muted);font-size:.84rem}
+.fb{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:32px}
+.fb-in{border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:18px 16px;margin-top:16px}
+.stars{color:var(--gold);font-size:.8rem;letter-spacing:2px}
+.fb-in p{font-style:italic;font-size:.83rem;margin:8px 0 14px;color:#ddd}
+.fb-in div{display:flex;justify-content:space-between;font-size:.82rem}
+.fb-in b{color:var(--gold)}.fb-in span{color:var(--muted)}
+.outline-pill{font-size:.7rem;color:var(--muted);border:1px solid rgba(255,255,255,.2);border-radius:999px;padding:4px 12px;text-transform:uppercase}
+
+/* Estimator */
+.est{max-width:832px;margin:0 auto;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:40px}
+.est label{font-size:.75rem;font-weight:700;color:#ddd;text-transform:uppercase;letter-spacing:.04em;margin-bottom:6px}
+.est .form-control,.est .form-select{background:#141414;border:1px solid rgba(255,255,255,.18);color:#fff;border-radius:10px;padding:12px 16px;font-size:.9rem}
+.est .form-control::placeholder{color:#777}
+.est .form-control:focus,.est .form-select:focus{border-color:var(--amber);box-shadow:0 0 0 3px rgba(245,158,11,.15)}
+.btn-call{border:1px solid var(--amber);color:var(--gold);background:transparent;font-weight:700;border-radius:10px;padding:12px 24px}
+.btn-call:hover{background:rgba(245,158,11,.1);color:var(--gold)}
+.btn-send{background:var(--amber);color:#111;font-weight:800;border:0;border-radius:10px;padding:12px 28px}
+.btn-send:hover{background:var(--gold)}
+.info{border-top:1px solid rgba(255,255,255,.08);margin-top:32px;padding-top:28px;display:flex;justify-content:center;gap:48px;flex-wrap:wrap;text-align:center;font-size:.8rem;color:var(--muted)}
+.info b{display:block;color:#fff;font-size:.82rem}
+
+/* Footer */
+footer{padding:40px 0;font-size:.82rem}
+footer .logo{width:32px;height:32px;font-size:14px;border-radius:8px}
+footer a{color:#cfcfcf;text-decoration:none;margin:0 14px}
+footer a:hover{color:var(--amber)}
+footer .small-muted{color:var(--muted)}
+.booking-line{color:var(--amber)}
+
+@media(max-width:991.98px){
+  .site-nav .nav-link{padding:12px 0}
+  .navbar-collapse{padding:12px 0 8px}
+  section{padding:56px 0}
+}
+@media(max-width:575.98px){
+  .hero-cap{padding:18px 20px 22px}
+  .est{padding:24px}.info{gap:20px}
+  footer a{display:inline-block;margin:6px 10px}
+}
+
+/* ===== Motion layer ===== */
+a,.btn,.nav-link,.stat,.route,.car,.svc,.fb-in,.ico,.logo,.check i{transition:all .3s cubic-bezier(.22,.61,.36,1)}
+.site-nav{transition:padding .3s,background .3s,box-shadow .3s}
+.site-nav.scrolled{padding:4px 0;background:#111111;box-shadow:0 6px 24px rgba(0,0,0,.5)}
+#progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--amber),var(--gold));z-index:2000}
+
+/* nav underline */
+.site-nav .nav-link{position:relative}
+.site-nav .nav-link:after{content:"";position:absolute;left:16px;right:16px;bottom:2px;height:2px;background:var(--amber);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.site-nav .nav-link:hover:after,.site-nav .nav-link.active:after{transform:scaleX(1)}
+@media(max-width:991.98px){.site-nav .nav-link:after{left:0;right:auto;width:40px}}
+.brand:hover .logo{transform:rotate(-6deg) scale(1.06);box-shadow:0 0 18px rgba(245,158,11,.35)}
+
+/* buttons: lift + shine + ripple */
+.btn{position:relative;overflow:hidden}
+.btn:hover{transform:translateY(-2px)}
+.btn:active{transform:translateY(0) scale(.98)}
+.btn-amber:hover,.btn-book:hover,.btn-send:hover{box-shadow:0 8px 22px rgba(245,158,11,.4)}
+.btn-amber:before,.btn-book:before,.btn-send:before{content:"";position:absolute;top:0;left:-80%;width:50%;height:100%;background:linear-gradient(120deg,transparent,rgba(255,255,255,.45),transparent);transform:skewX(-20deg);transition:left .6s}
+.btn-amber:hover:before,.btn-book:hover:before,.btn-send:hover:before{left:130%}
+.ripple{position:absolute;border-radius:50%;background:rgba(255,255,255,.35);transform:scale(0);animation:rip .6s linear;pointer-events:none}
+@keyframes rip{to{transform:scale(4);opacity:0}}
+
+/* cards */
+.stat:hover,.svc:hover{transform:translateY(-6px);border-color:var(--amber);box-shadow:0 14px 34px rgba(245,158,11,.12)}
+/* Shared card hover: fleet (.car), route (.route) and homepage route cards */
+.car,.route{border:1px solid var(--line)}
+.car:hover,.route:hover{transform:translateY(-6px);border-color:var(--amber);box-shadow:0 14px 34px rgba(245,158,11,.12)}
+.car-img{overflow:hidden;background-size:100% 100%;transition:none}
+.car-img:before{content:"";position:absolute;inset:0;background:inherit;background-size:cover;background-position:center;transition:transform .8s cubic-bezier(.22,.61,.36,1)}
+.car:hover .car-img:before{transform:scale(1.08)}
+.stat:hover i,.svc:hover .ico{transform:scale(1.15) rotate(-6deg)}
+.svc:hover .ico{background:var(--amber);color:#111}
+.fb-in:hover{border-color:var(--line);transform:translateX(4px)}
+.check:hover i{background:var(--amber);color:#111;transform:scale(1.15)}
+.hero-card{transition:transform .6s,box-shadow .6s}
+.hero-card:hover{box-shadow:0 24px 60px rgba(245,158,11,.1)}
+footer a{position:relative}
+
+/* hero load-in (single orchestrated moment) */
+.hero h1,.hero .hero-sub,.hero .hero-cta,.hero-card{animation:rise .9s cubic-bezier(.22,.61,.36,1) both}
+.hero .hero-sub{animation-delay:.12s}.hero .hero-cta{animation-delay:.24s}.hero-card{animation-delay:.36s}
+@keyframes rise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+
+/* scroll reveal */
+.js .reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s cubic-bezier(.22,.61,.36,1)}
+.js .reveal.in{opacity:1;transform:none}
+
+/* back to top */
+#toTop{position:fixed;right:20px;bottom:20px;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--amber);display:grid;place-items:center;opacity:0;visibility:hidden;transform:translateY(12px);z-index:1040}
+#toTop.show{opacity:1;visibility:visible;transform:none}
+#toTop:hover{background:var(--amber);color:#111;transform:translateY(-3px)}
+
+/* modal */
+.modal-content{background:var(--card);border:1px solid var(--line);border-radius:18px;color:var(--text)}
+.modal.fade .modal-dialog{transform:translateY(30px) scale(.96);transition:transform .35s cubic-bezier(.22,.61,.36,1)}
+.modal.show .modal-dialog{transform:none}
+.modal-header,.modal-footer{border-color:rgba(255,255,255,.08)}
+.summary{list-style:none;padding:0;margin:0;font-size:.9rem}
+.summary li{display:flex;justify-content:space-between;gap:16px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+.summary span{color:var(--muted)}.summary b{text-align:right}
+
+@media (prefers-reduced-motion:reduce){
+  *,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .js .reveal{opacity:1;transform:none}
+}
+
+html{scroll-padding-top:84px}
+.page-head{padding:64px 0 8px;text-align:center}
+.page-head h1{font-size:clamp(2rem,4.5vw,3rem);margin-bottom:10px}
+.page-head p{color:#d4d4d4;max-width:620px;margin:0 auto}
+.page-head,.page-head h1,.page-head p{animation:rise .9s cubic-bezier(.22,.61,.36,1) both}
+.booking-sec{border-bottom:0;padding-top:40px}
+
+.filters{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:28px 0 8px}
+.filters button{background:var(--card);border:1px solid rgba(255,255,255,.15);color:#ddd;font-weight:700;font-size:.82rem;border-radius:999px;padding:8px 20px;transition:all .3s}
+.filters button:hover{border-color:var(--amber);color:var(--amber);transform:translateY(-2px)}
+.filters button.active{background:var(--amber);border-color:var(--amber);color:#111}
+.cta-band{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:36px;text-align:center}
+.cta-band h3{font-size:1.6rem;margin-bottom:8px}
+.cta-band p{color:var(--muted);margin-bottom:20px}
+.fleet-sec{padding-top:48px}
+
+/* Fleet: icon placeholder until a photo loads, and rate-card table */
+.car-img .ph{position:absolute;left:50%;top:42%;transform:translate(-50%,-50%);font-size:4.2rem;color:rgba(245,158,11,.28);z-index:0}
+.car-img.has-img .ph{display:none}
+/* ---- Rate card table ---- */
+.rate-card{background:#1a1a1a;border:1px solid var(--line);border-radius:20px;padding:32px}
+.rate-table{--bs-table-bg:transparent;--bs-table-color:var(--text);color:var(--text);font-size:.9rem;margin:0}
+.rate-table thead th{color:#ffb400;font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;border-bottom:1px solid var(--line);background:transparent;padding:12px 10px;white-space:nowrap}
+.rate-table td{border-color:rgba(255,255,255,.07);background:transparent;color:#ddd;padding:14px 10px;vertical-align:middle}
+.rate-table tbody tr:hover td{background:rgba(255,180,0,.06)}
+.rate-table .col-no{color:#aaaaaa;font-weight:700;width:56px}
+.rate-table .veh-cat{display:block;color:#aaaaaa;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:2px}
+.rate-table .veh-name{display:block;color:#ffb400;font-weight:800;font-size:1rem;line-height:1.25}
+.rate-table .col-seat{white-space:nowrap}
+.rate-table .rt{color:var(--gold);font-weight:800;white-space:nowrap}
+.rate-table .col-book{text-align:right;width:1%;white-space:nowrap}
+.book-actions{display:inline-flex;gap:8px;justify-content:flex-end}
+.btn-wa,.btn-callnow{display:inline-flex;align-items:center;justify-content:center;gap:6px;font-size:.8rem;font-weight:700;line-height:1;text-decoration:none;white-space:nowrap;padding:10px 14px;border-radius:8px;border:0;color:#111;transition:transform .15s,filter .15s,box-shadow .15s}
+.btn-wa{background:#25D366}
+.btn-callnow{background:#b197fc}
+.btn-wa:hover,.btn-callnow:hover{color:#111;filter:brightness(1.08);transform:translateY(-2px);box-shadow:0 6px 16px rgba(0,0,0,.45)}
+.btn-wa:focus-visible,.btn-callnow:focus-visible{outline:2px solid #fff;outline-offset:2px}
+
+/* Tablet: tighten buttons */
+@media(max-width:991.98px){
+  .btn-wa,.btn-callnow{padding:9px 11px;font-size:.76rem}
+}
+/* Mobile: each row becomes a stacked card (no sideways scrolling) */
+@media(max-width:767.98px){
+  .rate-card{padding:20px 16px}
+  .rate-table thead{display:none}
+  .rate-table,.rate-table tbody,.rate-table tr,.rate-table td{display:block;width:100%}
+  .rate-table tbody tr{background:#222;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:14px 16px;margin-bottom:14px;position:relative}
+  .rate-table td{border:0;padding:6px 0;display:flex;justify-content:space-between;align-items:center;gap:12px;text-align:right}
+  .rate-table td::before{content:attr(data-label);color:#aaaaaa;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;text-align:left;flex:none}
+  .rate-table tbody tr:hover td{background:transparent}
+  .rate-table .col-no{position:absolute;top:14px;right:16px;width:auto;padding:0}
+  .rate-table .col-no::before{content:"#";margin-right:2px}
+  .rate-table .col-veh{display:block;text-align:left;padding:0 36px 10px 0;margin-bottom:6px;border-bottom:1px solid rgba(255,255,255,.08)}
+  .rate-table .col-veh::before{display:none}
+  .rate-table .col-book{display:block;width:100%;white-space:normal;padding-top:12px}
+  .rate-table .col-book::before{display:none}
+  .book-actions{display:flex;flex-direction:column;gap:8px;width:100%}
+  .btn-wa,.btn-callnow{width:100%;padding:12px 14px;font-size:.88rem}
+}
+@media(min-width:480px) and (max-width:767.98px){
+  .book-actions{flex-direction:row}
+  .book-actions>a{flex:1}
+}
+
+/* ===== WhatsApp buttons (official green) ===== */
+.btn.btn-wa,.btn.btn-wa:focus{background:#25D366;color:#FFFFFF;border:0;font-weight:700;border-radius:8px;box-shadow:0 4px 16px rgba(37,211,102,.28)}
+.btn.btn-wa:hover,.btn.btn-wa:active{background:#1ebe5b;color:#FFFFFF;box-shadow:0 8px 22px rgba(37,211,102,.45)}
+.btn.btn-wa .fa-whatsapp{font-size:1.1em;vertical-align:-1px}
+.btn-wa:before{content:"";position:absolute;top:0;left:-80%;width:50%;height:100%;background:linear-gradient(120deg,transparent,rgba(255,255,255,.35),transparent);transform:skewX(-20deg);transition:left .6s}
+.btn-wa:hover:before{left:130%}
+a.btn-wa.wa-route,a.btn-wa.wa-car{display:block;width:100%;padding:10px;font-size:.85rem;text-align:center}
+.site-nav .btn-wa{font-size:.8rem;text-transform:uppercase;padding:10px 18px;font-weight:800}
+.est .btn-wa{padding:12px 28px;border-radius:10px;font-weight:800}
+
+/* ===== Vehicle cards: category #aaaaaa, name #ffb400 ===== */
+:root{--vehicle-gold:#ffb400}
+.car-img small{color:#aaaaaa}
+.car-img h5{color:var(--vehicle-gold)}
+.car-img h5{font-weight:700}
+
+/* ---- SEO pages additions ---- */
+.crumbs{font-size:.8rem;color:var(--muted);margin-bottom:10px}.crumbs a{color:var(--gold);text-decoration:none}
+.chips{display:flex;flex-wrap:wrap;gap:8px}.chips a{background:var(--card);border:1px solid var(--line);color:#ddd;text-decoration:none;font-size:.8rem;font-weight:600;padding:7px 12px;border-radius:999px;transition:.15s}.chips a:hover{border-color:var(--amber);color:var(--gold)}
+.faq details{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:14px 18px;margin-bottom:10px}.faq summary{cursor:pointer;font-weight:700}.faq p{color:var(--muted);margin:10px 0 0;font-size:.9rem}
+.tick{list-style:none;padding:0}.tick li{padding:6px 0 6px 28px;position:relative;color:#ddd}.tick li:before{content:"\2713";position:absolute;left:0;color:var(--amber);font-weight:800}
+.foot-links a{display:block;margin:5px 0}.ft-ph{margin:0 0 0 4px;color:var(--gold)}
+/* Floating WhatsApp + Call widget (fixed, bottom-right, all pages) */
+.floating-cta{position:fixed;right:18px;bottom:18px;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:1050;display:flex;flex-direction:column;align-items:center;gap:12px}
+.floating-cta__btn{box-sizing:border-box;position:relative;display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:50%;line-height:1;text-decoration:none;transition:transform .25s,box-shadow .25s,background .25s}
+.floating-cta__btn:hover{transform:translateY(-3px) scale(1.06)}
+.floating-cta__btn:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.floating-cta__btn--wa{font-size:1.9rem;color:#fff;background:#25D366;box-shadow:0 6px 18px rgba(37,211,102,.4),0 2px 8px rgba(0,0,0,.55)}
+.floating-cta__btn--wa:hover{color:#fff;background:#1ebe5b;box-shadow:0 10px 26px rgba(37,211,102,.55),0 2px 8px rgba(0,0,0,.55)}
+.floating-cta__btn--wa:after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid #25D366;animation:fcta-pulse 2.4s ease-out infinite;pointer-events:none}
+.floating-cta__btn--call{font-size:1.4rem;color:#111;border:1.5px solid var(--amber);background:linear-gradient(180deg,var(--gold),var(--amber));box-shadow:0 6px 18px rgba(245,158,11,.38),0 2px 8px rgba(0,0,0,.55)}
+.floating-cta__btn--call:hover{color:#111;box-shadow:0 10px 26px rgba(245,158,11,.55),0 2px 8px rgba(0,0,0,.55)}
+@keyframes fcta-pulse{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.55);opacity:0}}
+@media(prefers-reduced-motion:reduce){.floating-cta__btn--wa:after{animation:none;display:none}.floating-cta__btn{transition:none}}
+@media(max-width:575.98px){.floating-cta{right:14px;right:calc(14px + env(safe-area-inset-right,0px));bottom:14px;bottom:calc(14px + env(safe-area-inset-bottom,0px));gap:10px}.floating-cta__btn{width:52px;height:52px}.floating-cta__btn--wa{font-size:1.75rem}.floating-cta__btn--call{font-size:1.3rem}}
+/* keep the back-to-top button clear of the floating widget */
+#toTop{right:24px;bottom:calc(150px + env(safe-area-inset-bottom,0px))}
+@media(max-width:575.98px){#toTop{right:18px;bottom:calc(136px + env(safe-area-inset-bottom,0px))}}
+.rate-table td[data-label="Vehicle"]{min-width:150px}
+
+/* Homepage "Popular Rajkot Taxi & Cab Routes": 6 image cards, whole card is one link */
+#routeGrid .route-card-link{display:block;height:100%;color:inherit;text-decoration:none}
+#routeGrid .route-card-link:hover,#routeGrid .route-card-link:focus{color:inherit}
+#routeGrid .rc-card{height:100%;display:flex;flex-direction:column;overflow:hidden}
+#routeGrid .route-card-link:focus-visible{outline:none}
+#routeGrid .rc-img{width:100%;height:180px;overflow:hidden;border-radius:16px 16px 0 0;background:linear-gradient(135deg,#2b2b2b,#141414)}
+#routeGrid .rc-img img{display:block;width:100%;height:180px;object-fit:cover;object-position:center center;transition:transform .8s cubic-bezier(.22,.61,.36,1)}
+#routeGrid .route-card-link:hover .rc-img img,#routeGrid .route-card-link:focus-visible .rc-img img{transform:scale(1.08)}
+#routeGrid .rc-body{padding:20px 24px 24px;display:flex;flex-direction:column;flex:1}
+#routeGrid .rc-top{display:flex;justify-content:space-between;align-items:center;gap:8px}
+#routeGrid .rc-badge{font-size:.74rem;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:var(--gold);background:rgba(251,191,36,.12);border:1px solid var(--line);border-radius:5px;padding:4px 10px}
+#routeGrid .rc-km{color:var(--gold);font-weight:700;font-size:.82rem;white-space:nowrap}
+#routeGrid .rc-body h4{font-weight:700;font-size:1.25rem;margin:16px 0 8px}
+#routeGrid .rc-body p{color:var(--muted);font-size:.84rem;min-height:40px;margin-bottom:0}
+#routeGrid .rc-fares{border-top:1px solid rgba(255,255,255,.08);margin-top:auto;padding:16px 0;font-size:.85rem}
+#routeGrid .rc-fares div{display:flex;justify-content:space-between;padding:3px 0}
+#routeGrid .rc-fares span{color:#cfcfcf}
+#routeGrid .rc-fares b{font-weight:800}
+#routeGrid .rc-wa{display:flex;align-items:center;justify-content:center;gap:8px;background:#25D366;color:#fff;font-weight:700;font-size:.88rem;border-radius:8px;padding:11px;cursor:pointer;box-shadow:0 4px 16px rgba(37,211,102,.28);transition:background .2s,box-shadow .2s}
+#routeGrid .rc-wa:hover{background:#1ebe5b;box-shadow:0 8px 22px rgba(37,211,102,.45)}
+#routeGrid .rc-wa .fa-whatsapp{font-size:1.15em}
+@media(max-width:575px){#routeGrid .rc-img,#routeGrid .rc-img img{height:180px}}
+/* 6th route card (collage photo): show the whole image, no cropping, with a soft blurred backdrop */
+
+/* ===== Fleet carousel (homepage): 3 cards per view, 2 on tablets, 1 on phones ===== */
+.fleet-carousel{--per:3;--gap:1.5rem}
+.fc-viewport{overflow:hidden;padding:28px 28px 48px;margin:-28px -28px -36px}  /* 28px = 20px glow + 4px lift + room for the focus ring, so no edge clips it */
+/* the viewport now reaches 16px past the container; clip that at the section so the page never scrolls sideways */
+@supports (overflow:clip){#tours,#our-cars{overflow-x:clip}}
+@supports not (overflow:clip){#tours,#our-cars{overflow-x:hidden}}
+.fc-track{display:flex;gap:var(--gap);transition:transform .6s cubic-bezier(.22,.61,.36,1);will-change:transform}
+.fc-slide{flex:0 0 calc((100% - (var(--per) - 1) * var(--gap)) / var(--per));min-width:0;display:flex}
+.fc-slide>.car{width:100%}
+.fc-controls{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:8px}
+.fc-btn{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--amber);display:grid;place-items:center;font-size:1.05rem;cursor:pointer;padding:0;transition:all .3s cubic-bezier(.22,.61,.36,1)}
+.fc-btn:hover:not(:disabled){background:var(--amber);color:#111;border-color:var(--amber);transform:translateY(-2px);box-shadow:0 8px 22px rgba(245,158,11,.35)}
+.fc-btn:disabled{opacity:.35;cursor:default}
+.fc-dots{display:flex;align-items:center;gap:8px}
+.fc-dot{width:9px;height:9px;padding:0;border:0;border-radius:999px;background:rgba(255,255,255,.25);cursor:pointer;transition:all .3s cubic-bezier(.22,.61,.36,1)}
+.fc-dot:hover{background:rgba(245,158,11,.6)}
+.fc-dot.on{width:26px;background:var(--amber)}
+.fc-btn:focus-visible,.fc-dot:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.fc-track.no-anim{transition:none}
+.hero-cta{margin:0 0 22px}
+.btn-book-cta{display:inline-flex;align-items:center;justify-content:center;font-size:1.15rem;font-weight:800;letter-spacing:.02em;line-height:1;text-decoration:none;color:var(--gold);padding:16px 34px;border-radius:12px;border:1.5px solid var(--amber);background:linear-gradient(180deg,#2a2210,#161616);box-shadow:0 0 22px rgba(245,158,11,.22),inset 0 1px 0 rgba(251,191,36,.18);transition:transform .3s,box-shadow .3s,background .3s,color .3s}
+.btn-book-cta i{transition:transform .3s}
+.btn-book-cta:hover{color:#111;background:linear-gradient(180deg,var(--gold),var(--amber));transform:translateY(-2px);box-shadow:0 10px 28px rgba(245,158,11,.4)}
+.btn-book-cta:hover i{transform:translateX(4px)}
+.btn-book-cta:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+@media(max-width:575.98px){.btn-book-cta{width:100%;max-width:340px;font-size:1.05rem;padding:15px 24px}}
+#booking{scroll-margin-top:130px}
+.foot-btns{display:flex;flex-direction:column;gap:10px;margin-top:18px;max-width:270px}
+.foot-btns .btn-book-cta,.foot-btns .btn{width:100%;font-size:.95rem;padding:13px 20px;text-align:center}
+.foot-btns .btn-book-cta{font-size:1rem}
+.foot-btns .btn-wa{display:flex;font-size:.95rem;padding:13px 20px;border-radius:10px;font-weight:800;text-transform:none}
+.routes-sec{padding-top:28px}
+.routes-sec .container>h2.sec-title:first-child{margin-top:8px!important}
+.site-nav{padding:8px 0}
+
+/* ===== Home hero: centred text block on dark bg, banner image below ===== */
+.hero{
+  text-align:center;padding:30px 20px 40px 20px;background:#0d0d0d;
+  background-image:radial-gradient(900px 420px at 50% 0%,rgba(255,193,7,.10),transparent 70%);
+}
+.hero .hero-sub,.hero .btn-book-cta{font-family:'Poppins','Inter','Montserrat',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif}
+.hero h1{
+  font-family:'Poppins',sans-serif !important;
+  font-weight:700;font-size:42px;
+  color:#ffffff !important;-webkit-text-fill-color:#ffffff !important;
+  background:none !important;-webkit-background-clip:border-box !important;background-clip:border-box !important;
+  text-shadow:none;
+  line-height:1.2;letter-spacing:-0.5px;text-align:center;
+  max-width:900px;margin:0 auto 16px;text-wrap:balance;
+}
+.hero .hero-sub{
+  max-width:760px;margin:0 auto 28px;
+  color:#CCCCCC;font-size:18px;font-weight:400;line-height:1.6;
+}
+.hero .hero-cta{margin:0 0 36px}
+.hero .btn-book-cta{
+  display:inline-flex;align-items:center;justify-content:center;
+  font-size:16px;font-weight:600;line-height:1.2;text-decoration:none;
+  color:#FFC107;background:transparent;border:1.5px solid #FFC107;
+  border-radius:8px;padding:12px 30px;box-shadow:none;
+  transition:background .3s,color .3s,box-shadow .3s,transform .3s;
+}
+.hero .btn-book-cta:hover,.hero .btn-book-cta:focus-visible{
+  color:#FFC107;background:rgba(255,193,7,.10);
+  box-shadow:0 0 22px rgba(255,193,7,.45);transform:translateY(-2px);
+}
+.hero .hero-card{border-radius:16px}
+@media(max-width:767.98px){
+  .hero{padding:30px 20px 40px 20px}
+  .hero .container{padding-left:0;padding-right:0}
+  .hero h1{font-size:28px !important;line-height:1.2;margin-bottom:14px}
+  .hero .hero-sub{font-size:15px;margin-bottom:24px}
+  .hero .hero-cta{margin-bottom:28px}
+  .hero .btn-book-cta{width:100%;max-width:340px;font-size:15px}
+}
+
+/* ===== Compact hero (Airport Taxi, Local Taxi, Our Cars) =====
+   Hero is a flex column, vertically centred, with a controlled height so the
+   next section ("What we offer" / fleet filters) peeks into the first screen. */
+.page-head.hero-compact{
+  display:flex;flex-direction:column;justify-content:center;align-items:center;
+  min-height:clamp(290px,44vh,420px);   /* tune 44vh: smaller = more peek, bigger = airier hero */
+  min-height:clamp(290px,44svh,420px);  /* mobile browsers: ignores the address-bar jump */
+  padding:20px 0 24px;
+}
+.page-head.hero-compact > .container{width:100%}
+.page-head.hero-compact .crumbs{margin-bottom:10px}
+.page-head.hero-compact h1{margin:0 0 14px;line-height:1.12}
+.page-head.hero-compact .hero-cta{margin:0 0 14px}
+.page-head.hero-compact p{margin:0 auto;line-height:1.5}
+.page-head.hero-compact .d-flex{margin-top:16px!important;gap:12px!important}
+.hero-compact + section{padding-top:28px}
+.hero-compact + section .sec-title{margin-bottom:8px}
+@media(max-width:575.98px){
+  .page-head.hero-compact{min-height:0;padding:14px 0 18px}
+  .page-head.hero-compact h1{font-size:1.9rem;margin-bottom:12px}
+  .page-head.hero-compact .d-flex{flex-direction:column;align-items:stretch;max-width:340px;margin-left:auto;margin-right:auto;gap:10px!important}
+  .page-head.hero-compact .d-flex .btn{width:100%;justify-content:center}
+  .hero-compact + section{padding-top:20px}
+}
+
+/* ===== About Us page ===== */
+.gu{font-family:'Noto Sans Gujarati','Nirmala UI','Shruti',sans-serif}
+.about section{padding:64px 0;border-bottom:0}
+.about .ab-alt{background:rgba(255,255,255,.025);border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06)}
+.ab-hero{position:relative;text-align:center;padding:40px 0 100px!important;background:radial-gradient(900px 380px at 50% 0%,rgba(245,158,11,.16),transparent 70%)}
+.ab-hero .pill{margin-bottom:6px}
+.ab-hero h1{font-size:clamp(2rem,5vw,3.5rem);line-height:1.12;margin:12px 0 10px}
+.ab-hero h1 .gold{color:var(--gold)}
+.ab-gu{font-size:clamp(1.05rem,2.4vw,1.3rem);color:var(--gold);font-weight:600;margin:0 auto 14px;line-height:1.5}
+.ab-lead{color:#d4d4d4;max-width:720px;margin:0 auto 20px;line-height:1.65}
+.ab-hero .hero-cta{margin:0 0 14px}
+.ab-chips{list-style:none;padding:0;margin:22px 0 0;display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.ab-chips li{background:var(--card);border:1px solid var(--line);color:#ddd;font-size:.82rem;font-weight:600;padding:7px 14px;border-radius:999px}
+.ab-chips i{color:var(--amber);margin-right:7px}
+.ab-stats{padding:0!important;margin-top:-60px;position:relative;z-index:2}
+.ab-stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.ab-stat{background:linear-gradient(180deg,#201b0e,var(--card));border:1px solid var(--line);border-radius:16px;padding:22px 12px;text-align:center;box-shadow:0 14px 34px rgba(0,0,0,.35)}
+.ab-stat i{color:var(--amber);font-size:1.5rem}
+.ab-stat b{display:block;font:800 clamp(1.7rem,3.4vw,2.5rem)/1.1 'Fraunces',serif;color:var(--gold);margin:6px 0 2px}
+.ab-stat span{color:var(--muted);font-size:.85rem}
+.ab-head{text-align:center;max-width:720px;margin:0 auto 34px}
+.ab-h2{font-size:clamp(1.65rem,3.6vw,2.5rem);line-height:1.18;margin:8px 0 12px}
+.ab-h3{font-size:1.35rem;margin-bottom:18px}
+.ab-p{color:#d4d4d4;line-height:1.75}
+.ab-narrow{max-width:820px}
+.ab-split{display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:start}
+.ab-quote{border-left:3px solid var(--amber);background:rgba(245,158,11,.07);padding:16px 20px;border-radius:0 14px 14px 0;margin:22px 0 0}
+.ab-quote .gu{font-size:1.2rem;color:var(--gold);font-weight:700;margin:0 0 4px;line-height:1.5}
+.ab-quote small{color:var(--muted)}
+.ab-steps{list-style:none;margin:0;padding:0;counter-reset:st}
+.ab-steps li{position:relative;padding:0 0 26px 62px;counter-increment:st}
+.ab-steps li:before{content:counter(st);position:absolute;left:0;top:0;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;font-weight:800;color:#111;background:linear-gradient(180deg,var(--gold),var(--amber));box-shadow:0 6px 16px rgba(245,158,11,.3)}
+.ab-steps li:after{content:"";position:absolute;left:20px;top:46px;bottom:4px;width:2px;background:var(--line)}
+.ab-steps li:last-child{padding-bottom:0}.ab-steps li:last-child:after{display:none}
+.ab-steps b{display:block;font-size:1.05rem;margin-bottom:3px}
+.ab-steps span{color:var(--muted);font-size:.92rem;line-height:1.6}
+.ab-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.ab-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px;transition:transform .3s,border-color .3s,box-shadow .3s}
+.ab-card:hover{transform:translateY(-6px);border-color:var(--amber);box-shadow:0 14px 34px rgba(245,158,11,.12)}
+.ab-card:hover .ico{background:var(--amber);color:#111}
+.ab-card h4{font-size:1.1rem;font-weight:700;margin-bottom:8px}
+.ab-card h4 small{display:block;color:var(--gold);font-size:.85rem;font-weight:600;margin-top:2px}
+.ab-card p{color:var(--muted);font-size:.9rem;line-height:1.65;margin:0}
+.ab-car{padding:0;overflow:hidden;display:flex;flex-direction:column}
+.ab-car img{width:100%;height:180px;object-fit:contain;background:radial-gradient(circle at 50% 60%,#2a2210,#171717);padding:10px}
+.ab-car .pill{align-self:flex-start;margin:18px 0 0 22px}
+.ab-car h4{margin:10px 22px 6px}.ab-car p{margin:0 22px 14px}
+.ab-rate{margin:auto 22px 22px;color:var(--gold);font:800 1.6rem 'Fraunces',serif}.ab-rate small{font:600 .8rem 'Manrope',sans-serif;color:var(--muted)}
+.ab-tabs{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:22px}
+.ab-tab{background:var(--card);border:1px solid var(--line);color:#ddd;border-radius:999px;padding:10px 18px;font-weight:700;font-size:.9rem;cursor:pointer;transition:all .25s}
+.ab-tab i{color:var(--amber);margin-right:8px}
+.ab-tab:hover{border-color:var(--amber)}
+.ab-tab.on{background:var(--amber);color:#111;border-color:var(--amber)}.ab-tab.on i{color:#111}
+.ab-tab:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.ab-panels{max-width:760px;margin:0 auto;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:30px;text-align:center}
+.ab-panel h4{font-size:1.3rem;margin-bottom:10px}
+.ab-panel p{color:#d4d4d4;line-height:1.7;margin-bottom:18px}
+.ab-js .ab-panel{display:none}.ab-js .ab-panel.on{display:block;animation:rise .5s both}
+.ab-panel+.ab-panel{border-top:1px solid var(--line);margin-top:22px;padding-top:22px}
+.ab-js .ab-panel+.ab-panel{border:0;margin:0;padding:0}
+.ab-mission{border:1px solid var(--amber);border-radius:22px;padding:clamp(26px,4vw,48px);background:linear-gradient(135deg,#2a2210,#161616);text-align:center;box-shadow:0 20px 50px rgba(245,158,11,.1)}
+.ab-mission .ab-h2{max-width:820px;margin-left:auto;margin-right:auto}
+.ab-final{padding-top:24px!important}
+.ab-cta{background:linear-gradient(135deg,#2a2210,#151515);border:1px solid var(--amber);border-radius:22px;padding:clamp(28px,5vw,56px);text-align:center}
+.ab-cta .ab-p{max-width:560px;margin:0 auto 22px}
+/* Make the whole CTA card clickable */
+.ab-cta{position:relative}
+.ab-cta .card-bg-link{position:absolute;inset:0;z-index:1;border-radius:inherit;cursor:pointer}
+.ab-cta .ab-h2,.ab-cta .ab-gu,.ab-cta .ab-p{pointer-events:none}
+.ab-cta .cta-buttons{position:relative;z-index:2}
+/* Hover: golden halo grows outward from the card border */
+.cta-card-box{overflow:visible;transition:box-shadow .4s ease-out,transform .3s ease}
+.cta-card-box:hover{transform:translateY(-2px);box-shadow:0 0 15px 15px rgba(255,193,7,.2)}
+/* .ab-reveal sets its own transform/transition (higher specificity), so re-assert them for this card */
+.ab-js .ab-cta.cta-card-box{transition:opacity .7s cubic-bezier(.22,.61,.36,1),box-shadow .4s ease-out,transform .3s ease}
+.ab-js .ab-cta.cta-card-box.in:hover{transform:translateY(-2px);box-shadow:0 0 15px 15px rgba(255,193,7,.2)}
+.ab-js .ab-reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1)}
+.ab-js .ab-reveal.in{opacity:1;transform:none}
+@media(max-width:991.98px){.ab-split{grid-template-columns:1fr;gap:34px}.ab-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:767.98px){.ab-stat-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:575.98px){
+  .about section{padding:46px 0}
+  .ab-hero{padding:28px 0 90px!important}
+  .ab-grid{grid-template-columns:1fr}
+  .ab-hero .d-flex .btn,.ab-cta .d-flex .btn{width:100%;max-width:340px;justify-content:center}
+  .ab-tab{flex:1 1 calc(50% - 8px);padding:10px 8px;font-size:.82rem}
+  .ab-panels{padding:22px 16px}
+}
+@media(prefers-reduced-motion:reduce){.ab-js .ab-reveal{opacity:1;transform:none}}
+.about h1,.about h2,.about h3,.about h4{color:var(--text)}
+.about .ab-hero h1 .gold{color:var(--gold)}
+.about .ab-stat b,.about .ab-rate{color:var(--gold)}
+
+/* ===== About: Location & Service Hub card ===== */
+.about .ab-loc{padding-top:56px}
+.ab-chips a{color:inherit;text-decoration:none}.ab-chips a:hover{color:var(--gold)}
+.ab-hub{display:grid;grid-template-columns:1.05fr .95fr;border:1px solid var(--amber);border-radius:24px;overflow:hidden;background:linear-gradient(135deg,#261f0e,#141414 62%);box-shadow:0 24px 60px rgba(245,158,11,.14)}
+.ab-hub-info{padding:clamp(24px,4vw,44px)}
+.ab-hub-list{list-style:none;margin:20px 0 24px;padding:0;display:grid;gap:16px}
+.ab-hub-list li{display:flex;gap:14px;align-items:flex-start}
+.hub-ico{flex:none;width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:#2a2210;border:1px solid var(--line);color:var(--amber);font-size:1.1rem}
+.ab-hub-list small{display:block;color:var(--amber);font-weight:800;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;margin-bottom:2px}
+.ab-hub-list b{display:block;font-size:1.05rem;color:var(--text);line-height:1.4}
+.ab-hub-list li>div>span{display:block;color:var(--muted);font-size:.9rem;margin-top:2px}
+.ab-hub-list b a{color:var(--gold);text-decoration:none;white-space:nowrap}.ab-hub-list b a:hover{text-decoration:underline}
+.ab-hub-list .sep{color:var(--muted);font-style:normal;margin:0 4px}
+.ab-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+.ab-tags span{background:rgba(245,158,11,.1);border:1px solid var(--line);color:#eee;font-size:.82rem;font-weight:600;padding:5px 11px;border-radius:999px}
+.ab-tags .all{background:var(--amber);border-color:var(--amber);color:#111;font-weight:800}
+.ab-live{display:inline-flex;align-items:center;gap:6px;margin-left:8px;font-size:.72rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:#4ade80;background:rgba(74,222,128,.1);border:1px solid rgba(74,222,128,.35);border-radius:999px;padding:3px 10px;vertical-align:middle}
+.ab-live i{width:7px;height:7px;border-radius:50%;background:#4ade80;animation:abpulse 1.8s ease-out infinite}
+@keyframes abpulse{0%{box-shadow:0 0 0 0 rgba(74,222,128,.6)}100%{box-shadow:0 0 0 9px rgba(74,222,128,0)}}
+.ab-hub-map{display:flex;align-items:center;justify-content:center;padding:18px;background:radial-gradient(circle at 50% 50%,rgba(245,158,11,.14),transparent 68%);border-left:1px solid var(--line)}
+.ab-hub-map svg{width:100%;max-width:460px;height:auto}
+.hub-lines line{stroke:var(--amber);stroke-width:1.6;stroke-dasharray:5 6;opacity:.7;animation:abdash 14s linear infinite}
+@keyframes abdash{to{stroke-dashoffset:-110}}
+.hub-core{fill:var(--amber)}.hub-core-t{fill:#111;font:800 12px 'Manrope',sans-serif}
+.hub-ring{fill:none;stroke:var(--gold);stroke-width:1.5;transform-origin:210px 190px;animation:abring 2.6s ease-out infinite}.hub-ring.r2{animation-delay:1.3s}
+@keyframes abring{0%{transform:scale(.8);opacity:.8}100%{transform:scale(2.1);opacity:0}}
+.hub-node circle{fill:var(--gold);stroke:#111;stroke-width:2}
+.hub-node text{fill:#f1f1f1;font:700 13px 'Manrope',sans-serif}
+@media(max-width:991.98px){.ab-hub{grid-template-columns:1fr}.ab-hub-map{border-left:0;border-top:1px solid var(--line)}}
+@media(max-width:575.98px){.ab-hub-btns .btn{flex:1 1 100%;justify-content:center}.ab-hub-map{padding:8px}}
+@media(prefers-reduced-motion:reduce){.hub-lines line,.hub-ring,.ab-live i{animation:none}.hub-ring{display:none}}
+
+/* ===== About page: ultra-compact hero + stats, Location Hub peeks above the fold =====
+   Goal: header + hero + 4 stat cards fit on the first screen and the top ~25% of the
+   "Location & Service Hub" box shows at the bottom, so people scroll to see it.
+   Tune: --ab-hero-pad (hero top/bottom space) and .ab-stats margin-top (overlap). */
+.about{--ab-hero-pad:12px}
+.ab-hero{
+  min-height:0;display:block;
+  padding:var(--ab-hero-pad) 0 38px!important;
+  margin-bottom:0;
+}
+.ab-hero .crumbs{margin:0 0 4px;font-size:.78rem;line-height:1.2}
+.ab-hero .pill{margin:0;font-size:.7rem;padding:3px 11px;line-height:1.4}
+.ab-hero h1{font-size:clamp(1.45rem,2.9vw,2.2rem);line-height:1.12;margin:6px 0 4px}
+.ab-gu{font-size:clamp(.88rem,1.5vw,1rem);margin:0 auto 4px;line-height:1.35}
+.ab-lead{font-size:clamp(.85rem,1.3vw,.95rem);line-height:1.4;max-width:700px;margin:0 auto 10px}
+/* one row of 3 buttons: Book / Call / WhatsApp */
+.ab-hero .hero-cta{display:inline-block;vertical-align:middle;margin:0 8px 0 0!important}
+.ab-hero .d-flex{display:inline-flex!important;vertical-align:middle;flex-wrap:nowrap!important}
+.ab-hero .btn-book-cta{font-size:.92rem;padding:9px 22px;border-radius:9px}
+.ab-hero .d-flex{gap:10px!important;margin-top:0!important}
+.ab-hero .d-flex .btn{font-size:.85rem;padding:8px 15px;line-height:1.2}
+.ab-chips{margin:10px 0 0;gap:6px}
+.ab-chips li{font-size:.72rem;padding:4px 10px}
+
+.ab-stats{margin-top:-26px}
+.ab-stat-grid{gap:10px}
+.ab-stat{padding:10px 8px;border-radius:14px;box-shadow:0 10px 24px rgba(0,0,0,.35)}
+.ab-stat i{font-size:1.05rem;line-height:1}
+.ab-stat b{font-size:clamp(1.3rem,2.4vw,1.8rem);margin:2px 0 0}
+.ab-stat span{font-size:.78rem;line-height:1.2}
+.about .ab-loc{padding-top:22px}
+
+/* short laptop screens: drop the chips (they repeat info shown in the hub below) */
+@media(max-height:760px) and (min-width:768px){.ab-chips{display:none}}
+
+@media(max-width:767.98px){
+  .about{--ab-hero-pad:8px}
+  .ab-hero{padding-bottom:30px!important}
+  .ab-hero .crumbs{display:none}   /* breadcrumb hidden on phones to win back space */
+  .ab-hero h1{font-size:1.35rem;margin:5px 0 3px}
+  .ab-gu{font-size:.85rem;margin-bottom:3px}
+  .ab-lead{font-size:.82rem;line-height:1.35;margin-bottom:8px}
+  .ab-chips{display:none}
+  .ab-hero .hero-cta{display:block;margin:0 0 6px!important}
+  .ab-hero .d-flex{display:flex!important;width:100%}
+  .ab-hero .btn-book-cta{width:100%;max-width:320px;font-size:.92rem;padding:9px 18px}
+  .ab-hero .d-flex{gap:8px!important}
+  .ab-hero .d-flex .btn{flex:1 1 0;width:auto;max-width:none;font-size:.78rem;padding:8px 6px;white-space:nowrap}
+  .ab-stats{margin-top:-22px}
+  .ab-stat-grid{gap:8px}
+  .ab-stat{padding:8px 6px}
+  .ab-stat b{font-size:1.25rem}
+  .ab-stat span{font-size:.72rem}
+  .about .ab-loc{padding-top:18px}
+}
+
+/* ===== About page: bigger, clearer Service Hub map ===== */
+@media(min-width:992px){.ab-hub{grid-template-columns:1fr 1fr}}
+.ab-hub-map{padding:14px 18px}
+.ab-hub-map svg{max-width:600px}
+.hub-node text{font-size:16px;font-weight:800;stroke:none}
+.hub-node circle{r:7px}
+.hub-core-t{font-size:15px}
+.hub-lines line{stroke-width:2}
+@media(max-width:991.98px){.ab-hub-map svg{max-width:560px}}
+@media(max-width:575.98px){.ab-hub-map{padding:6px}.hub-node text{font-size:15px}}
+
+/* ===== Location & Service Hub: clickable tags, buttons and map nodes ===== */
+.ab-tags a{display:inline-block;background:rgba(245,158,11,.1);border:1px solid var(--line);color:#eee;font-size:.82rem;font-weight:600;padding:5px 11px;border-radius:999px;text-decoration:none;cursor:pointer;transition:background .25s,color .25s,border-color .25s,transform .25s,box-shadow .25s}
+.ab-tags a:hover,.ab-tags a:focus-visible{background:var(--amber);border-color:var(--amber);color:#111;transform:translateY(-2px);box-shadow:0 6px 16px rgba(245,158,11,.35);outline:none}
+.ab-tags a.all{background:var(--amber);border-color:var(--amber);color:#111;font-weight:800}
+.ab-tags a.all:hover,.ab-tags a.all:focus-visible{background:var(--gold);border-color:var(--gold)}
+.ab-hub-list b a{cursor:pointer}
+
+/* map nodes */
+.hub-link{cursor:pointer;outline:none}
+.hub-link .hub-node circle,.hub-link .hub-core{transform-box:fill-box;transform-origin:center;transition:transform .25s ease,filter .25s ease,fill .25s ease}
+.hub-link .hub-node text,.hub-link .hub-core-t{transition:fill .25s ease}
+.hub-link:hover .hub-node circle,.hub-link:focus-visible .hub-node circle{transform:scale(1.55);fill:#fff;filter:drop-shadow(0 0 7px rgba(251,191,36,.95))}
+.hub-link:hover .hub-node text,.hub-link:focus-visible .hub-node text{fill:var(--gold)}
+.hub-link:hover .hub-core,.hub-link:focus-visible .hub-core{transform:scale(1.12);fill:var(--gold);filter:drop-shadow(0 0 12px rgba(251,191,36,.9))}
+@media(prefers-reduced-motion:reduce){.hub-link *{transition:none!important}}
+.hub-ring,.hub-lines{pointer-events:none}
+
+/* ===== Location & Service Hub rows: clickable icon + text with hover glow ===== */
+a.hub-ico{text-decoration:none;cursor:pointer;transition:background .25s,color .25s,border-color .25s,box-shadow .25s,transform .25s}
+.hub-row-text{display:block;color:inherit;text-decoration:none;cursor:pointer;border-radius:8px}
+.hub-row-text b{transition:color .25s,text-shadow .25s}
+.hub-row-text small{transition:color .25s}
+.hub-row-text:hover b,.hub-row-text:focus-visible b{color:var(--gold);text-shadow:0 0 14px rgba(251,191,36,.55)}
+.hub-row-text:hover small,.hub-row-text:focus-visible small{color:var(--gold)}
+.hub-row-text:hover b:after{content:"\2192";margin-left:8px;color:var(--amber)}
+.hub-row-text b .ab-live:after{content:none}
+a.hub-ico:hover,a.hub-ico:focus-visible,
+.ab-hub-list li:has(.hub-row-text:hover) a.hub-ico{background:var(--amber);color:#111;border-color:var(--gold);box-shadow:0 0 0 4px rgba(245,158,11,.18),0 0 22px rgba(245,158,11,.6);transform:scale(1.08)}
+.ab-hub-list li:has(a.hub-ico:hover) .hub-row-text b{color:var(--gold);text-shadow:0 0 14px rgba(251,191,36,.55)}
+.ab-hub-list li:has(a.hub-ico:hover) .hub-row-text small{color:var(--gold)}
+.hub-row-link:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+@media(prefers-reduced-motion:reduce){a.hub-ico{transition:none}}
+
+/* ===== Phone / WhatsApp row: call link (icon + title + 1st number) and WhatsApp link (2nd number) ===== */
+.hub-phone{display:flex;flex-wrap:wrap;align-items:flex-end;column-gap:2px}
+.hub-phone .sep{align-self:flex-end;line-height:1.4;margin:0 8px}
+.hub-phone .hub-call{display:block}
+.hub-phone .hub-call b,.hub-phone .hub-wa b{color:var(--gold);white-space:nowrap}
+.hub-phone .hub-call:hover b:after{content:none}
+.hub-wa{display:inline-block;text-decoration:none;cursor:pointer;border-radius:10px;padding:0 8px;margin:0 -8px;border:1px solid transparent;transition:background .25s,border-color .25s,box-shadow .25s,transform .25s}
+.hub-wa b{transition:color .25s,text-shadow .25s}
+.hub-wa:hover,.hub-wa:focus-visible{background:rgba(37,211,102,.14);border-color:rgba(37,211,102,.7);box-shadow:0 0 0 3px rgba(37,211,102,.14),0 0 22px rgba(37,211,102,.55);transform:translateY(-1px);outline:none}
+.hub-wa:hover b,.hub-wa:focus-visible b{color:#25D366;text-shadow:0 0 12px rgba(37,211,102,.6)}
+.hub-wa:hover b:before,.hub-wa:focus-visible b:before{content:"\f232";font-family:"Font Awesome 6 Brands";font-weight:400;margin-right:7px}
+@media(max-width:575.98px){.hub-phone{flex-direction:column;align-items:flex-start}.hub-phone .sep{display:none}.hub-wa{margin:2px 0 0 -8px}}
+@media(prefers-reduced-motion:reduce){.hub-wa{transition:none}}
+
+/* Operating Hours: subtext is now inside the link */
+.hub-row-text .hub-sub{display:block;color:var(--muted);font-size:.9rem;margin-top:2px;transition:color .25s,text-shadow .25s}
+.hub-row-text:hover .hub-sub,.hub-row-text:focus-visible .hub-sub{color:var(--gold);text-shadow:0 0 12px rgba(251,191,36,.45)}
+
+/* Map labels: clean solid text - no outline/dotted edge, no underline */
+.hub-link,.hub-link:hover,.hub-link:focus,.hub-link text,.hub-link:hover text{text-decoration:none}
+.hub-node text,.hub-core-t{stroke:none;paint-order:normal;text-rendering:geometricPrecision}
+
+/* =====================================================================
+   CONTACT PAGE (contact.html) - dark + gold, live & interactive
+   ===================================================================== */
+.ct section{border-bottom:0}
+.ct-hero{position:relative;text-align:center;padding:34px 0 26px!important;background:radial-gradient(900px 340px at 50% 0%,rgba(245,158,11,.18),transparent 70%)}
+.ct-hero .crumbs{margin-bottom:8px}
+.ct-hero h1{font-size:clamp(1.7rem,4vw,2.8rem);line-height:1.12;margin:8px 0 8px}
+.ct-hero h1 .gold{color:var(--gold)}
+.ct-sub{color:#d4d4d4;font-size:clamp(.95rem,1.8vw,1.1rem);max-width:640px;margin:0 auto 16px}
+.ct-badges{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.ct-badge{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:999px;font-weight:800;font-size:.82rem;letter-spacing:.03em;background:rgba(245,158,11,.1);border:1px solid var(--line);color:var(--gold);animation:ctfloat 3.4s ease-in-out infinite;transition:box-shadow .3s,transform .3s}
+.ct-badge:nth-child(2){animation-delay:1.1s;color:#4ade80;background:rgba(74,222,128,.08);border-color:rgba(74,222,128,.35)}
+.ct-badge:hover{box-shadow:0 0 22px rgba(245,158,11,.45);cursor:default}
+.ct-badge:nth-child(2):hover{box-shadow:0 0 22px rgba(74,222,128,.4)}
+.ct-badge .dot{width:8px;height:8px;border-radius:50%;background:#4ade80;animation:abpulse 1.8s ease-out infinite}
+.ct-badge i.bi{animation:ctzap 1.6s ease-in-out infinite}
+@keyframes ctfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+@keyframes ctzap{0%,100%{transform:scale(1)}50%{transform:scale(1.25)}}
+
+.ct-main{padding:14px 0 56px!important}
+.ct-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:start}
+.ct-col{display:grid;gap:22px}
+.ct-card{background:linear-gradient(135deg,#231c0d,#141414 65%);border:1px solid var(--line);border-radius:22px;padding:clamp(18px,3vw,28px);box-shadow:0 18px 50px rgba(0,0,0,.4);transition:border-color .3s,box-shadow .3s}
+.ct-card:hover{border-color:var(--amber);box-shadow:0 22px 60px rgba(245,158,11,.14)}
+.ct-card h2{font-size:1.35rem;margin:4px 0 14px}
+
+/* contact rows */
+.ct-list{display:grid;gap:10px}
+.ct-row{display:flex;align-items:center;gap:14px;padding:12px 14px;border-radius:14px;border:1px solid rgba(255,255,255,.06);background:rgba(255,255,255,.02);color:inherit;text-decoration:none;cursor:pointer;transition:transform .25s,border-color .25s,background .25s,box-shadow .25s}
+.ct-ico{flex:none;width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:#2a2210;border:1px solid var(--line);color:var(--amber);font-size:1.15rem;transition:transform .3s,background .3s,color .3s,box-shadow .3s}
+.ct-txt{display:block;flex:1;min-width:0}
+.ct-txt small{display:block;color:var(--amber);font-weight:800;font-size:.7rem;letter-spacing:.07em;text-transform:uppercase;margin-bottom:1px;transition:color .25s}
+.ct-txt b{display:block;font-size:1.02rem;line-height:1.4;color:var(--text);transition:color .25s,text-shadow .25s}
+.ct-txt em{display:block;font-style:normal;color:var(--muted);font-size:.86rem;margin-top:1px}
+.ct-go{flex:none;color:var(--muted);font-size:1rem;transition:transform .25s,color .25s}
+.ct-row:hover,.ct-row:focus-visible{transform:translateX(4px);border-color:var(--amber);background:rgba(245,158,11,.07);box-shadow:0 0 26px rgba(245,158,11,.18);outline:none}
+.ct-row:hover .ct-ico,.ct-row:focus-visible .ct-ico{background:var(--amber);color:#111;transform:scale(1.1) rotate(-6deg);box-shadow:0 0 0 4px rgba(245,158,11,.18),0 0 22px rgba(245,158,11,.6)}
+.ct-row:hover .ct-txt b,.ct-row:focus-visible .ct-txt b{color:var(--gold);text-shadow:0 0 14px rgba(251,191,36,.5)}
+.ct-row:hover .ct-go,.ct-row:focus-visible .ct-go{color:var(--gold);transform:translate(3px,-3px)}
+.ct-row.call:hover .ct-ico i{animation:ctring .6s ease-in-out infinite}
+@keyframes ctring{0%,100%{transform:rotate(0)}25%{transform:rotate(-14deg)}75%{transform:rotate(14deg)}}
+/* whatsapp green variant */
+.ct-row.wa .ct-ico{background:rgba(37,211,102,.1);border-color:rgba(37,211,102,.4);color:#25D366;font-size:1.3rem}
+.ct-row.wa .ct-txt small{color:#25D366}
+.ct-row.wa:hover,.ct-row.wa:focus-visible{border-color:#25D366;background:rgba(37,211,102,.08);box-shadow:0 0 26px rgba(37,211,102,.28)}
+.ct-row.wa:hover .ct-ico,.ct-row.wa:focus-visible .ct-ico{background:#25D366;color:#fff;box-shadow:0 0 0 4px rgba(37,211,102,.18),0 0 22px rgba(37,211,102,.65)}
+.ct-row.wa:hover .ct-txt b,.ct-row.wa:focus-visible .ct-txt b{color:#25D366;text-shadow:0 0 14px rgba(37,211,102,.55)}
+.ct-row.wa:hover .ct-go,.ct-row.wa:focus-visible .ct-go{color:#25D366}
+.ct-live{display:inline-flex;align-items:center;gap:6px;margin-left:8px;font-size:.68rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:#4ade80;background:rgba(74,222,128,.1);border:1px solid rgba(74,222,128,.35);border-radius:999px;padding:2px 9px;vertical-align:middle}
+.ct-live i{width:7px;height:7px;border-radius:50%;background:#4ade80;animation:abpulse 1.8s ease-out infinite}
+
+/* callback form */
+.ct-form{display:grid;gap:14px}
+.ct-field{position:relative}
+.ct-field label{display:block;font-size:.74rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--amber);margin-bottom:6px}
+.ct-field input,.ct-field select{width:100%;background:#101010;border:1px solid rgba(255,255,255,.12);color:var(--text);border-radius:12px;padding:13px 14px;font:600 .98rem 'Manrope',sans-serif;transition:border-color .25s,box-shadow .25s,background .25s;appearance:none;-webkit-appearance:none}
+.ct-field select{background-image:linear-gradient(45deg,transparent 50%,var(--amber) 50%),linear-gradient(135deg,var(--amber) 50%,transparent 50%);background-position:calc(100% - 20px) 52%,calc(100% - 14px) 52%;background-size:6px 6px;background-repeat:no-repeat;padding-right:38px;cursor:pointer}
+.ct-field select option{background:#161616;color:#f5f5f5}
+.ct-field input::placeholder{color:#6f6f6f;font-weight:500}
+.ct-field input:hover,.ct-field select:hover{border-color:rgba(245,158,11,.5)}
+.ct-field input:focus,.ct-field select:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(245,158,11,.2),0 0 20px rgba(245,158,11,.2);background:#141109}
+.ct-field.bad input,.ct-field.bad select{border-color:#f87171;box-shadow:0 0 0 3px rgba(248,113,113,.15)}
+.ct-err{display:none;color:#f87171;font-size:.8rem;font-weight:600;margin-top:5px}
+.ct-field.bad .ct-err{display:block}
+.ct-submit{position:relative;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:8px;width:100%;border:0;cursor:pointer;border-radius:12px;padding:15px 20px;font:800 1rem 'Manrope',sans-serif;color:#111;background:linear-gradient(180deg,var(--gold),var(--amber));box-shadow:0 8px 24px rgba(245,158,11,.35);transition:transform .25s,box-shadow .25s,filter .25s}
+.ct-submit:before{content:"";position:absolute;top:0;left:-70%;width:45%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg);animation:ctshine 3.2s ease-in-out infinite}
+@keyframes ctshine{0%,60%{left:-70%}100%{left:130%}}
+.ct-submit:hover,.ct-submit:focus-visible{transform:translateY(-2px);box-shadow:0 14px 36px rgba(245,158,11,.6),0 0 0 4px rgba(245,158,11,.18);filter:brightness(1.06);outline:none}
+.ct-submit:active{transform:translateY(0)}
+.ct-submit[disabled]{cursor:progress;filter:grayscale(.3);opacity:.85}
+.ct-note{color:var(--muted);font-size:.78rem;text-align:center;margin:2px 0 0}
+.ct-thanks{display:none;text-align:center;padding:10px 4px}
+.ct-thanks.show{display:block;animation:ctpop .5s cubic-bezier(.22,.61,.36,1) both}
+.ct-thanks .tick{width:68px;height:68px;margin:0 auto 12px;border-radius:50%;display:grid;place-items:center;font-size:2rem;color:#111;background:linear-gradient(180deg,var(--gold),var(--amber));box-shadow:0 0 0 8px rgba(245,158,11,.14),0 0 34px rgba(245,158,11,.5);animation:ctpulse 2s ease-in-out infinite}
+.ct-thanks h3{font-family:'Fraunces',serif;font-weight:800;font-size:1.4rem;margin:0 0 6px}
+.ct-thanks p{color:#d4d4d4;margin:0 0 14px}
+.ct-thanks .acts{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.ct-thanks .btn{cursor:pointer}
+@keyframes ctpop{from{opacity:0;transform:scale(.94) translateY(8px)}to{opacity:1;transform:none}}
+@keyframes ctpulse{0%,100%{transform:scale(1)}50%{transform:scale(1.07)}}
+
+/* map card */
+.ct-mapcard{position:sticky;top:96px}
+.ct-maphead{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:6px}
+.ct-maphead h2{margin:4px 0}
+.ct-hint{color:var(--muted);font-size:.84rem;margin:0 0 4px}
+.ct-map{display:flex;justify-content:center;border-radius:16px;background:radial-gradient(circle at 50% 50%,rgba(245,158,11,.14),transparent 68%)}
+.ct-map svg{width:100%;max-width:600px;height:auto}
+
+@media(max-width:991.98px){
+  .ct-grid{grid-template-columns:1fr}
+  .ct-mapcard{position:static}
+}
+@media(max-width:575.98px){
+  .ct-hero{padding:22px 0 18px!important}
+  .ct-row{padding:11px 12px;gap:12px}
+  .ct-ico{width:40px;height:40px}
+  .ct-txt b{font-size:.96rem}
+  .ct-go{display:none}
+  .ct-thanks .acts .btn{width:100%}
+}
+@media(prefers-reduced-motion:reduce){.ct-badge,.ct-badge .dot,.ct-badge i.bi,.ct-submit:before,.ct-thanks .tick,.ct-row.call:hover .ct-ico i{animation:none}.ct-row,.ct-ico,.ct-submit{transition:none}}
+
+/* All-India route groups */
+.india-sec{padding-top:40px}.rg-grid .svc{padding:22px}.rg-grid .svc h3{font-size:1.02rem;font-weight:800;margin:0 0 12px;color:var(--gold)}.rg-grid .chips{gap:6px}.rg-grid .chips a{font-size:.78rem;padding:6px 10px}
+
+/* ===== Contact Us page (contact.html) — all rules prefixed .cu- ===== */
+.cu section{padding:64px 0;border-bottom:0}
+.cu-hero{position:relative;text-align:center;overflow:hidden;padding:72px 0 56px!important;background:radial-gradient(900px 380px at 50% -10%,rgba(245,158,11,.22),transparent 70%),radial-gradient(500px 260px at 90% 100%,rgba(251,191,36,.08),transparent 70%)}
+.cu-hero:before{content:"";position:absolute;left:0;right:0;bottom:22px;height:2px;background:repeating-linear-gradient(90deg,var(--amber) 0 38px,transparent 38px 76px);opacity:.28;animation:cu-road 3.2s linear infinite}
+@keyframes cu-road{to{background-position:76px 0}}
+.cu-eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:'Poppins',sans-serif;font-size:.78rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);background:#141414;border:1px solid rgba(251,191,36,.45);border-radius:999px;padding:7px 16px;margin-bottom:18px}
+.cu-eyebrow .dot{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 0 rgba(34,197,94,.6);animation:cu-ping 1.8s infinite}
+@keyframes cu-ping{70%{box-shadow:0 0 0 9px rgba(34,197,94,0)}100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}}
+.cu-hero h1{font-size:clamp(2rem,4.8vw,3.5rem);line-height:1.12;max-width:900px;margin:0 auto 16px}
+.cu-grad{background:linear-gradient(100deg,var(--gold),var(--amber) 55%,#fde68a);-webkit-background-clip:text;background-clip:text;color:transparent}
+.cu-sub{color:#d4d4d4;font-size:1.15rem;max-width:720px;margin:0 auto 26px}
+.cu-badges{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+.cu-badge{display:inline-flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-weight:700;font-size:.85rem;color:#eee}
+.cu-badge i{color:var(--amber)}
+
+/* quick action cards */
+.cu-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.cu-card{--mx:50%;--my:0%;position:relative;display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:28px 24px;overflow:hidden;transition:transform .3s,border-color .3s,box-shadow .3s}
+.cu-card:before{content:"";position:absolute;inset:0;background:radial-gradient(320px circle at var(--mx) var(--my),rgba(251,191,36,.16),transparent 60%);opacity:0;transition:opacity .3s;pointer-events:none}
+.cu-card:hover{transform:translateY(-6px);border-color:var(--amber);box-shadow:0 18px 44px rgba(0,0,0,.55),0 0 28px rgba(245,158,11,.14)}
+.cu-card:hover:before{opacity:1}
+.cu-ico{width:58px;height:58px;border-radius:16px;display:grid;place-items:center;font-size:1.6rem;color:#111;background:linear-gradient(145deg,var(--gold),var(--amber));box-shadow:0 8px 22px rgba(245,158,11,.35);margin-bottom:18px;transition:transform .3s}
+.cu-card:hover .cu-ico{transform:rotate(-8deg) scale(1.08)}
+.cu-ico.wa{background:linear-gradient(145deg,#34e07f,#25D366);color:#fff;box-shadow:0 8px 22px rgba(37,211,102,.35)}
+.cu-card h3{font-size:1.3rem;margin-bottom:6px;font-family:'Fraunces',serif;font-weight:800}
+.cu-card p{color:var(--muted);font-size:.92rem;margin-bottom:18px}
+.cu-actions{margin-top:auto;display:flex;flex-direction:column;gap:10px}
+.cu-btn{display:flex;align-items:center;justify-content:center;gap:10px;border:0;border-radius:12px;padding:13px 18px;font-weight:800;font-size:.95rem;text-decoration:none;cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s,color .2s}
+.cu-btn:hover{transform:translateY(-2px)}
+.cu-btn:focus-visible,.cu-chip:focus-visible,.cu-opt input:focus-visible+span,.cu-faq button:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.cu-btn-gold{background:linear-gradient(180deg,var(--gold),var(--amber));color:#111;box-shadow:0 6px 20px rgba(245,158,11,.3)}
+.cu-btn-gold:hover{color:#111;box-shadow:0 10px 28px rgba(245,158,11,.5)}
+.cu-btn-ghost{background:transparent;color:var(--gold);border:1.5px solid var(--line)}
+.cu-btn-ghost:hover{border-color:var(--amber);color:var(--gold);background:rgba(245,158,11,.08)}
+.cu-btn-wa{background:#25D366;color:#fff;box-shadow:0 6px 20px rgba(37,211,102,.3)}
+.cu-btn-wa:hover{background:#1ebe5b;color:#fff;box-shadow:0 10px 28px rgba(37,211,102,.5)}
+.cu-chips{display:flex;flex-wrap:wrap;gap:8px}
+.cu-chip{border:1px solid var(--line);background:var(--card2);color:#e5e5e5;font:600 .8rem 'Manrope',sans-serif;padding:7px 13px;border-radius:999px;cursor:pointer;transition:.2s}
+.cu-chip:hover,.cu-chip.on{border-color:var(--amber);color:#111;background:var(--gold)}
+.cu-hq{display:flex;gap:12px;align-items:flex-start;background:rgba(245,158,11,.07);border:1px dashed var(--line);border-radius:14px;padding:12px 14px;margin-bottom:14px}
+.cu-hq i{color:var(--amber);font-size:1.2rem;margin-top:2px}
+.cu-hq b{display:block;font-size:.95rem}.cu-hq span{color:var(--muted);font-size:.85rem}
+.cu-hint{font-size:.76rem;color:var(--muted);margin:10px 0 0}
+
+/* form section */
+.cu-formwrap{display:grid;grid-template-columns:1.35fr .85fr;gap:26px;align-items:start}
+.cu-panel{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:34px;position:relative}
+.cu-panel:after{content:"";position:absolute;left:34px;right:34px;top:0;height:3px;border-radius:0 0 4px 4px;background:linear-gradient(90deg,transparent,var(--amber),var(--gold),transparent)}
+.cu-title{font-size:clamp(1.6rem,3vw,2.2rem);margin-bottom:6px}
+.cu-lead{color:var(--muted);margin-bottom:24px}
+.cu-fields{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.cu-f{display:flex;flex-direction:column;gap:7px}.cu-f.full{grid-column:1/-1}
+.cu-f>label,.cu-legend{font-weight:700;font-size:.82rem;letter-spacing:.02em;color:#e5e5e5;display:flex;align-items:center;gap:7px}
+.cu-f>label i,.cu-legend i{color:var(--amber)}
+.cu-f .req{color:var(--amber)}
+.cu-in{width:100%;background:#111;color:var(--text);border:1.5px solid rgba(255,255,255,.1);border-radius:12px;padding:13px 15px;font:500 .95rem 'Manrope',sans-serif;color-scheme:dark;accent-color:var(--amber);transition:border-color .2s,box-shadow .2s,background .2s}
+.cu-in::placeholder{color:#6b6b6b}
+.cu-in:hover{border-color:rgba(245,158,11,.5)}
+.cu-in:focus{outline:0;border-color:var(--gold);background:#141414;box-shadow:0 0 0 4px rgba(251,191,36,.16)}
+.cu-in.bad{border-color:#ef4444;box-shadow:0 0 0 4px rgba(239,68,68,.14)}
+textarea.cu-in{min-height:110px;resize:vertical}
+.cu-err{color:#fca5a5;font-size:.76rem;min-height:0;display:none}.cu-f.has-err .cu-err{display:block}
+.cu-opts{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.cu-opt{position:relative;cursor:pointer}
+.cu-opt input{position:absolute;opacity:0;inset:0;cursor:pointer}
+.cu-opt span{display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;padding:14px 8px;border-radius:14px;background:#111;border:1.5px solid rgba(255,255,255,.1);font-weight:700;font-size:.82rem;transition:.2s}
+.cu-opt span i{font-size:1.35rem;color:var(--amber);transition:.2s}
+.cu-opt:hover span{border-color:var(--amber);transform:translateY(-2px)}
+.cu-opt input:checked+span{background:linear-gradient(180deg,rgba(251,191,36,.2),rgba(245,158,11,.08));border-color:var(--gold);box-shadow:0 0 0 3px rgba(251,191,36,.14)}
+.cu-opt input:checked+span i{transform:scale(1.15);color:var(--gold)}
+.cu-submit{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:24px}
+.cu-submit .cu-btn{width:100%;min-height:54px;padding:14px 20px;font-size:1rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+@media(max-width:575.98px){.cu-submit{grid-template-columns:1fr;gap:12px;margin-top:20px}}
+
+/* live WhatsApp preview */
+.cu-side{position:sticky;top:110px;display:flex;flex-direction:column;gap:18px}
+.cu-phone{background:#0b141a;border:1px solid rgba(255,255,255,.1);border-radius:22px;overflow:hidden;box-shadow:0 14px 40px rgba(0,0,0,.5)}
+.cu-phone-h{display:flex;align-items:center;gap:10px;padding:12px 16px;background:#1f2c34;font-weight:700;font-size:.9rem}
+.cu-phone-h .av{width:34px;height:34px;border-radius:50%;background:linear-gradient(145deg,var(--gold),var(--amber));color:#111;display:grid;place-items:center;font-weight:800}
+.cu-phone-h small{display:block;color:#8696a0;font-weight:500;font-size:.72rem}
+.cu-chat{padding:18px 14px 20px;background:#0b141a radial-gradient(rgba(255,255,255,.035) 1px,transparent 1px) 0 0/16px 16px;min-height:250px}
+.cu-bubble{margin-left:auto;max-width:94%;background:#005c4b;color:#e9edef;border-radius:12px 12px 2px 12px;padding:10px 12px;font-size:.84rem;line-height:1.5;white-space:pre-wrap;word-break:break-word}
+.cu-bubble .ph{color:#7a9a93}
+.cu-bubble time{display:block;text-align:right;font-size:.66rem;color:#8fb3aa;margin-top:4px}
+.cu-trust{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px 20px;display:grid;gap:12px}
+.cu-trust div{display:flex;gap:12px;align-items:center;font-size:.88rem;font-weight:600}
+.cu-trust i{color:var(--amber);font-size:1.15rem;width:22px;text-align:center}
+.cu-toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,30px);opacity:0;pointer-events:none;z-index:1100;background:#16a34a;color:#fff;font-weight:700;padding:12px 20px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.5);transition:.35s;max-width:90vw;text-align:center}
+.cu-toast.show{opacity:1;transform:translate(-50%,0)}
+
+/* FAQ accordion */
+.cu-faq{max-width:860px;margin:0 auto}
+.cu-faq .item{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:16px;margin-bottom:12px;transition:border-color .25s,box-shadow .25s}
+.cu-faq .item:hover{border-color:var(--line)}
+.cu-faq .item.open{border-color:var(--amber);box-shadow:0 8px 28px rgba(245,158,11,.12)}
+.cu-faq button{all:unset;box-sizing:border-box;width:100%;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 22px;font-weight:700;font-size:1.02rem}
+.cu-faq button .pm{flex:none;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:rgba(251,191,36,.12);color:var(--gold);transition:transform .3s,background .3s}
+.cu-faq .item.open .pm{transform:rotate(45deg);background:var(--amber);color:#111}
+.cu-faq .body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s ease}
+.cu-faq .item.open .body{grid-template-rows:1fr}
+.cu-faq .body>div{overflow:hidden}
+.cu-faq .body p{margin:0;padding:0 22px 20px;color:#c9c9c9;line-height:1.7}
+.cu-faq .body a{color:var(--gold)}
+
+/* closing band */
+.cu-band{text-align:center;background:linear-gradient(135deg,#231a05,#1a1a1a 55%,#231a05);border:1px solid var(--line);border-radius:24px;padding:44px 24px}
+.cu-band h2{font-size:clamp(1.5rem,3vw,2.2rem);margin-bottom:8px}.cu-band p{color:var(--muted);margin-bottom:22px}
+.cu-band .row-btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}.cu-band .cu-btn{min-width:210px}
+
+/* reveal on scroll */
+.cu-rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}.cu-rv.in{opacity:1;transform:none}
+@media(max-width:991.98px){.cu-cards{grid-template-columns:1fr}.cu-formwrap{grid-template-columns:1fr}.cu-side{position:static}.cu-opts{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:575.98px){.cu-panel{padding:24px 18px}.cu-panel:after{left:18px;right:18px}.cu-fields{grid-template-columns:1fr}.cu-hero{padding:48px 0 44px!important}.cu .container{padding-left:16px;padding-right:16px}}
+@media(prefers-reduced-motion:reduce){.cu-hero:before,.cu-eyebrow .dot{animation:none}.cu-rv{opacity:1;transform:none;transition:none}.cu-card,.cu-btn,.cu-opt span,.cu-faq .body{transition:none}}
+
+/* ===== Map watermarks (routes.html + index.html route cards) ===== */
+:root{--map-india:url("images/maps/india-map.svg");--map-gujarat:url("images/maps/gujarat-map.svg");--map-opacity:.07}
+/* India map behind each All-India / Airport card */
+.india-sec .rg-grid .svc{position:relative;isolation:isolate;overflow:hidden}
+.india-sec .rg-grid .svc::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:var(--map-india) no-repeat right -12% center/auto 115%;opacity:var(--map-opacity);transition:opacity .3s}
+.india-sec .rg-grid .svc:hover::before{opacity:.13}
+/* Gujarat map behind the Gujarat outstation / airport block */
+#outstation-gujarat{position:relative;isolation:isolate;overflow:hidden}
+#outstation-gujarat::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:var(--map-gujarat) no-repeat right 2% top 120px/min(520px,55%) auto;opacity:var(--map-opacity)}
+@media(max-width:575.98px){
+  :root{--map-opacity:.05}
+  .india-sec .rg-grid .svc::before{background-position:right -25% bottom;background-size:auto 95%}
+  #outstation-gujarat::before{background-position:center top 90px;background-size:min(420px,90%) auto}
+}
+@media(prefers-reduced-motion:reduce){.india-sec .rg-grid .svc::before{transition:none}}
+
+/* ===== Section headings with inline SVG map icon (.sec-head) — no image files needed ===== */
+.sec-head{display:flex;align-items:center;gap:14px;margin:0 0 14px}
+.sec-head--center{justify-content:center;text-align:center}
+.sec-head .sec-head__title{flex:1 1 auto;min-width:0;margin:0;font-size:clamp(1.4rem,3.2vw,2.1rem);line-height:1.15}
+.sec-head--center .sec-head__title{flex:0 1 auto}
+.sec-head__icon{display:block;flex:none;width:clamp(40px,5vw,56px);height:auto;aspect-ratio:1/1;
+  color:#FFA500;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;
+  filter:drop-shadow(0 4px 12px rgba(255,165,0,.35));transition:transform .3s}
+.sec-head__icon .fill{fill:currentColor;stroke:none}
+.sec-head__icon .hole{fill:var(--bg,#0d0d0d);stroke:none}
+.sec-head:hover .sec-head__icon{transform:translateY(-3px) scale(1.06)}
+@media(max-width:575.98px){.sec-head{gap:10px}.sec-head__icon{width:38px}.sec-head .sec-head__title{font-size:1.3rem}}
+@media(prefers-reduced-motion:reduce){.sec-head__icon{transition:none}.sec-head:hover .sec-head__icon{transform:none}}
+
+/* ===== Fully clickable route cards (stretched-link) ===== */
+.rg-grid .svc{position:relative;cursor:pointer}
+/* main link: title text, but its ::after stretches over the whole card */
+.svc__link{color:inherit;text-decoration:none}
+.svc__link::after{content:"";position:absolute;inset:0;z-index:1;border-radius:inherit}
+.svc__link:focus-visible{outline:none}
+.svc__link:focus-visible::after{outline:2px solid var(--gold);outline-offset:2px}
+/* sub-links sit above the stretched layer so they keep their own destination */
+.rg-grid .svc .chips{position:relative;z-index:2}
+.rg-grid .svc .chips a{position:relative;z-index:2;cursor:pointer}
+/* hover / keyboard-focus lift */
+.rg-grid .svc{transition:transform .3s cubic-bezier(.22,.61,.36,1),box-shadow .3s,border-color .3s}
+.rg-grid .svc:hover,.rg-grid .svc:focus-within{transform:translateY(-6px);border-color:var(--amber);box-shadow:0 14px 34px rgba(245,158,11,.16),0 4px 12px rgba(0,0,0,.45)}
+@media(prefers-reduced-motion:reduce){.rg-grid .svc{transition:none}.rg-grid .svc:hover,.rg-grid .svc:focus-within{transform:none}}
+
+
+/* ===== Clickable fleet cards (stretched-link overlay) =====
+   Whole card -> booking page. Only the WhatsApp button sits above the overlay. */
+.car{position:relative;cursor:pointer;
+  transition:transform .35s cubic-bezier(.22,.61,.36,1),box-shadow .35s ease,border-color .35s ease}
+.car-overlay{position:absolute;inset:0;z-index:2;border-radius:inherit;text-decoration:none;
+  -webkit-tap-highlight-color:transparent}
+.car-overlay:focus-visible{outline:2px solid var(--gold);outline-offset:-3px}
+.car .btn-wa.wa-car{position:relative;z-index:3;cursor:pointer}
+.car:hover,.car:focus-within{
+  transform:translateY(-8px) scale(1.02);
+  border-color:var(--amber);
+  box-shadow:0 0 0 1px rgba(245,158,11,.35),0 0 28px rgba(245,158,11,.28),0 18px 40px rgba(0,0,0,.45)}
+@media (hover:none){.car:hover{transform:none;box-shadow:none;border-color:var(--line)}
+  .car:active{transform:scale(.985);border-color:var(--amber)}}
+@media (prefers-reduced-motion:reduce){.car,.car:hover,.car:focus-within{transition:none;transform:none}}
+
+/* ===== Email links: clickable, wrap on narrow screens ===== */
+a[href^="mailto:"]{overflow-wrap:anywhere;word-break:break-word}
+.booking-line a[href^="mailto:"]:hover{color:#fff;text-decoration:underline}
+.cu-btn[href^="mailto:"]{font-size:.88rem;text-align:center}
+
+/* ==========================================================
+   Chamunda Cab - Gold & Black Email Button (footer)
+   ========================================================== */
+.cc-mail-wrap{margin-top:12px;max-width:100%}
+.cc-mail-btn{--cc-gold:#ffcc00;--cc-gold-deep:#e6a100;display:inline-flex;align-items:center;gap:.75rem;max-width:100%;padding:.75rem 1.25rem;border:1.5px solid var(--cc-gold-deep);border-radius:12px;background:linear-gradient(180deg,#1c1c1c 0%,#0b0b0b 100%);color:var(--cc-gold);font-weight:700;font-size:.95rem;line-height:1.2;text-decoration:none;box-shadow:inset 0 1px 0 rgba(255,204,0,.15),0 0 0 rgba(255,204,0,0);transition:transform .3s cubic-bezier(.22,.61,.36,1),box-shadow .3s ease,border-color .3s ease,background .3s ease,color .3s ease;-webkit-tap-highlight-color:transparent}
+.cc-mail-btn__icon{flex:0 0 auto;display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--cc-gold),var(--cc-gold-deep));color:#0b0b0b;transition:transform .3s ease,background .3s ease,color .3s ease}
+.cc-mail-btn__text{min-width:0;overflow-wrap:anywhere;word-break:break-word}
+.cc-mail-btn:hover{transform:translateY(-3px);border-color:var(--cc-gold);background:linear-gradient(180deg,var(--cc-gold),var(--cc-gold-deep));color:#0b0b0b;box-shadow:0 0 0 1px rgba(255,204,0,.5),0 0 22px rgba(255,204,0,.45),0 10px 24px rgba(0,0,0,.5)}
+.cc-mail-btn:hover .cc-mail-btn__icon{background:#0b0b0b;color:var(--cc-gold);transform:rotate(-8deg) scale(1.08)}
+.cc-mail-btn:active{transform:translateY(-1px) scale(.98)}
+.cc-mail-btn:focus-visible{outline:2px solid var(--cc-gold);outline-offset:3px}
+@media (max-width:575.98px){.cc-mail-btn{display:flex;width:100%;justify-content:center;padding:.7rem 1rem;font-size:.88rem}}
+@media (hover:none){.cc-mail-btn:hover{transform:none;background:linear-gradient(180deg,#1c1c1c,#0b0b0b);color:var(--cc-gold);box-shadow:inset 0 1px 0 rgba(255,204,0,.15)}.cc-mail-btn:hover .cc-mail-btn__icon{background:linear-gradient(135deg,var(--cc-gold),var(--cc-gold-deep));color:#0b0b0b;transform:none}}
+@media (prefers-reduced-motion:reduce){.cc-mail-btn,.cc-mail-btn__icon{transition:none}.cc-mail-btn:hover{transform:none}}
+
+/* ===== Vehicle dropdown (Booking & Inquiry form): black + gold ===== */
+.cu-select-wrap{position:relative}
+.cu-select-wrap:after{content:"";position:absolute;right:16px;top:50%;width:10px;height:10px;margin-top:-7px;border-right:2.5px solid #ffcc00;border-bottom:2.5px solid #ffcc00;transform:rotate(45deg);pointer-events:none;transition:transform .25s ease,margin-top .25s ease}
+.cu-select-wrap:focus-within:after{transform:rotate(-135deg);margin-top:-2px}
+.cu-select{-webkit-appearance:none;-moz-appearance:none;appearance:none;cursor:pointer;background:#0b0b0b;color:#fff;border:1.5px solid #ffcc00;padding-right:44px;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;box-shadow:inset 0 1px 0 rgba(255,204,0,.12)}
+.cu-select:hover{border-color:#ffcc00;box-shadow:0 0 14px rgba(255,204,0,.25)}
+.cu-select:focus{background:#0b0b0b;border-color:#ffcc00;box-shadow:0 0 0 4px rgba(255,204,0,.2),0 0 18px rgba(255,204,0,.3)}
+.cu-select:required:invalid{color:#8a8a8a}        /* placeholder look until a vehicle is chosen */
+.cu-select option{background:#0b0b0b;color:#fff}
+.cu-select optgroup{background:#161616;color:#ffcc00;font-style:normal;font-weight:800}
+.cu-select option:checked,.cu-select option:hover{background:#ffcc00;color:#0b0b0b}
+.cu-select.bad{border-color:#ef4444;box-shadow:0 0 0 4px rgba(239,68,68,.14)}
+.cu-select-wrap:has(.cu-select.bad):after{border-color:#ef4444}
+@media(max-width:575.98px){.cu-select{font-size:16px;padding-top:14px;padding-bottom:14px}}  /* 16px stops iOS zoom-on-focus */
+/* Contact page: solid white section titles (no gradient) */
+.cu-title,.cu-band h2{color:#ffffff}
+
+/* ===== Fleet hero: live car preview strip (Our Cars page only) ===== */
+.fleet-hero{min-height:0;padding:22px 0 26px}
+.fleet-hero .fleet-preview{width:100%;margin-top:26px;overflow:hidden;position:relative;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);
+  mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.fp-track{display:flex;gap:14px;width:max-content;animation:fpScroll 55s linear infinite;padding:4px 0}
+.fleet-preview:hover .fp-track,.fleet-preview:focus-within .fp-track{animation-play-state:paused}
+@keyframes fpScroll{to{transform:translateX(calc(-50% - 7px))}}
+.fp-tile{position:relative;flex:0 0 auto;width:236px;aspect-ratio:8/5;border-radius:14px;overflow:hidden;
+  border:1px solid var(--line);background:var(--card2);display:block;text-decoration:none;
+  box-shadow:0 8px 22px rgba(0,0,0,.45);transition:transform .3s,border-color .3s,box-shadow .3s}
+.fp-tile img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s cubic-bezier(.22,.61,.36,1)}
+.fp-tile:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 42%,rgba(13,13,13,.92))}
+.fp-tile:hover,.fp-tile:focus-visible{transform:translateY(-4px);border-color:var(--amber);box-shadow:0 12px 28px rgba(245,158,11,.25)}
+.fp-tile:hover img{transform:scale(1.07)}
+.fp-tile:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.fp-cap{position:absolute;left:12px;right:12px;bottom:10px;z-index:1;text-align:left}
+.fp-cap small{display:block;color:var(--amber);font-weight:800;font-size:.68rem;text-transform:uppercase;letter-spacing:.05em}
+.fp-cap b{display:block;color:#fff;font-size:.95rem;font-weight:700;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+@media(min-width:992px){.fp-tile{width:268px}}
+@media(max-width:575.98px){.fleet-hero{padding:14px 0 18px}.fleet-hero .fleet-preview{margin-top:20px}.fp-tile{width:190px}.fp-track{gap:10px;animation-duration:45s}@keyframes fpScroll{to{transform:translateX(calc(-50% - 5px))}}}
+@media(prefers-reduced-motion:reduce){.fp-track{animation:none}.fleet-hero .fleet-preview{overflow-x:auto;-webkit-mask-image:none;mask-image:none;scroll-snap-type:x proximity}.fp-tile{scroll-snap-align:start}.fp-tile[aria-hidden="true"]{display:none}}
+
+/* ===== About hero: decluttered, centred, breathable (Poppins) ===== */
+.about .ab-hero{padding:48px 0 8px!important;margin-bottom:50px;text-align:center}
+.about .ab-hero .pill{display:inline-block;margin:0 0 22px;font-size:.74rem;padding:5px 14px;line-height:1.5}
+.about .ab-hero h1{
+  font-family:'Poppins','Inter',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
+  font-weight:700;font-size:36px;line-height:1.25;letter-spacing:-.01em;
+  max-width:820px;margin:0 auto 10px;text-wrap:balance;
+}
+.about .ab-hero .ab-tagline{
+  font-family:'Poppins','Inter',system-ui,sans-serif;font-weight:600;font-size:20px;line-height:1.6;
+  color:var(--gold);margin:0 auto 26px;
+}
+.about .ab-hero .ab-gu{font-size:1.05rem;line-height:1.6;margin:0 auto 22px;padding:0 12px}
+.about .ab-hero .ab-lead{font-size:1.05rem;line-height:1.6;max-width:850px;margin:0 auto 34px;padding:0 12px;color:#cfcfcf;text-wrap:balance}   /* 850px: no lone last word; balance evens out the lines */
+.about .ab-hero .hero-cta{display:block;margin:0 0 4px!important}
+.about .ab-hero .btn-book-cta{
+  font-family:'Poppins','Inter',system-ui,sans-serif;font-size:16px;font-weight:600;line-height:1.2;
+  color:#111;background:linear-gradient(180deg,var(--gold),var(--amber));border:0;border-radius:10px;
+  padding:14px 34px;box-shadow:0 8px 24px rgba(245,158,11,.32);
+}
+.about .ab-hero .btn-book-cta:hover{color:#111;background:linear-gradient(180deg,#fcd34d,var(--gold));transform:translateY(-2px);box-shadow:0 12px 30px rgba(245,158,11,.45)}
+.about .ab-hero .ab-chips{margin:32px 0 0;gap:8px;justify-content:center}
+.about .ab-stats{margin-top:0}   /* stat cards no longer overlap the hero */
+@media(max-width:767.98px){
+  .about .ab-hero{padding:32px 0 4px!important;margin-bottom:50px}
+  .about .ab-hero .container{padding-left:20px;padding-right:20px}
+  .about .ab-hero .pill{margin-bottom:18px}
+  .about .ab-hero h1{font-size:26px;margin-bottom:8px}
+  .about .ab-hero .ab-tagline{font-size:17px;margin-bottom:22px}
+  .about .ab-hero .ab-gu{font-size:.95rem;margin-bottom:18px;padding:0}
+  .about .ab-hero .ab-lead{font-size:.95rem;margin-bottom:28px;padding:0}
+  .about .ab-hero .btn-book-cta{width:100%;max-width:320px;font-size:15px;padding:14px 22px}
+}
+
+/* ===== Fleet header: modern Poppins heading, clean subtitle, roomy spacing ===== */
+.page-head.hero-compact.fleet-hero{padding:48px 0 40px;text-align:center}
+.page-head.hero-compact.fleet-hero h1{
+  font-family:'Poppins','Inter',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
+  font-weight:700;font-size:38px;line-height:1.25;letter-spacing:-.01em;color:#fff;
+  max-width:860px;margin:0 auto 18px;text-wrap:balance;
+}
+.page-head.hero-compact.fleet-hero p{
+  max-width:760px;margin:0 auto;font-size:1.05rem;line-height:1.65;color:#d4d4d4;
+}
+.fleet-hero .fleet-preview{margin-top:34px}
+.fleet-hero + .fleet-sec,.fleet-hero + section{padding-top:56px}
+#fleet.fleet-sec{padding-top:56px}
+@media(max-width:767.98px){
+  .page-head.hero-compact.fleet-hero{padding:32px 0 28px}
+  .page-head.hero-compact.fleet-hero .container{padding-left:20px;padding-right:20px}
+  .page-head.hero-compact.fleet-hero h1{font-size:26px;margin-bottom:14px}
+  .page-head.hero-compact.fleet-hero p{font-size:.95rem}
+  .fleet-hero .fleet-preview{margin-top:26px}
+  .fleet-hero + .fleet-sec,.fleet-hero + section,#fleet.fleet-sec{padding-top:40px}
+}
+
+/* ===== H1 / H2 modern headline style (Poppins) =====
+   Placed last so it overrides the older Fraunces/serif rules above.
+   ":not(#_)" raises specificity so page-specific h1 rules cannot bring serif/odd sizes back. */
+h1:not(#_),h2:not(#_){font-family:'Poppins',sans-serif}
+h2:not(#_){font-weight:700}
+h1:not(#_){
+  font-size:40px;font-weight:700;letter-spacing:-0.5px;
+  text-transform:capitalize;color:#FFFFFF;line-height:1.2;
+}
+h1:not(#_) .gold,h1:not(#_) .accent{color:var(--gold,#fbbf24)}
+@media(max-width:767.98px){
+  h1:not(#_){font-size:28px;line-height:1.25}
+}
+
+/* Clickable contact subtitle (WhatsApp) */
+.cu-sub-link{font-family:'Poppins',sans-serif;color:inherit;text-decoration:none;cursor:pointer;border-bottom:1px solid transparent;transition:color .25s,border-color .25s}
+.cu-sub-link:hover,.cu-sub-link:focus-visible{color:var(--gold);border-bottom-color:var(--gold);text-decoration:none}
+
+/* ===== Hero action buttons: Book in seconds / Call / WhatsApp (centred, responsive) ===== */
+.hero-actions{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:14px;margin:26px auto 0;padding:0 4px}
+.hero-actions .ha-btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  font-family:'Poppins',sans-serif;font-size:16px;font-weight:600;line-height:1.2;text-decoration:none;white-space:nowrap;
+  padding:13px 26px;border-radius:10px;border:1.5px solid transparent;
+  transition:transform .25s,box-shadow .25s,background .25s,color .25s,filter .25s;
+}
+.hero-actions .ha-btn i{font-size:1.05em;line-height:1}
+.hero-actions .ha-btn:hover,.hero-actions .ha-btn:focus-visible{transform:translateY(-2px)}
+.hero-actions .ha-btn:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.hero-actions .ha-book{color:#FFC107;background:#111;border-color:#FFC107}
+.hero-actions .ha-book:hover{background:rgba(255,193,7,.12);color:#FFC107;box-shadow:0 0 22px rgba(255,193,7,.45)}
+.hero-actions .ha-call{color:#111;background:#FFC107;border-color:#FFC107}
+.hero-actions .ha-call:hover{color:#111;filter:brightness(1.08);box-shadow:0 8px 22px rgba(255,193,7,.4)}
+.hero-actions .ha-wa{color:#fff;background:#25D366;border-color:#25D366;text-shadow:0 1px 1px rgba(0,0,0,.25)}
+.hero-actions .ha-wa:hover{color:#fff;filter:brightness(1.06);box-shadow:0 8px 22px rgba(37,211,102,.45)}
+.hero .hero-actions{margin-bottom:36px}
+@media(max-width:767.98px){
+  .hero-actions{flex-direction:column;gap:12px;margin-top:22px}
+  .hero-actions .ha-btn{width:100%;max-width:340px;font-size:15px;padding:13px 20px}
+  .hero .hero-actions{margin-bottom:28px}
+}
+
+/* ===== Chamunda Cab – compact premium footer (Black & Gold) ===== */
+footer.cc-footer{
+  padding:36px 0 0;font-size:.88rem;color:#cfcfcf;
+  background:linear-gradient(180deg,#121212,#0a0a0a);
+  border-top:1px solid var(--line,rgba(245,158,11,.22));
+  position:relative;
+}
+footer.cc-footer::before{ /* thin gold accent line */
+  content:"";position:absolute;top:-1px;left:50%;transform:translateX(-50%);
+  width:120px;height:2px;background:linear-gradient(90deg,transparent,var(--gold,#fbbf24),transparent);
+}
+footer.cc-footer a{margin:0;color:#cfcfcf;text-decoration:none;transition:color .2s,transform .2s}
+footer.cc-footer a:hover,footer.cc-footer a:focus-visible{color:var(--gold,#fbbf24)}
+
+/* Grid: brand | nav | routes (wide) | policies */
+.cc-foot-grid{
+  display:grid;gap:28px 32px;align-items:start;
+  grid-template-columns:1.6fr .75fr 2.3fr 1.25fr;
+}
+
+/* Brand */
+.cc-foot-logo{display:inline-block;line-height:0}
+.cc-foot-logo img{
+  height:46px;width:auto;border-radius:8px;
+  border:1px solid var(--line,rgba(245,158,11,.22));
+  box-shadow:0 0 12px rgba(251,191,36,.18);
+}
+.cc-foot-about{color:var(--muted,#9a9a9a);margin:12px 0 14px;line-height:1.55;max-width:340px}
+
+/* Contact – simple text + small gold icons */
+.cc-foot-contact{list-style:none;margin:0;padding:0;display:grid;gap:9px}
+.cc-foot-contact li{display:flex;align-items:center;gap:10px}
+.cc-foot-contact i{width:16px;text-align:center;color:var(--gold,#fbbf24);font-size:.95rem;flex:none}
+.cc-foot-contact a{display:inline-flex;align-items:center;gap:10px;min-height:28px;overflow-wrap:anywhere;cursor:pointer}
+.cc-foot-contact a:hover i,.cc-foot-contact a:focus-visible i{color:var(--amber,#f59e0b)}
+@media(min-width:992px){.cc-foot-contact a{white-space:nowrap}}
+
+/* Link columns */
+.cc-foot-col h4{
+  font:700 .78rem 'Manrope',sans-serif;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--gold,#fbbf24);margin:2px 0 14px;padding-bottom:10px;position:relative;
+}
+.cc-foot-col h4::after{content:"";position:absolute;left:0;bottom:0;width:28px;height:2px;background:var(--amber,#f59e0b);border-radius:2px}
+.cc-foot-col>a{display:block;padding:4px 0}
+.cc-foot-col a:hover{transform:translateX(3px)}
+
+/* Popular routes – even 2-column grid, no dead space */
+.cc-routes-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 20px}
+@media(min-width:992px){.cc-routes-grid a{white-space:nowrap}}
+.cc-routes-grid a{display:block;padding:4px 0}
+.cc-routes-grid a:hover{transform:translateX(3px)}
+
+/* Bottom bar */
+.cc-foot-bottom{
+  margin-top:26px;padding:14px 0;text-align:center;
+  border-top:1px solid rgba(255,255,255,.07);color:var(--muted,#9a9a9a);font-size:.8rem;
+}
+
+/* Tablet */
+@media(max-width:991.98px){
+  .cc-foot-grid{grid-template-columns:1fr 1fr;gap:28px 32px}
+  .cc-foot-brand{grid-column:1/-1}
+  .cc-foot-routes{grid-column:1/-1;order:3}
+  .cc-foot-about{max-width:520px}
+}
+/* Mobile */
+@media(max-width:575.98px){
+  footer.cc-footer{padding-top:28px}
+  .cc-foot-grid{grid-template-columns:1fr 1fr;gap:24px 20px}
+  .cc-routes-grid{grid-template-columns:1fr 1fr;gap:0 16px}
+  .cc-routes-grid a,.cc-foot-col>a{font-size:.84rem}
+  .cc-foot-bottom{margin-top:20px}
+}
+@media(max-width:379.98px){
+  .cc-foot-grid,.cc-routes-grid{grid-template-columns:1fr}
+}
+
+/* ===== Fully clickable contact cards (stretched-link pattern) ===== */
+.cu-card--link{cursor:pointer}
+.cu-card--link .cu-stretch::after{content:"";position:absolute;inset:0;z-index:1;border-radius:inherit}
+.cu-card--link .cu-stretch:hover{transform:none} /* a transformed link would shrink its stretched area */
+.cu-card--link .cu-actions .cu-btn:not(.cu-stretch),.cu-card--link .cu-chips{position:relative;z-index:2} /* secondary buttons & chips stay independently clickable */
+.cu-card--link .cu-chip{cursor:pointer}
+.cu-card--link:hover{border-color:var(--gold);box-shadow:0 18px 44px rgba(0,0,0,.55),0 0 34px rgba(251,191,36,.28),0 0 0 1px rgba(251,191,36,.35)}
+.cu-card--wa:hover{border-color:#25D366;box-shadow:0 18px 44px rgba(0,0,0,.55),0 0 34px rgba(37,211,102,.28),0 0 0 1px rgba(37,211,102,.35)}
+.cu-card--link:has(.cu-stretch:focus-visible){outline:2px solid var(--gold);outline-offset:3px}
+.cu-card--link .cu-stretch:focus-visible{outline:none}
+.cu-card--link:hover .cu-stretch{box-shadow:0 10px 28px rgba(245,158,11,.5)}
+.cu-card--wa:hover .cu-stretch{background:#1ebe5b;box-shadow:0 10px 28px rgba(37,211,102,.5)}
+@media(hover:none){.cu-card--link:hover{transform:none}}
+
+/* ===== Headquarters & Hubs card ===== */
+a.cu-hq{color:inherit;text-decoration:none}
+a.cu-hq.cu-stretch:hover{transform:none}
+.cu-card--hub:hover .cu-hq{border-style:solid;border-color:var(--gold);background:rgba(245,158,11,.14)}
+a.cu-chip{display:inline-block;text-decoration:none;line-height:1.4}
+a.cu-chip:hover{color:#111;transform:translateY(-1px)}
+
+/* ===== "Book in seconds" card: fully clickable ===== */
+.cta-band--link{position:relative;cursor:pointer;transition:transform .3s,border-color .3s,box-shadow .3s}
+.cta-band--link .cta-stretch{color:inherit;text-decoration:none}
+.cta-band--link .cta-stretch::after{content:"";position:absolute;inset:0;z-index:1;border-radius:inherit}
+.cta-band--link .btn{position:relative;z-index:2;cursor:pointer}
+.cta-band--link:hover{transform:translateY(-4px);border-color:var(--gold);box-shadow:0 18px 44px rgba(0,0,0,.55),0 0 34px rgba(251,191,36,.28),0 0 0 1px rgba(251,191,36,.35)}
+.cta-band--link:has(.cta-stretch:focus-visible){outline:2px solid var(--gold);outline-offset:3px}
+.cta-band--link .cta-stretch:focus-visible{outline:none}
+@media(hover:none){.cta-band--link:hover{transform:none}}
+
+/* ===== Custom Tour & Holiday Packages ===== */
+.tp-sec{padding:72px 0}
+.tp-card{position:relative;overflow:hidden;text-align:center;padding:clamp(28px,5vw,52px) clamp(18px,4vw,48px);border-radius:22px;border:1.5px solid var(--amber);
+  background:radial-gradient(700px 260px at 50% -10%,rgba(251,191,36,.16),transparent 70%),linear-gradient(135deg,#231c0d,#141414 65%);
+  box-shadow:0 18px 50px rgba(0,0,0,.45),0 0 0 1px rgba(251,191,36,.12) inset;transition:box-shadow .3s,border-color .3s}
+.tp-card:hover{border-color:var(--gold);box-shadow:0 22px 60px rgba(0,0,0,.55),0 0 34px rgba(251,191,36,.22),0 0 0 1px rgba(251,191,36,.2) inset}
+.tp-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);background:rgba(251,191,36,.12);border:1px solid var(--line);border-radius:999px;padding:5px 14px;margin-bottom:14px}
+.tp-title{font-family:'Poppins',sans-serif;font-weight:800;font-size:clamp(1.6rem,3.8vw,2.4rem);line-height:1.2;letter-spacing:-.01em;color:#fff;margin:0 auto;max-width:760px}
+.tp-desc{color:#d4d4d4;font-size:clamp(.95rem,1.7vw,1.05rem);line-height:1.65;max-width:700px;margin:0 auto 22px}
+.tp-badges{list-style:none;margin:0 0 28px;padding:0;display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.tp-badges li{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border-radius:999px;font-size:.86rem;font-weight:700;color:var(--gold);background:rgba(245,158,11,.08);border:1px solid var(--line);transition:background .25s,border-color .25s,transform .25s}
+.tp-badges li:hover{background:rgba(245,158,11,.16);border-color:var(--amber);transform:translateY(-2px)}
+.tp-badges i{color:var(--amber)}
+.tp-actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.tp-actions .btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:12px 26px;font-size:.95rem;font-weight:800;border-radius:12px}
+.tp-actions .btn-call{background:linear-gradient(180deg,var(--gold),var(--amber));border:1.5px solid var(--amber);color:#111;box-shadow:0 6px 20px rgba(245,158,11,.3)}
+.tp-actions .btn-call:hover,.tp-actions .btn-call:focus-visible{background:linear-gradient(180deg,#ffd75a,var(--gold));color:#111;box-shadow:0 10px 28px rgba(245,158,11,.5);transform:translateY(-2px)}
+@media(max-width:991.98px){.tp-sec{padding:56px 0}}
+@media(max-width:575.98px){.tp-sec{padding:44px 0}.tp-actions{flex-direction:column}.tp-actions .btn{width:100%}.tp-badges li{font-size:.82rem}}
+
+
+/* =====================================================================
+   LIVE CUSTOMER REVIEWS - ultra-compact horizontal slider
+   Fixed height: one row of fixed-height cards that slide sideways, so the section
+   is the same size with 10 or 1000 reviews.
+   Every selector is prefixed .rv- / #reviews so nothing else on the site changes.
+   Brand: gold #ffb703 on near-black #0d0d0d.
+   ===================================================================== */
+#reviews.rv{
+  --rv-gold:#ffb703;
+  --rv-gold-soft:rgba(255,183,3,.14);
+  --rv-gold-line:rgba(255,183,3,.28);
+  --rv-bg:#0d0d0d;
+  --rv-card:#161616;
+  --rv-card2:#1d1d1d;
+  --rv-text:#f5f5f5;
+  --rv-muted:#a1a1a1;
+  --rv-radius:16px;
+  --rv-h:216px;                 /* <- the fixed card height (change here if you want taller/shorter) */
+  position:relative;color:var(--rv-text);text-align:left;
+  background:radial-gradient(800px 240px at 50% -40px,rgba(255,183,3,.10),transparent 70%),var(--rv-bg);
+  border-top:1px solid rgba(255,183,3,.14);border-bottom:1px solid rgba(255,183,3,.14);
+}
+/* beats the homepage's "main#top > section" padding for this section only */
+main#top > section#reviews.rv{padding-top:30px;padding-bottom:30px}
+#reviews{scroll-margin-top:100px}
+#reviews *,#reviews *::before,#reviews *::after{box-sizing:border-box}
+.rv-wrap{max-width:1280px;margin:0 auto;padding:0 12px}
+
+/* ---------- Inline header: title | rating badge | arrows + CTA ---------- */
+.rv-bar{display:flex;align-items:center;flex-wrap:wrap;gap:12px 18px;margin:0 0 14px}
+#reviews h2.rv-title{
+  font-family:'Poppins',sans-serif;font-weight:700;color:#fff;margin:0;
+  font-size:clamp(1.2rem,2.2vw,1.65rem);line-height:1.2;
+}
+#reviews h2.rv-title em{font-style:normal;color:var(--rv-gold)}
+.rv-rating{
+  display:inline-flex;align-items:center;gap:7px;padding:6px 14px 6px 10px;border-radius:999px;
+  background:linear-gradient(160deg,#261b06,#141414 75%);border:1px solid var(--rv-gold-line);
+  box-shadow:0 0 22px rgba(255,183,3,.10);white-space:nowrap;
+}
+.rv-rating svg{width:18px;height:18px;fill:var(--rv-gold);flex:none}
+.rv-rating b.rv-avg{font:800 1.15rem/1 'Poppins',sans-serif;color:var(--rv-gold)}
+.rv-rating small{color:var(--rv-muted);font-size:.8rem;font-weight:600;margin-left:-3px}
+.rv-count{color:#cfcfcf;font-size:.8rem;padding-left:9px;margin-left:3px;border-left:1px solid var(--rv-gold-line)}
+.rv-count b{color:#fff}
+.rv-tools{margin-left:auto;display:flex;align-items:center;gap:12px}
+.rv-arrows{display:flex;gap:8px}
+
+/* arrows reuse the fleet slider's .fc-btn look, tuned to the gold accent */
+.rv-nav.fc-btn{width:38px;height:38px;font-size:.95rem;color:var(--rv-gold);background:var(--rv-card);border-color:var(--rv-gold-line)}
+.rv-nav.fc-btn:hover:not(:disabled){background:var(--rv-gold);border-color:var(--rv-gold);color:#111;box-shadow:0 6px 18px rgba(255,183,3,.35)}
+
+/* inline-SVG chevrons (no icon-font dependency) */
+.rv-nav svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+
+/* ---------- Buttons ---------- */
+.rv-btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;cursor:pointer;white-space:nowrap;
+  font:800 .78rem 'Manrope',sans-serif;text-transform:uppercase;letter-spacing:.06em;
+  border:0;border-radius:10px;padding:11px 18px;color:#111;background:var(--rv-gold);
+  box-shadow:0 6px 18px rgba(255,183,3,.28);
+  transition:transform .2s,box-shadow .25s,background .25s;
+}
+.rv-btn:hover{background:#ffc83a;transform:translateY(-2px);box-shadow:0 12px 26px rgba(255,183,3,.4)}
+.rv-btn:active{transform:translateY(0)}
+.rv-btn svg{width:15px;height:15px;fill:currentColor}
+.rv-btn--ghost{background:transparent;color:var(--rv-gold);border:1px solid var(--rv-gold-line);box-shadow:none}
+.rv-btn--ghost:hover{background:var(--rv-gold-soft);box-shadow:none}
+.rv-btn:focus-visible,.rv-x:focus-visible,.rv-readmore:focus-visible,.rv-track:focus-visible,.rv-field input:focus-visible,
+.rv-field textarea:focus-visible,.rv-rate input:focus-visible + label{outline:3px solid var(--rv-gold);outline-offset:3px}
+
+/* ---------- Stars ---------- */
+.rv-stars{display:inline-flex;gap:2px;color:var(--rv-gold);line-height:1}
+.rv-stars svg{width:15px;height:15px;fill:currentColor;flex:none}
+.rv-stars .rv-off{color:#3a3a3a}
+
+/* ---------- Slider track (CSS scroll-snap: native touch swipe + smooth snapping) ---------- */
+.rv-slider{position:relative}
+.rv-track{
+  --per:3;--gap:18px;
+  display:flex;gap:var(--gap);margin:-22px 0 -24px;padding:28px 0 34px;list-style:none;
+  overflow-x:auto;overflow-y:hidden;
+  scroll-snap-type:x mandatory;scroll-behavior:smooth;
+  -webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;
+  scrollbar-width:none;cursor:grab;border-radius:var(--rv-radius);
+}
+.rv-track::-webkit-scrollbar{display:none}
+.rv-track.is-jump{scroll-behavior:auto}                       /* instant reposition before an animated glide */
+.rv-track.is-drag{scroll-snap-type:none;scroll-behavior:auto;cursor:grabbing;user-select:none;-webkit-user-select:none}
+.rv-track.is-drag *{pointer-events:none}
+
+/* ---------- Card (fixed height) ---------- */
+.rv-card{
+  flex:0 0 calc((100% - (var(--per) - 1) * var(--gap)) / var(--per));
+  scroll-snap-align:start;
+  position:relative;display:flex;flex-direction:column;overflow:hidden;min-width:0;
+  height:var(--rv-h);padding:16px 18px 14px;
+  background:linear-gradient(160deg,#1b1507,var(--rv-card) 62%);
+  border:1px solid var(--rv-gold-line);border-radius:var(--rv-radius);
+  box-shadow:0 8px 20px rgba(0,0,0,.4);
+  transition:transform .3s,border-color .3s,box-shadow .3s;
+}
+.rv-card::before{
+  content:"\201C";position:absolute;top:-2px;right:14px;font:800 4.4rem/1 'Poppins',serif;color:var(--rv-gold);opacity:.1;pointer-events:none;
+}
+.rv-card:hover{transform:translateY(-4px);border-color:var(--rv-gold);box-shadow:0 14px 30px rgba(0,0,0,.55),0 0 22px rgba(255,183,3,.18)}
+.rv-card--new{border-color:var(--rv-gold);animation:rvIn .9s cubic-bezier(.22,.8,.24,1)}
+@keyframes rvIn{from{opacity:0;transform:translateX(-24px) scale(.96);box-shadow:0 0 0 rgba(255,183,3,0)}55%{box-shadow:0 0 34px rgba(255,183,3,.55)}to{opacity:1;transform:none}}
+
+.rv-rate-row{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:0 0 9px;padding-right:30px}
+.rv-date{color:var(--rv-muted);font-size:.74rem;white-space:nowrap}
+.rv-body{
+  margin:0;flex:none;color:#dedede;font-size:.9rem;line-height:1.55;overflow-wrap:anywhere;
+  display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;line-clamp:3;overflow:hidden;
+}
+.rv-readmore{
+  display:none;flex:none;align-self:flex-start;margin:4px 0 0;padding:0;border:0;background:none;cursor:pointer;
+  font:700 .76rem 'Manrope',sans-serif;color:var(--rv-gold);text-decoration:underline;text-underline-offset:3px;
+}
+.rv-card.is-trunc .rv-readmore{display:inline-block}
+.rv-readmore:hover{color:#ffd666}
+
+.rv-top{display:flex;align-items:center;gap:11px;margin-top:auto;border-top:1px solid rgba(255,255,255,.08);padding-top:11px}
+.rv-avatar{
+  width:38px;height:38px;border-radius:50%;flex:none;display:grid;place-items:center;
+  font:800 .85rem 'Poppins',sans-serif;color:#111;background:linear-gradient(135deg,#ffd666,#ffb703 60%,#e09a00);
+  box-shadow:0 0 0 3px rgba(255,183,3,.15);
+}
+.rv-who{min-width:0;flex:1}
+.rv-name{display:flex;align-items:center;flex-wrap:wrap;gap:2px 7px;font-weight:700;font-size:.88rem;color:#fff;font-style:normal;line-height:1.25}
+.rv-route{display:flex;align-items:center;gap:5px;color:var(--rv-muted);font-size:.76rem;margin-top:1px;min-width:0}
+.rv-route::before{content:"";flex:none;width:6px;height:6px;border-radius:50%;background:var(--rv-gold)}
+.rv-badge{
+  display:inline-flex;align-items:center;gap:3px;font-size:.58rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;
+  padding:1px 7px;border-radius:999px;color:#7be3a1;background:rgba(46,204,113,.12);border:1px solid rgba(46,204,113,.3);
+}
+.rv-badge svg{width:10px;height:10px;fill:currentColor}
+.rv-badge--new{color:var(--rv-gold);background:var(--rv-gold-soft);border-color:var(--rv-gold-line)}
+
+/* ---------- Thin progress bar under the slider (works for any number of reviews) ---------- */
+.rv-progress{height:3px;border-radius:3px;background:rgba(255,255,255,.08);overflow:hidden;margin-top:2px}
+.rv-progress span{display:block;height:100%;width:100%;border-radius:3px;background:var(--rv-gold);transform-origin:left center;will-change:transform,width}
+.rv-progress.is-hidden{visibility:hidden}
+
+/* ---------- "Read full review" dialog ---------- */
+.rv-read-rate{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:0 0 12px}
+.rv-read-rate .rv-stars svg{width:20px;height:20px}
+.rv-read-body{margin:0 0 18px;color:#e6e6e6;font-size:1rem;line-height:1.7;white-space:pre-line;overflow-wrap:anywhere}
+.rv-read .rv-top{margin-top:0}
+.rv-read .rv-avatar{width:44px;height:44px}
+
+/* ---------- Modal (native <dialog>) ---------- */
+.rv-modal{
+  width:min(540px,calc(100vw - 24px));max-height:calc(100vh - 24px);overflow:auto;padding:0;border:1px solid var(--rv-gold-line);
+  border-radius:22px;color:var(--rv-text);text-align:left;background:linear-gradient(160deg,#1d1708,#111 60%);
+  box-shadow:0 30px 80px rgba(0,0,0,.75),0 0 40px rgba(255,183,3,.12);
+}
+.rv-modal::backdrop{background:rgba(0,0,0,.78);backdrop-filter:blur(3px)}
+.rv-modal[open]{animation:rvPop .3s cubic-bezier(.22,.8,.24,1)}
+@keyframes rvPop{from{opacity:0;transform:translateY(16px) scale(.97)}to{opacity:1;transform:none}}
+.rv-form{padding:28px 26px 24px}
+.rv-mhead{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:6px}
+.rv-mtitle{font-family:'Poppins',sans-serif;font-weight:700;font-size:1.35rem;margin:0;color:#fff}
+.rv-msub{color:var(--rv-muted);font-size:.88rem;margin:0 0 20px}
+.rv-x{
+  flex:none;width:36px;height:36px;border-radius:50%;cursor:pointer;display:grid;place-items:center;
+  color:var(--rv-text);background:var(--rv-card2);border:1px solid rgba(255,255,255,.12);transition:background .2s,color .2s;
+}
+.rv-x:hover{background:var(--rv-gold);color:#111}
+.rv-x svg{width:16px;height:16px;stroke:currentColor;stroke-width:2.4;fill:none;stroke-linecap:round}
+
+.rv-field{margin-bottom:16px;border:0;padding:0;min-width:0}
+.rv-field > label,.rv-field > legend{float:none;display:block;width:auto;font-weight:700;font-size:.82rem;margin-bottom:6px;color:#eee;padding:0}
+.rv-field input[type=text],.rv-field textarea{
+  width:100%;font:500 .95rem 'Manrope',sans-serif;color:#fff;background:#0d0d0d;border:1px solid rgba(255,255,255,.16);
+  border-radius:10px;padding:12px 14px;transition:border-color .2s,box-shadow .2s;
+}
+.rv-field textarea{min-height:120px;resize:vertical}
+.rv-field input::placeholder,.rv-field textarea::placeholder{color:#6f6f6f}
+.rv-field input[type=text]:focus,.rv-field textarea:focus{outline:none;border-color:var(--rv-gold);box-shadow:0 0 0 3px rgba(255,183,3,.2)}
+.rv-field.rv-invalid input[type=text],.rv-field.rv-invalid textarea{border-color:#ff6b6b}
+.rv-err{display:none;color:#ff8a8a;font-size:.78rem;margin-top:5px}
+.rv-field.rv-invalid .rv-err{display:block}
+.rv-hint{display:flex;justify-content:space-between;gap:10px;color:var(--rv-muted);font-size:.75rem;margin-top:5px}
+
+/* star picker: radios in reverse DOM order so hover/checked fills leftwards */
+.rv-rate{display:inline-flex;flex-direction:row-reverse;gap:4px}
+.rv-rate input{position:absolute;opacity:0;width:1px;height:1px;pointer-events:none}
+.rv-rate label{cursor:pointer;color:#3a3a3a;transition:color .15s,transform .15s;line-height:0;padding:2px}
+.rv-rate label svg{width:36px;height:36px;fill:currentColor}
+.rv-rate label:hover,.rv-rate label:hover ~ label,.rv-rate input:checked ~ label{color:var(--rv-gold)}
+.rv-rate label:hover{transform:scale(1.12)}
+.rv-rate-text{margin-left:12px;color:var(--rv-gold);font-weight:700;font-size:.85rem;align-self:center}
+.rv-rate-wrap{display:flex;align-items:center;flex-wrap:wrap}
+
+.rv-hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;overflow:hidden}
+.rv-actions{display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap;margin-top:6px}
+.rv-actions .rv-btn{padding:13px 22px}
+.rv-note{color:var(--rv-muted);font-size:.74rem;margin:14px 0 0}
+
+/* ---------- Toast ---------- */
+.rv-toast{
+  position:fixed;left:50%;bottom:26px;z-index:3000;transform:translate(-50%,30px);opacity:0;pointer-events:none;
+  background:#161616;color:#fff;border:1px solid var(--rv-gold);border-radius:12px;padding:12px 18px;font-weight:700;font-size:.9rem;
+  box-shadow:0 14px 40px rgba(0,0,0,.6),0 0 24px rgba(255,183,3,.25);transition:opacity .3s,transform .3s;max-width:calc(100vw - 32px);
+}
+.rv-toast.rv-show{opacity:1;transform:translate(-50%,0)}
+
+/* ---------- Responsive ---------- */
+@media(max-width:991.98px){
+  .rv-track{--per:2}
+}
+@media(max-width:640px){
+  main#top > section#reviews.rv{padding-top:24px;padding-bottom:24px}
+  .rv-bar{gap:10px 12px;margin-bottom:12px}
+  #reviews h2.rv-title{flex:1 0 100%}
+  .rv-arrows{display:none}                          /* phones: swipe instead */
+  .rv-tools{margin-left:auto}
+  .rv-bar > .rv-rating{padding:5px 11px 5px 9px}
+  .rv-tools .rv-btn{padding:10px 13px;font-size:.7rem;letter-spacing:.04em}
+  .rv-track{--per:1.12;--gap:12px}                  /* one card + a peek of the next one */
+  .rv-card{padding:15px 16px 13px}
+  .rv-form{padding:22px 18px 20px}
+  .rv-rate label svg{width:40px;height:40px}
+  .rv-actions .rv-btn{flex:1}
+}
+@media(prefers-reduced-motion:reduce){
+  .rv-track{scroll-behavior:auto}
+  .rv-card,.rv-btn,.rv-toast,.rv-modal[open],.rv-card--new{transition:none;animation:none}
+}
+
+/* Review section: breathing room below the "View all vehicles & rates" section */
+#reviews{margin-top:50px}
+@media (max-width:575px){#reviews{margin-top:36px}}
+
+/* =====================================================================
+   REVIEWS - centered header + fresh gradient cards (overrides, keep at end)
+   ===================================================================== */
+/* ---- 1. Centered header: Reviews on top, then  < [4.9 badge] [WRITE A REVIEW] > ---- */
+#reviews .rv-bar{justify-content:center;align-items:center;gap:14px 16px;margin:0 0 22px}
+/* Same typography as the "All India & Interstate Routes" title (.sec-title.sec-head__title):
+   Poppins 700, var(--text) colour, clamp(1.4rem,3.2vw,2.1rem), line-height 1.15, no letter-spacing, Title Case */
+#reviews h2.rv-title{
+  flex:1 0 100%;text-align:center;position:relative;padding-bottom:12px;
+  font-family:'Poppins',sans-serif;font-weight:700;
+  font-size:clamp(1.4rem,3.2vw,2.1rem);line-height:1.15;
+  letter-spacing:normal;color:var(--text);
+  text-transform:none !important;
+}
+#reviews h2.rv-title::after{          /* small glowing gold underline */
+  content:"";position:absolute;left:50%;bottom:0;width:64px;height:3px;margin-left:-32px;border-radius:3px;
+  background:linear-gradient(90deg,transparent,var(--rv-gold),transparent);box-shadow:0 0 14px rgba(255,183,3,.7);
+}
+#reviews .rv-tools,#reviews .rv-arrows{display:contents}      /* lets arrows, badge and button sit in one centered row */
+#reviews .rv-bar > .rv-rating{order:2}
+#reviews .rv-btn{order:3}
+#reviews [data-rv-prev]{order:1}
+#reviews [data-rv-next]{order:4}
+#reviews .rv-rating{box-shadow:0 0 26px rgba(255,183,3,.22),inset 0 0 12px rgba(255,183,3,.08)}
+#reviews .rv-rating svg{filter:drop-shadow(0 0 5px rgba(255,183,3,.9))}
+@media(max-width:640px){
+  #reviews .rv-bar{gap:12px}
+  #reviews h2.rv-title{font-size:1.3rem}                       /* same phone size as .sec-head__title */
+  #reviews .rv-arrows{display:none}                            /* phones: swipe instead */
+  #reviews .rv-tools{display:contents}
+}
+
+/* ---- 2. Fresh, youthful cards ---- */
+#reviews .rv-card{
+  background:linear-gradient(145deg,#161616 0%,#1f1f1f 100%);
+  border:1px solid rgba(255,255,255,.08);
+  box-shadow:0 8px 22px rgba(0,0,0,.45);
+}
+#reviews .rv-card::after{             /* soft gold glow in the corner */
+  content:"";position:absolute;right:-50px;top:-50px;width:140px;height:140px;border-radius:50%;pointer-events:none;
+  background:radial-gradient(circle,rgba(255,183,3,.16),transparent 70%);
+}
+#reviews .rv-card:hover{
+  border-color:var(--rv-gold);
+  box-shadow:0 14px 32px rgba(0,0,0,.6),0 0 0 1px rgba(255,183,3,.55),0 0 28px rgba(255,183,3,.35);
+}
+#reviews .rv-card--new{border-color:var(--rv-gold)}
+/* glowing stars */
+#reviews .rv-stars{gap:3px}
+#reviews .rv-stars svg{width:16px;height:16px;color:#ffc933;filter:drop-shadow(0 0 4px rgba(255,201,51,.85))}
+#reviews .rv-stars .rv-off{color:#3a3a3a;filter:none}
+/* vibrant glowing avatar */
+#reviews .rv-avatar{
+  width:42px;height:42px;color:#111;
+  background:linear-gradient(135deg,#ffe27a 0%,#ffb703 55%,#ff8a00 100%);
+  box-shadow:0 0 0 2px #161616,0 0 0 4px rgba(255,183,3,.75),0 0 18px rgba(255,183,3,.65);
+  transition:box-shadow .3s,transform .3s;
+}
+#reviews .rv-card:hover .rv-avatar{transform:scale(1.07);box-shadow:0 0 0 2px #161616,0 0 0 4px var(--rv-gold),0 0 26px rgba(255,183,3,.95)}
+
+/* =====================================================================
+   REVIEWS - dark section + 6 accent colours (all gold now; data-theme kept for reviews.js)
+   --acc / --acc-rgb : the official accent (border, glow, avatar)
+   --acc-text        : text-safe tint for stars + tags (only violet needs a lighter one)
+   --on              : initials colour on the avatar disc
+   ===================================================================== */
+#reviews.rv{
+  background:
+    radial-gradient(360px 220px at 16% 62%,rgba(255,183,3,.16),transparent 70%),     /* soft gold light behind the glass cards */
+    radial-gradient(360px 220px at 50% 62%,rgba(255,183,3,.14),transparent 70%),
+    radial-gradient(360px 220px at 84% 62%,rgba(255,183,3,.16),transparent 70%),
+    radial-gradient(800px 240px at 50% -40px,rgba(255,183,3,.10),transparent 70%),#0d0d0d;
+  border-top:1px solid rgba(255,183,3,.14);border-bottom:1px solid rgba(255,183,3,.14);color:#f5f5f5;
+}
+/* One unified golden-yellow theme for ALL review cards (any data-theme value) */
+#reviews .rv-card[data-theme]{--acc:#ffb703;--acc-rgb:255,183,3;--acc-text:#ffb703;--on:#111}
+
+/* Glassmorphism card: translucent tint + blur of whatever sits behind + neon edge */
+#reviews .rv-card[data-theme]{
+  background:rgba(255,183,3,.08);
+  -webkit-backdrop-filter:blur(10px);
+  backdrop-filter:blur(10px);
+  border:1px solid rgba(255,183,3,.4);
+  box-shadow:0 0 16px rgba(255,183,3,.14),inset 0 1px 0 rgba(255,255,255,.06);
+  transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease;
+}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  #reviews .rv-card[data-theme]{background:#1a1608}   /* no blur support: opaque tint keeps text readable */
+}
+#reviews .rv-card[data-theme]::before{color:var(--acc-text);opacity:.14}
+#reviews .rv-card[data-theme]::after{background:radial-gradient(circle,rgba(var(--acc-rgb),.14),transparent 70%)}
+#reviews .rv-card[data-theme]:hover,
+#reviews .rv-card[data-theme]:focus-within{
+  transform:translateY(-6px);
+  border-color:#ffb703;
+  box-shadow:0 10px 25px rgba(255,183,3,.3);
+}
+@media (prefers-reduced-motion:reduce){#reviews .rv-card[data-theme]:hover,#reviews .rv-card[data-theme]:focus-within{transform:none}}
+/* crisp text */
+#reviews .rv-card[data-theme] .rv-body{color:#f5f5f5}
+#reviews .rv-card[data-theme] .rv-name{color:#fff}
+#reviews .rv-card[data-theme] .rv-route,#reviews .rv-card[data-theme] .rv-date{color:#b8b8b8}
+#reviews .rv-card[data-theme] .rv-readmore{color:var(--acc-text)}
+#reviews .rv-card[data-theme] .rv-route::before{background:var(--acc);box-shadow:0 0 8px rgba(var(--acc-rgb),.8)}
+#reviews .rv-card[data-theme] .rv-top{border-top-color:rgba(255,255,255,.1)}
+/* star ratings */
+#reviews .rv-card[data-theme] .rv-stars svg{color:var(--acc-text);filter:drop-shadow(0 0 4px rgba(var(--acc-rgb),.8))}
+#reviews .rv-card[data-theme] .rv-stars .rv-off{color:#3a3a3a;filter:none}
+/* user avatar */
+#reviews .rv-card[data-theme] .rv-avatar{
+  color:var(--on);background:var(--acc);
+  box-shadow:0 0 0 2px #161616,0 0 0 4px rgba(var(--acc-rgb),.7),0 0 18px rgba(var(--acc-rgb),.6);
+}
+#reviews .rv-card[data-theme]:hover .rv-avatar{box-shadow:0 0 0 2px #161616,0 0 0 4px var(--acc),0 0 26px rgba(var(--acc-rgb),.9)}
+/* verified rider tag (+ "Just now" tag on new reviews) */
+#reviews .rv-card[data-theme] .rv-badge{color:var(--acc-text);background:rgba(var(--acc-rgb),.14);border:1px solid rgba(var(--acc-rgb),.5)}
+
+/* ===== Local 8 Hrs / 80 Km taxi package (dark + gold glass) ===== */
+.lp-sec{background:#0a0a0a;padding:clamp(48px,7vw,84px) 0;position:relative;border-top:1px solid rgba(255,193,7,.12);border-bottom:1px solid rgba(255,193,7,.12)}
+.lp-sec:before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(700px 320px at 50% 0%,rgba(255,193,7,.09),transparent 70%)}
+.lp-sec>.container{position:relative}
+.lp-head{text-align:center;max-width:760px;margin:0 auto clamp(28px,4vw,44px)}
+.lp-badge{display:inline-flex;align-items:center;gap:8px;font-size:.8rem;font-weight:800;letter-spacing:.04em;color:#ffc107;background:rgba(255,193,7,.1);border:1px solid rgba(255,193,7,.4);border-radius:999px;padding:6px 16px;margin-bottom:14px}
+.lp-title{color:#fff;margin-bottom:10px;line-height:1.3;font-size:clamp(1.5rem,4.2vw,2.1rem)}
+.lp-sub{color:#b9b9b9;margin:0 auto;font-size:clamp(.95rem,2.4vw,1.05rem)}
+.lp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:1040px;margin:0 auto}
+.lp-card{position:relative;display:flex;flex-direction:column;padding:28px 24px 24px}
+.lp-ribbon{position:absolute;top:-12px;right:20px;background:#ffc107;color:#111;font-size:.72rem;font-weight:800;padding:4px 12px;border-radius:999px;box-shadow:0 4px 14px rgba(255,193,7,.35)}
+.lp-ico{width:54px;height:54px;border-radius:14px;display:grid;place-items:center;font-size:1.6rem;color:#ffc107;background:rgba(255,193,7,.1);border:1px solid rgba(255,193,7,.3);margin-bottom:14px}
+.lp-name{color:#fff;font-size:1.35rem;font-weight:800;margin:0 0 6px}
+.lp-price{color:#ffc107;font:800 2.5rem/1.1 'Fraunces',serif;margin-bottom:16px}
+.lp-price .lp-cur{font-size:1.5rem;margin-right:2px}
+.lp-price small{display:block;font:600 .8rem 'Manrope',sans-serif;color:#9a9a9a;margin-top:4px}
+.lp-list{list-style:none;margin:0 0 22px;padding:16px 0 0;border-top:1px solid rgba(255,193,7,.18);display:grid;gap:11px;flex:1}
+.lp-list li{display:flex;align-items:flex-start;gap:10px;color:#e8e8e8;font-size:.95rem;line-height:1.45}
+.lp-list i{color:#ffc107;flex:none;margin-top:2px}
+.lp-list b{color:#ffc107}
+a.btn-wa.lp-btn{display:flex;width:100%;padding:13px 14px;font-size:.9rem}
+.lp-terms{max-width:1040px;margin:26px auto 0;padding:22px 26px;border-radius:18px;background:rgba(255,255,255,.035);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border:1px solid rgba(255,193,7,.22);box-shadow:0 10px 28px rgba(0,0,0,.4)}
+.lp-terms-h{display:flex;align-items:center;gap:10px;color:#ffc107;font-size:1.1rem;font-weight:800;margin:0 0 12px}
+.lp-terms ul{margin:0;padding-left:20px;display:grid;gap:7px;color:#cfcfcf;font-size:.92rem;line-height:1.55}
+.lp-terms li::marker{color:#ffc107}
+@media(max-width:991px){.lp-grid{grid-template-columns:1fr;max-width:460px}.lp-card--pop{margin-top:8px}}
+@media(max-width:575px){.lp-card{padding:24px 18px 20px}.lp-terms{padding:18px 16px}.lp-price{font-size:2.2rem}}
+
+/* ===== Hero: booking form embedded on the right (2 columns on desktop, stacked on mobile) ===== */
+.hero .hero-container{display:grid;grid-template-columns:minmax(0,1fr) 420px;grid-template-areas:"content form" "image form";column-gap:32px;row-gap:24px;align-items:start;text-align:left}
+.hero .hero-content{grid-area:content;color:#fff}
+.hero .hero-container>.booking-card-embedded{grid-area:form}
+.hero .hero-container>.hero-card{grid-area:image;margin:0}
+.hero .hero-container .hero-img{min-height:0}
+.hero .hero-container .hero-content h1{text-align:left;max-width:none;margin:0 0 16px}
+.hero .hero-container .hero-content .hero-sub{max-width:none;margin:0 0 24px}
+.hero .hero-container .hero-content .hero-actions{justify-content:flex-start;margin:0;padding:0}
+.hero .hero-container .hero-content .hero-cta{margin:0}
+
+.booking-card-embedded,.booking-card-embedded *{box-sizing:border-box}
+.booking-card-embedded{position:sticky;top:140px;scroll-margin-top:140px;background:linear-gradient(160deg,#1d1709,#121212 70%);border:1px solid rgba(255,193,7,.4);border-radius:16px;box-shadow:0 15px 35px rgba(0,0,0,.5),0 0 24px rgba(255,193,7,.08);overflow:hidden;text-align:left;color:#f5f5f5}
+.booking-card-embedded .bce-head{background:#2a2210;border-bottom:1px solid rgba(255,193,7,.35);padding:10px 18px;text-align:center}
+.booking-card-embedded .bce-head h2{margin:0 0 2px;font-size:1.15rem;line-height:1.2;color:#ffc107}
+.booking-card-embedded .bce-head p{margin:0;font-size:.8rem;color:#cbd5e1}
+.booking-card-embedded .bce-body{padding:12px 18px 14px}
+.booking-card-embedded .form-group{margin-bottom:8px;min-width:0}
+.booking-card-embedded .bce-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.booking-card-embedded label{display:block;margin:0 0 4px;font-size:.76rem;line-height:1.2;font-weight:700;color:#d9d9d9}
+.booking-card-embedded input,.booking-card-embedded select{display:block;width:100%;background:#141414;color:#fff;border:1px solid rgba(255,255,255,.18);border-radius:10px;padding:7px 10px;font-size:.88rem;font-family:inherit;color-scheme:dark;min-height:36px;text-overflow:ellipsis}
+.booking-card-embedded input::placeholder{color:#777}
+.booking-card-embedded input:focus,.booking-card-embedded select:focus{outline:0;border-color:#ffc107;box-shadow:0 0 0 3px rgba(255,193,7,.18)}
+.booking-card-embedded select option{background:#141414;color:#fff}
+.booking-card-embedded .bce-submit{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;margin-top:4px;padding:10px;border:0;border-radius:10px;background:#25D366;color:#fff;font-weight:800;font-size:1rem;cursor:pointer;box-shadow:0 6px 18px rgba(37,211,102,.25);transition:transform .2s ease,box-shadow .2s ease}
+.booking-card-embedded .bce-submit:hover,.booking-card-embedded .bce-submit:focus-visible{transform:translateY(-2px);box-shadow:0 10px 24px rgba(37,211,102,.35)}
+.booking-card-embedded .bce-submit i{font-size:1.2em}
+
+@media (max-width:900px){
+  .hero .hero-container{grid-template-columns:minmax(0,1fr);grid-template-areas:"content" "form" "image";row-gap:22px;text-align:center}
+  .hero .hero-container .hero-content h1{text-align:center;margin:0 auto 14px}
+  .hero .hero-container .hero-content .hero-sub{margin:0 auto 20px}
+  .hero .hero-container .hero-content .hero-actions{justify-content:center}
+  .booking-card-embedded{position:static;width:100%;max-width:560px;margin:0 auto}
+}
+@media (max-width:420px){
+  .booking-card-embedded .bce-body{padding:12px 14px 14px}
+}
+@media (max-width:359px){
+  .booking-card-embedded .bce-row{grid-template-columns:1fr}
+}
+
+/* =====================================================================
+   SMOOTH CAROUSELS  (homepage fleet slider, tour slider, fleet-page marquee)
+   Goals: GPU-composited layers, locked image boxes, no WebKit flicker.
+   ===================================================================== */
+
+/* 1) Locked image box: the frame keeps one aspect ratio and the photo is only
+      ever cropped (object-fit:cover), never stretched or re-measured mid-slide. */
+.car-img{height:var(--img-h,auto);aspect-ratio:3/2;background-color:#2b2b2b;background-image:none;isolation:isolate}
+.car-img:before{content:none;display:none}                 /* old background:inherit zoom layer is replaced by the <img> */
+.car-img>.car-photo{
+  position:absolute;inset:0;z-index:1;display:block;width:100%;height:100%;
+  object-fit:cover;object-position:center;
+  transform:translateZ(0);
+  -webkit-backface-visibility:hidden;backface-visibility:hidden;
+  transition:transform .8s cubic-bezier(.22,.61,.36,1)}
+.car-img:after{z-index:1}                                   /* gradient sits above the photo ...        */
+.car-img>div{z-index:2}                                     /* ... and the caption above the gradient   */
+.car:hover .car-img>.car-photo{transform:scale(1.08) translateZ(0)}
+
+/* 2) Sliders: viewport + track on their own GPU layers */
+.fc-viewport{isolation:isolate;transform:translateZ(0)}     /* also fixes WebKit's "overflow:hidden ignores composited children" bug */
+.fc-track{
+  transform:translate3d(0,0,0);
+  will-change:transform;
+  -webkit-backface-visibility:hidden;backface-visibility:hidden}
+.fc-slide{
+  /* JS writes --slide-w in WHOLE pixels; the calc() is only the no-JS fallback */
+  flex:0 0 var(--slide-w, calc((100% - (var(--per) - 1) * var(--gap)) / var(--per)));
+  transform:translateZ(0);
+  -webkit-backface-visibility:hidden;backface-visibility:hidden}
+.fc-slide>.car,.fc-slide>.tpk{isolation:isolate}            /* keeps rounded corners clipped on Safari/iOS */
+
+/* While the track is moving, cards sliding under a still cursor must not toggle :hover (that was the jitter) */
+.fc-track.is-sliding{pointer-events:none}
+.fc-track.is-sliding .car,.fc-track.is-sliding .tpk{transition:none!important}
+
+/* 3) Fleet page marquee (auto-scroll left)
+      - tiles get INTEGER heights (8/5 gave 147.5 / 167.5 / 118.75px = half-pixel rasterisation = shimmer)
+      - loop distance is an exact integer, measured by JS into --fp-shift (fallback = the old calc)
+      - runs on the compositor: translate3d + will-change, no main-thread work per frame */
+.fleet-hero .fleet-preview{transform:translateZ(0);isolation:isolate}
+.fp-track{
+  transform:translate3d(0,0,0);
+  will-change:transform;
+  -webkit-backface-visibility:hidden;backface-visibility:hidden}
+@keyframes fpScroll{
+  from{transform:translate3d(0,0,0)}
+  to{transform:translate3d(calc(-1 * var(--fp-shift, calc(50% + 7px))),0,0)}}
+.fp-tile{width:236px;height:148px;aspect-ratio:auto;
+  transform:translateZ(0);isolation:isolate;
+  -webkit-backface-visibility:hidden;backface-visibility:hidden;
+  transition:transform .3s cubic-bezier(.22,.61,.36,1),border-color .3s,box-shadow .3s}
+@media(min-width:992px){.fp-tile{width:268px;height:168px}}
+@media(max-width:575.98px){.fp-tile{width:190px;height:119px}}
+.fp-tile img{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;object-position:center;
+  transform:translateZ(0);
+  -webkit-backface-visibility:hidden;backface-visibility:hidden}
+.fp-tile:hover img{transform:scale(1.07) translateZ(0)}
+@media(prefers-reduced-motion:reduce){
+  .fc-track,.fp-track{will-change:auto}
+  .car:hover .car-img>.car-photo,.fp-tile:hover img{transform:translateZ(0)}
+}
+
+/* =====================================================================
+   "24/7" WhatsApp link inside page-head subtitles (routes.html + fleet.html)
+   mint accent -> gold on hover, underline that glides outward, no layout shift
+   ===================================================================== */
+.page-head a.support-link{
+  color:#6ee7b7;font-weight:800;cursor:pointer;
+  text-decoration:underline;text-decoration-color:currentColor;
+  text-decoration-thickness:1.5px;text-underline-offset:3px;
+  transition:color .3s ease,text-decoration-color .3s ease,text-underline-offset .3s ease,text-decoration-thickness .3s ease}
+.page-head a.support-link:hover,
+.page-head a.support-link:focus-visible{
+  color:#fde68a;text-decoration-color:#fde68a;
+  text-underline-offset:5px;text-decoration-thickness:2px}
+.page-head a.support-link:focus-visible{outline:2px solid #fde68a;outline-offset:3px;border-radius:3px}
+
+/* Local package (.lp-card) and tour package (.tpk) hover / focus / press states now live in the
+   GOLDEN GLOW CARD block at the end of this file. */
+
+/* =====================================================================
+   GOLDEN GLOW CARD  -  .golden-glow-card
+   Reusable premium card: dark surface, gold border, gold glow on
+   hover / keyboard focus / press. Add the class to any card wrapper.
+
+   Used on the Home Page by: .svc (All India routes), .rc-card (Gujarat
+   routes), .tpk (tour packages), .lp-card (local 8h/80km), .car (fleet).
+
+   Notes
+   - The class is doubled in every selector on purpose: it lifts specificity
+     just enough to win over the older per-card rules (.car:hover,
+     .rg-grid .svc:hover ...) that other pages still use.
+   - Only transform / border-color / box-shadow / opacity are animated
+     (no layout properties), so hover never causes reflow.
+   - The inner gold edge-glow lives on ::after and fades with opacity, so it
+     also shows on top of photos (an inset box-shadow would be hidden by them).
+   - Tweak the look from the variables below.
+   ===================================================================== */
+:root{
+  --gg-bg-from:#1e1e1e;
+  --gg-bg-to:#121212;
+  --gg-border:rgba(255,193,7,.4);
+  --gg-border-hover:#ffb700;
+  --gg-ring:#ffd700;
+  --gg-radius:16px;
+  --gg-lift:-4px;
+  --gg-dur:.3s;
+  --gg-ease:cubic-bezier(.4,0,.2,1);
+  --gg-shadow:0 4px 15px rgba(0,0,0,.5);
+  --gg-glow-off:0 0 20px rgba(255,183,0,0);      /* same shadow count as hover so box-shadow interpolates smoothly */
+  --gg-glow:0 0 20px rgba(255,183,0,.5);
+  --gg-inset:inset 0 0 10px rgba(255,183,0,.15);
+}
+@media(max-width:575.98px){:root{--gg-radius:14px}}
+
+/* ---- default state ---- */
+.golden-glow-card.golden-glow-card{
+  position:relative;
+  background:linear-gradient(160deg,var(--gg-bg-from),var(--gg-bg-to));
+  border:1px solid var(--gg-border);
+  border-radius:var(--gg-radius);
+  box-shadow:var(--gg-shadow),var(--gg-glow-off);
+  cursor:pointer;
+  -webkit-backdrop-filter:none;backdrop-filter:none;       /* opaque surface: no blur cost */
+  -webkit-tap-highlight-color:transparent;
+  transition:transform var(--gg-dur) var(--gg-ease),
+             border-color var(--gg-dur) var(--gg-ease),
+             box-shadow var(--gg-dur) var(--gg-ease);
+}
+.golden-glow-card.golden-glow-card::after{                 /* inner edge glow, revealed by opacity */
+  content:"";position:absolute;inset:0;z-index:1;
+  border-radius:inherit;box-shadow:var(--gg-inset);
+  opacity:0;pointer-events:none;
+  transition:opacity var(--gg-dur) var(--gg-ease);
+}
+/* "Most popular" local package keeps a stronger border and a faint gold wash */
+.golden-glow-card.lp-card--pop{
+  --gg-border:rgba(255,193,7,.7);
+  background:linear-gradient(160deg,rgba(255,193,7,.12),rgba(255,193,7,0) 60%),
+             linear-gradient(160deg,var(--gg-bg-from),var(--gg-bg-to));
+}
+.golden-glow-card .lp-ribbon{z-index:2}
+
+/* neutralise the older sticky :focus-within lift on the India route cards (it kept the card raised after a click) */
+.rg-grid .svc.golden-glow-card{transform:none;border-color:var(--gg-border);box-shadow:var(--gg-shadow),var(--gg-glow-off)}
+
+/* ---- hover (mouse / trackpad only, so phones never get a "stuck" raised card) ---- */
+@media (hover:hover){
+  .golden-glow-card.golden-glow-card:hover{
+    transform:translate3d(0,var(--gg-lift),0);
+    border-color:var(--gg-border-hover);
+    box-shadow:var(--gg-shadow),var(--gg-glow);
+  }
+  .golden-glow-card.golden-glow-card:hover::after{opacity:1}
+}
+
+/* ---- keyboard focus: same glow plus an accessible gold ring ---- */
+.golden-glow-card.golden-glow-card:focus-visible,
+.route-card-link:focus-visible>.golden-glow-card.golden-glow-card{
+  transform:translate3d(0,var(--gg-lift),0);
+  border-color:var(--gg-border-hover);
+  box-shadow:var(--gg-shadow),var(--gg-glow);
+  outline:2px solid var(--gg-ring);outline-offset:3px;
+}
+.golden-glow-card.golden-glow-card:focus-visible::after,
+.route-card-link:focus-visible>.golden-glow-card.golden-glow-card::after{opacity:1}
+/* cards whose link/button inside gets the focus (stretched-link cards, WhatsApp / Call buttons) */
+.golden-glow-card.golden-glow-card:has(:focus-visible){
+  transform:translate3d(0,var(--gg-lift),0);
+  border-color:var(--gg-border-hover);
+  box-shadow:var(--gg-shadow),var(--gg-glow);
+  outline:2px solid var(--gg-ring);outline-offset:3px;
+}
+.golden-glow-card.golden-glow-card:has(:focus-visible)::after{opacity:1}
+/* one ring per card: hide the inner links' own rings */
+.golden-glow-card .svc__link:focus-visible::after,
+.golden-glow-card .car-overlay:focus-visible{outline:none}
+
+/* ---- press feedback (also gives touch screens a glow while the finger is down) ---- */
+.golden-glow-card.golden-glow-card:active{
+  transform:translate3d(0,-1px,0) scale(.99);
+  border-color:var(--gg-border-hover);
+  box-shadow:var(--gg-shadow),var(--gg-glow);
+  transition-duration:.12s;
+}
+.golden-glow-card.golden-glow-card:active::after{opacity:1}
+
+/* sliding carousels already switch card transitions off while moving (see .fc-track.is-sliding) */
+
+@media (prefers-reduced-motion:reduce){
+  .golden-glow-card.golden-glow-card,
+  .golden-glow-card.golden-glow-card::after{transition:none}
+  .golden-glow-card.golden-glow-card:hover,
+  .golden-glow-card.golden-glow-card:focus-visible,
+  .golden-glow-card.golden-glow-card:has(:focus-visible),
+  .route-card-link:focus-visible>.golden-glow-card.golden-glow-card,
+  .golden-glow-card.golden-glow-card:active{transform:none}
+}
+
+/* =====================================================================
+   CURSOR SPOTLIGHT  (.glow-spot, injected by glow-spot.js)
+   A soft golden radial light that follows the mouse inside a card.
+   - Sits BEHIND the card content (z-index:-1 inside the card's own stacking
+     context), so text, photos' captions and buttons stay on top and clickable.
+   - pointer-events:none, fades with opacity only (compositor-friendly).
+   - --mx / --my are set from JS; the 50% fallback centres the light.
+   ===================================================================== */
+.golden-glow-card,.glow-card{isolation:isolate}
+.glow-spot{
+  position:absolute;inset:0;z-index:-1;
+  border-radius:inherit;pointer-events:none;
+  background:radial-gradient(280px circle at var(--mx,50%) var(--my,50%),
+             rgba(255,200,40,.22),rgba(255,183,0,.09) 38%,transparent 68%);
+  opacity:0;
+  transition:opacity .35s cubic-bezier(.4,0,.2,1);
+}
+@media (hover:hover){
+  .golden-glow-card:hover>.glow-spot,
+  .glow-card:hover>.glow-spot{opacity:1}
+}
+/* photo cards: the photo covers the spot above, so the existing top overlay (::after) carries a faint copy of the light across the whole card */
+.golden-glow-card.golden-glow-card::after{
+  background:radial-gradient(280px circle at var(--mx,50%) var(--my,50%),rgba(255,200,40,.08),transparent 65%);
+}
+@media (hover:none),(prefers-reduced-motion:reduce){.glow-spot{display:none}}
+
+/* =====================================================================
+   ROUTE CHIPS  (.chips a)  -  every route button on the site
+   routes.html (all sections), /routes/*.html and the Home Page route cards.
+   One component, tuned with custom properties - no !important, no
+   per-page overrides.
+   Rest  : dark glass, thin gold border, white text.
+   Hover / keyboard focus : solid gold fill, black text (about 15:1 contrast),
+            soft yellow-gold glow, 2px lift.
+   Press : settles back down with a slight squeeze (also the touch feedback).
+   Only transform / box-shadow / colours animate, so it stays on the GPU path.
+   ===================================================================== */
+.chips a{
+  --chip-gold:#ffd700;
+  --chip-glow:rgba(255,200,40,.55);
+  display:inline-flex;align-items:center;justify-content:center;
+  box-sizing:border-box;max-width:100%;text-align:center;line-height:1.25;
+  background-color:rgba(0,0,0,.35);
+  border:1px solid rgba(255,183,0,.4);
+  color:#fff;
+  text-decoration:none;
+  cursor:pointer;
+  -webkit-tap-highlight-color:transparent;
+  transition:
+    background-color .3s ease,
+    border-color .3s ease,
+    color .3s ease,
+    box-shadow .3s ease,
+    transform .3s cubic-bezier(.22,.61,.36,1);
+}
+.chips a:is(:hover,:focus-visible){
+  background-color:var(--chip-gold);
+  border-color:var(--chip-gold);
+  color:#000;
+  box-shadow:0 0 0 1px var(--chip-gold),0 0 18px var(--chip-glow),0 6px 18px rgba(0,0,0,.45);
+  transform:translateY(-2px);
+}
+.chips a:focus-visible{outline:2px solid var(--chip-gold);outline-offset:3px}
+.chips a:active{
+  background-color:var(--chip-gold);border-color:var(--chip-gold);color:#000;
+  transform:translateY(0) scale(.97);
+  transition-duration:.1s;
+}
+/* hover is for mouse/trackpad only, so phones never keep a "stuck" lit chip after a tap
+   (the :active rule above still gives touch a gold flash while the finger is down) */
+@media (hover:none){
+  .chips a:hover:not(:active):not(:focus-visible){
+    background-color:rgba(0,0,0,.35);border-color:rgba(255,183,0,.4);color:#fff;
+    box-shadow:none;transform:none;
+  }
+}
+/* comfortable tap target on touch screens (44px) */
+@media (pointer:coarse){.chips a{min-height:44px;padding-block:8px}}
+@media (prefers-reduced-motion:reduce){
+  .chips a{transition:background-color .01s,color .01s,border-color .01s,box-shadow .01s}
+  .chips a:is(:hover,:focus-visible,:active){transform:none}
+}
+
+/* =====================================================================
+   UNIFIED BUTTON SYSTEM  (site-wide, loaded last on purpose)
+   Reference look = the "BOOK AIRPORT CAB" button on About:
+   amber fill, dark bold text, rounded corners, soft amber glow.
+   - Primary (filled amber) : .btn-amber .btn-book .btn-send .cu-btn-gold .rv-btn
+                              .tp-actions .btn-call .ha-call
+   - WhatsApp (green)       : .btn-wa .cu-btn-wa .ha-wa .bce-submit
+   - Outline / ghost        : .btn-call (header + CTA bands) .ha-book .btn-book-cta
+                              .cu-btn-ghost .rv-btn--ghost .btn-dark2 .cc-mail-btn
+   - Call Now (purple)      : .btn-callnow
+   - Floating WhatsApp/Call : .floating-cta__btn (scale 1.1 + glow)
+   Only colour / glow / hover / press / transition are set here - no sizes,
+   padding, text or layout - so existing responsive rules keep working.
+   !important is used on purpose: the older per-page rules above have
+   higher specificity and would otherwise win.
+   ===================================================================== */
+
+/* 1. shared motion: one transition for every button */
+.btn,.btn-amber,.btn-book,.btn-send,.btn-wa,.btn-callnow,.btn-call,.btn-dark2,.btn-book-cta,
+.ha-btn,.cu-btn,.rv-btn,.cc-mail-btn,.bce-submit,.floating-cta__btn{
+  transition:transform .25s ease,box-shadow .25s ease,background .25s ease,background-color .25s ease,color .25s ease,border-color .25s ease,filter .25s ease !important;
+  cursor:pointer;-webkit-tap-highlight-color:transparent;
+}
+
+/* 2. PRIMARY - amber fill + amber glow */
+.btn-amber,.btn-book,.btn-send,.cu-btn-gold,.rv-btn:not(.rv-btn--ghost),
+.tp-actions .btn-call,.hero-actions .ha-call{
+  background:var(--amber) !important;color:#111 !important;border-color:var(--amber) !important;
+  box-shadow:0 0 18px rgba(245,158,11,.40) !important;
+}
+.btn-amber:hover,.btn-book:hover,.btn-send:hover,.cu-btn-gold:hover,.rv-btn:not(.rv-btn--ghost):hover,
+.tp-actions .btn-call:hover,.hero-actions .ha-call:hover,
+.btn-amber:focus-visible,.btn-book:focus-visible,.btn-send:focus-visible,.cu-btn-gold:focus-visible,
+.rv-btn:not(.rv-btn--ghost):focus-visible,.tp-actions .btn-call:focus-visible,.hero-actions .ha-call:focus-visible{
+  background:var(--gold) !important;color:#111 !important;border-color:var(--gold) !important;
+  box-shadow:0 0 30px rgba(245,158,11,.75) !important;filter:none !important;
+}
+
+/* 3. WHATSAPP - green fill + green glow */
+.btn-wa,.btn.btn-wa,.cu-btn-wa,.hero-actions .ha-wa,.booking-card-embedded .bce-submit{
+  background:#25D366 !important;border-color:#25D366 !important;
+  box-shadow:0 0 18px rgba(37,211,102,.40) !important;
+}
+.btn-wa:hover,.btn.btn-wa:hover,.cu-btn-wa:hover,.hero-actions .ha-wa:hover,.booking-card-embedded .bce-submit:hover,
+.btn-wa:focus-visible,.btn.btn-wa:focus-visible,.cu-btn-wa:focus-visible,.hero-actions .ha-wa:focus-visible,
+.booking-card-embedded .bce-submit:focus-visible{
+  background:#2fdc6e !important;border-color:#2fdc6e !important;filter:none !important;
+  box-shadow:0 0 30px rgba(37,211,102,.75) !important;
+}
+
+/* 4. OUTLINE / GHOST - keep the outline look, add the same glow + lift */
+.btn-call,.hero-actions .ha-book,.btn-book-cta,.hero .btn-book-cta,.about .ab-hero .btn-book-cta,
+.cu-btn-ghost,.rv-btn--ghost,.btn-dark2,.cc-mail-btn{
+  box-shadow:0 0 14px rgba(245,158,11,.28) !important;
+}
+.btn-call:hover,.hero-actions .ha-book:hover,.btn-book-cta:hover,.hero .btn-book-cta:hover,
+.about .ab-hero .btn-book-cta:hover,.cu-btn-ghost:hover,.rv-btn--ghost:hover,.btn-dark2:hover,.cc-mail-btn:hover,
+.btn-call:focus-visible,.hero-actions .ha-book:focus-visible,.btn-book-cta:focus-visible,.hero .btn-book-cta:focus-visible,
+.about .ab-hero .btn-book-cta:focus-visible,.cu-btn-ghost:focus-visible,.rv-btn--ghost:focus-visible,.btn-dark2:focus-visible,
+.cc-mail-btn:focus-visible{
+  box-shadow:0 0 28px rgba(245,158,11,.65) !important;
+}
+
+/* 5. CALL NOW (purple, mobile bar) */
+.btn-callnow{box-shadow:0 0 18px rgba(177,151,252,.40) !important}
+.btn-callnow:hover,.btn-callnow:focus-visible{box-shadow:0 0 30px rgba(177,151,252,.75) !important;filter:brightness(1.08)}
+
+/* 6. LIFT on hover (mouse devices) / keyboard focus, PRESS on click */
+@media (hover:hover){
+  .btn:hover,.btn-amber:hover,.btn-book:hover,.btn-send:hover,.btn-wa:hover,.btn-callnow:hover,.btn-call:hover,
+  .btn-dark2:hover,.btn-book-cta:hover,.ha-btn:hover,.cu-btn:hover,.rv-btn:hover,.cc-mail-btn:hover,.bce-submit:hover{
+    transform:translateY(-3px) !important;
+  }
+}
+.btn:focus-visible,.btn-amber:focus-visible,.btn-book:focus-visible,.btn-send:focus-visible,.btn-wa:focus-visible,
+.btn-callnow:focus-visible,.btn-call:focus-visible,.btn-dark2:focus-visible,.btn-book-cta:focus-visible,
+.ha-btn:focus-visible,.cu-btn:focus-visible,.rv-btn:focus-visible,.cc-mail-btn:focus-visible,.bce-submit:focus-visible{
+  transform:translateY(-3px) !important;
+}
+.btn:active,.btn-amber:active,.btn-book:active,.btn-send:active,.btn-wa:active,.btn-callnow:active,.btn-call:active,
+.btn-dark2:active,.btn-book-cta:active,.ha-btn:active,.cu-btn:active,.rv-btn:active,.cc-mail-btn:active,.bce-submit:active{
+  transform:translateY(0) scale(.97) !important;transition-duration:.1s !important;
+}
+
+/* 7. FLOATING WhatsApp + Call: scale 1.1 + glow */
+.floating-cta__btn--wa{box-shadow:0 0 18px rgba(37,211,102,.55),0 2px 8px rgba(0,0,0,.55) !important}
+.floating-cta__btn--call{box-shadow:0 0 18px rgba(245,158,11,.55),0 2px 8px rgba(0,0,0,.55) !important}
+@media (hover:hover){
+  .floating-cta__btn:hover{transform:scale(1.1) !important}
+}
+.floating-cta__btn:focus-visible{transform:scale(1.1) !important}
+.floating-cta__btn:active{transform:scale(1.03) !important;transition-duration:.1s !important}
+.floating-cta__btn--wa:hover,.floating-cta__btn--wa:focus-visible{box-shadow:0 0 32px rgba(37,211,102,.9),0 2px 8px rgba(0,0,0,.55) !important}
+.floating-cta__btn--call:hover,.floating-cta__btn--call:focus-visible{box-shadow:0 0 32px rgba(245,158,11,.9),0 2px 8px rgba(0,0,0,.55) !important}
+
+/* 8. Back-to-top: glow only (its show/hide uses transform, so no transform override) */
+#toTop:hover{box-shadow:0 0 26px rgba(245,158,11,.65)}
+
+/* 9. Respect reduced-motion preference */
+@media (prefers-reduced-motion:reduce){
+  .btn,.btn-amber,.btn-book,.btn-send,.btn-wa,.btn-callnow,.btn-call,.btn-dark2,.btn-book-cta,.ha-btn,.cu-btn,.rv-btn,
+  .cc-mail-btn,.bce-submit,.floating-cta__btn{transition:box-shadow .01s,background .01s,color .01s !important}
+  .btn:hover,.btn:active,.btn:focus-visible,.ha-btn:hover,.cu-btn:hover,.rv-btn:hover,.cc-mail-btn:hover,.btn-book-cta:hover,
+  .floating-cta__btn:hover,.floating-cta__btn:active,.floating-cta__btn:focus-visible{transform:none !important}
+}
+
+/* =====================================================================
+   MINI ROUTE SEARCH  (routes.html header)  - dark box, gold (#d4af37) accents
+   ===================================================================== */
+.rs-box{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:center;gap:10px;max-width:660px;margin:22px auto 0;padding:14px 16px;text-align:left;
+  background:#1a1a1a;border:1px solid #d4af37;border-radius:12px;box-shadow:0 0 22px rgba(212,175,55,.18)}
+.rs-box,.rs-box *{box-sizing:border-box}
+.rs-field{flex:1 1 180px;min-width:0}
+.rs-field label{display:block;margin:0 0 4px;font-size:.7rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#d4af37}
+.rs-field input{width:100%;height:42px;padding:0 12px;font-size:.92rem;color:#f5f5f5;background:#000;border:1px solid rgba(212,175,55,.45);border-radius:8px;outline:0;transition:border-color .25s,box-shadow .25s}
+.rs-field input::placeholder{color:#777}
+.rs-field input:focus{border-color:#d4af37;box-shadow:0 0 0 3px rgba(212,175,55,.25)}
+.rs-go{flex:0 0 auto;height:42px;display:inline-flex;align-items:center;justify-content:center;padding:0 20px;white-space:nowrap}
+.rs-msg{flex:1 0 100%;margin:2px 0 0;min-height:0;font-size:.82rem;color:#d4af37}
+.rs-msg:empty{display:none}
+.rs-msg.rs-bad{color:#fbbf24}
+.rs-msg a{color:#d4af37;font-weight:700;text-decoration:underline}
+@media(max-width:575.98px){.rs-box{padding:12px;margin-top:18px}.rs-field{flex:1 0 100%}.rs-go{flex:1 0 100%}}
+
+/* Mini route search: "no ready page" contact box */
+.rs-msg.rs-contact{margin-top:6px;padding:14px;text-align:center;background:#111;border:1px solid #d4af37;border-radius:10px;color:#fff}
+.rs-msg.rs-contact p{margin:0 0 12px;font-size:.9rem;line-height:1.5;color:#fff}
+.rs-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+.rs-actions .btn{flex:0 1 auto;text-decoration:none;text-transform:none;white-space:normal;line-height:1.25;font-size:.9rem}
+.rs-actions .btn-wa{color:#fff}
+@media(max-width:575.98px){.rs-actions .btn{flex:1 0 100%}}
+
+/* Mini route search: dynamic fare result (all-India) */
+.rs-result{max-width:900px;margin:16px auto 0;text-align:left}
+.rs-result:empty{display:none}
+.rs-result .rate-card{padding:18px}
+.rs-note{margin:12px 0 0;font-size:.8rem;line-height:1.5;color:#bdbdbd}
+.rs-note b{color:#d4af37}
+.rs-result .rs-actions{margin-top:14px}
+.rs-go[disabled]{opacity:.65;cursor:wait}
+@media(max-width:575.98px){.rs-result .rate-card{padding:12px}}
+.rs-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.rs-stats .stat{padding:16px 12px}
+.rs-stats .stat h3{font-size:1.4rem}
+.rs-result .table-responsive{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.rs-result .rate-table{width:100%}
+@media(max-width:767.98px){.rs-stats{grid-template-columns:1fr 1fr}.rs-stats .rs-stat-wide{grid-column:1 / -1}}
+.page-head .rs-result .rs-note{max-width:none;margin:12px 0 0;color:#bdbdbd;text-align:left}
+.page-head .rs-result .rs-note b{color:#d4af37}
+.rs-result,.rs-result *,.rs-contact,.rs-contact *{box-sizing:border-box}
+
+/* =====================================================================
+   ROUTES PAGE - GOLD / DARK BUTTON THEME  (routes.html only, via body.routes-page)
+   Same look as contact.html:
+   Normal : dark #1a1a1a fill, 1.5px gold #d4af37 border, crisp light text
+   Hover  : gold #d4af37 fill, black text, soft gold glow, 2px lift
+   Sits LAST in the file; !important is needed to beat the earlier
+   "UNIFIED BUTTON SYSTEM" rules (they also use !important).
+   ===================================================================== */
+body.routes-page{--rt-gold:#d4af37;--rt-dark:#1a1a1a;--rt-glow:0 0 20px rgba(212,175,55,.55),0 6px 18px rgba(0,0,0,.45)}
+
+/* Normal state: header buttons, hero buttons, Calculate, "no route" box buttons */
+body.routes-page .btn-amber,
+body.routes-page .btn-call,
+body.routes-page .btn-wa,
+body.routes-page .btn.btn-wa,
+body.routes-page .hero-actions .ha-btn,
+body.routes-page .hero-actions .ha-book,
+body.routes-page .hero-actions .ha-call,
+body.routes-page .hero-actions .ha-wa,
+body.routes-page .rs-actions .btn{
+  background:var(--rt-dark) !important;
+  background-color:var(--rt-dark) !important;
+  color:#f5f5f5 !important;
+  border:1.5px solid var(--rt-gold) !important;
+  box-shadow:none !important;
+  text-decoration:none;
+  transition:background-color .3s ease,color .3s ease,border-color .3s ease,box-shadow .3s ease,transform .3s ease !important;
+}
+/* keep the WhatsApp icon green at rest so it stays recognisable */
+body.routes-page .btn-wa .fa-whatsapp,
+body.routes-page .ha-wa .fa-whatsapp{color:#25D366;transition:color .3s ease}
+
+/* Hover / keyboard focus */
+body.routes-page .btn-amber:hover,       body.routes-page .btn-amber:focus-visible,
+body.routes-page .btn-call:hover,        body.routes-page .btn-call:focus-visible,
+body.routes-page .btn-wa:hover,          body.routes-page .btn-wa:focus-visible,
+body.routes-page .btn.btn-wa:hover,      body.routes-page .btn.btn-wa:focus-visible,
+body.routes-page .hero-actions .ha-btn:hover, body.routes-page .hero-actions .ha-btn:focus-visible,
+body.routes-page .rs-actions .btn:hover, body.routes-page .rs-actions .btn:focus-visible{
+  background:var(--rt-gold) !important;
+  background-color:var(--rt-gold) !important;
+  color:#000 !important;
+  border-color:var(--rt-gold) !important;
+  box-shadow:var(--rt-glow) !important;
+  filter:none !important;
+  transform:translateY(-2px) !important;
+}
+body.routes-page .btn-wa:hover .fa-whatsapp,
+body.routes-page .btn-wa:focus-visible .fa-whatsapp,
+body.routes-page .ha-wa:hover .fa-whatsapp,
+body.routes-page .ha-wa:focus-visible .fa-whatsapp{color:#000}
+
+/* Pressed */
+body.routes-page .btn-amber:active, body.routes-page .btn-call:active, body.routes-page .btn-wa:active,
+body.routes-page .hero-actions .ha-btn:active, body.routes-page .rs-actions .btn:active{
+  background:var(--rt-gold) !important;color:#000 !important;transform:translateY(0) scale(.98) !important;transition-duration:.1s !important;
+}
+/* Remove the old white shine sweep so only the gold fill animates */
+body.routes-page .btn-amber::before, body.routes-page .btn-wa::before{display:none !important}
+
+/* Keyboard focus ring in gold */
+body.routes-page .btn:focus-visible, body.routes-page .ha-btn:focus-visible{
+  outline:2px solid var(--rt-gold);outline-offset:3px;
+}
+@media (prefers-reduced-motion:reduce){
+  body.routes-page .btn, body.routes-page .ha-btn{transition:none !important}
+  body.routes-page .btn:hover, body.routes-page .ha-btn:hover{transform:none !important}
+}
