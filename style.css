@@ -28,7 +28,14 @@ section{padding:72px 0;border-bottom:1px solid rgba(255,255,255,.07)}
 .btn-amber:hover{background:var(--gold);color:#111}
 .navbar-toggler{border:1px solid var(--line);color:var(--amber);padding:6px 10px}
 .navbar-toggler:focus{box-shadow:none}
+/* Remove top yellow border */
+body, header, .site-nav, nav {
+    border-top: none !important;
+}
 
+body::before, header::before, .site-nav::before {
+    display: none !important;
+}
 /* Hero */
 .hero-card{position:relative;border-radius:18px;overflow:hidden;border:1px solid var(--line);text-align:left;background:var(--card)}
 .hero-img{display:block;width:100%;height:auto;aspect-ratio:1370/768;object-fit:contain;object-position:center top;background:var(--card)}
