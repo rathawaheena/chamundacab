@@ -28,13 +28,10 @@ section{padding:72px 0;border-bottom:1px solid rgba(255,255,255,.07)}
 .btn-amber:hover{background:var(--gold);color:#111}
 .navbar-toggler{border:1px solid var(--line);color:var(--amber);padding:6px 10px}
 .navbar-toggler:focus{box-shadow:none}
-/* Remove top yellow border */
-body, header, .site-nav, nav {
-    border-top: none !important;
-}
-
-body::before, header::before, .site-nav::before {
+/* Hide any top bar element */
+.top-bar, .topbar, #top-bar, header::after, .site-nav::after {
     display: none !important;
+    border: none !important;
 }
 /* Hero */
 .hero-card{position:relative;border-radius:18px;overflow:hidden;border:1px solid var(--line);text-align:left;background:var(--card)}
